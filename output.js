@@ -1,4 +1,4 @@
-//Tue Sep 09 2025 03:31:08 GMT+0000 (Coordinated Universal Time)
+//Tue Sep 09 2025 03:40:14 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
 "use strict";
@@ -7,506 +7,387 @@ Object.defineProperty(exports, "__esModule", {
   "value": true
 });
 const axios_1 = require("axios"),
+  cheerio_1 = require("cheerio"),
+  CryptoJs = require("crypto-js"),
   he = require("he"),
-  pageSize = 30;
-function artworkShort2Long(_0x1b91d9) {
-  var _0xd5cad0;
-  const _0x84c13 = (_0xd5cad0 = _0x1b91d9 === null || _0x1b91d9 === undefined ? undefined : _0x1b91d9.indexOf("/")) !== null && _0xd5cad0 !== undefined ? _0xd5cad0 : -1;
-  return _0x84c13 !== -1 ? "https://img4.kuwo.cn/star/albumcover/1080" + _0x1b91d9.slice(_0x84c13) : undefined;
-}
-function formatMusicItem(_0x4f9e92) {
+  pageSize = 20;
+function formatMusicItem(_0x5d1501) {
+  var _0x6e6498, _0x37cc27, _0x1290bf, _0x18fb19, _0x3d7024, _0x51ef76, _0x5d91c6, _0x239319, _0x5ed56c;
   return {
-    "id": _0x4f9e92.MUSICRID.replace("MUSIC_", ""),
-    "artwork": artworkShort2Long(_0x4f9e92.web_albumpic_short),
-    "title": he.decode(_0x4f9e92.NAME || ""),
-    "artist": he.decode(_0x4f9e92.ARTIST || ""),
-    "album": he.decode(_0x4f9e92.ALBUM || ""),
-    "albumId": _0x4f9e92.ALBUMID,
-    "artistId": _0x4f9e92.ARTISTID,
-    "formats": _0x4f9e92.FORMATS
+    "id": (_0x18fb19 = _0x5d1501.FileHash) !== null && _0x18fb19 !== undefined ? _0x18fb19 : _0x5d1501.Grp[0].FileHash,
+    "title": (_0x6e6498 = _0x5d1501.SongName) !== null && _0x6e6498 !== undefined ? _0x6e6498 : _0x5d1501.OriSongName,
+    "artist": (_0x37cc27 = _0x5d1501.SingerName) !== null && _0x37cc27 !== undefined ? _0x37cc27 : _0x5d1501.Singers[0].name,
+    "album": (_0x1290bf = _0x5d1501.AlbumName) !== null && _0x1290bf !== undefined ? _0x1290bf : _0x5d1501.Grp[0].AlbumName,
+    "album_id": (_0x3d7024 = _0x5d1501.AlbumID) !== null && _0x3d7024 !== undefined ? _0x3d7024 : _0x5d1501.Grp[0].AlbumID,
+    "album_audio_id": 0,
+    "duration": _0x5d1501.Duration,
+    "artwork": ((_0x51ef76 = _0x5d1501.Image) !== null && _0x51ef76 !== undefined ? _0x51ef76 : _0x5d1501.Grp[0].Image).replace("{size}", "1080"),
+    "320hash": (_0x5ed56c = _0x5d1501.HQFileHash) !== null && _0x5ed56c !== undefined ? _0x5ed56c : undefined,
+    "sqhash": (_0x5d91c6 = _0x5d1501.SQFileHash) !== null && _0x5d91c6 !== undefined ? _0x5d91c6 : undefined,
+    "ResFileHash": (_0x239319 = _0x5d1501.ResFileHash) !== null && _0x239319 !== undefined ? _0x239319 : undefined
   };
 }
-function formatAlbumItem(_0x137129) {
-  var _0x2b38ec;
+function formatMusicItem2(_0x2df23b) {
+  var _0x5ac1ea, _0x5393d0, _0x11377e, _0x17a522, _0x109b2e, _0x4fa6a4, _0x21ecdf;
   return {
-    "id": _0x137129.albumid,
-    "artist": he.decode(_0x137129.artist || ""),
-    "title": he.decode(_0x137129.name || ""),
-    "artwork": (_0x2b38ec = _0x137129.img) !== null && _0x2b38ec !== undefined ? _0x2b38ec : artworkShort2Long(_0x137129.pic),
-    "description": he.decode(_0x137129.info || ""),
-    "date": _0x137129.pub,
-    "artistId": _0x137129.artistid
+    "id": _0x2df23b.hash,
+    "title": _0x2df23b.songname,
+    "artist": (_0x5ac1ea = _0x2df23b.singername) !== null && _0x5ac1ea !== undefined ? _0x5ac1ea : ((_0x11377e = (_0x5393d0 = _0x2df23b.authors) === null || _0x5393d0 === undefined ? undefined : _0x5393d0.map(_0x490e5a => {
+      var _0x2ec7b1;
+      return (_0x2ec7b1 = _0x490e5a === null || _0x490e5a === undefined ? undefined : _0x490e5a.author_name) !== null && _0x2ec7b1 !== undefined ? _0x2ec7b1 : "";
+    })) === null || _0x11377e === undefined ? undefined : _0x11377e.join(", ")) || ((_0x4fa6a4 = (_0x109b2e = (_0x17a522 = _0x2df23b.filename) === null || _0x17a522 === undefined ? undefined : _0x17a522.split("-")) === null || _0x109b2e === undefined ? undefined : _0x109b2e[0]) === null || _0x4fa6a4 === undefined ? undefined : _0x4fa6a4.trim()),
+    "album": (_0x21ecdf = _0x2df23b.album_name) !== null && _0x21ecdf !== undefined ? _0x21ecdf : _0x2df23b.remark,
+    "album_id": _0x2df23b.album_id,
+    "album_audio_id": _0x2df23b.album_audio_id,
+    "artwork": _0x2df23b.album_sizable_cover ? _0x2df23b.album_sizable_cover.replace("{size}", "400") : undefined,
+    "duration": _0x2df23b.duration,
+    "320hash": _0x2df23b["320hash"],
+    "sqhash": _0x2df23b.sqhash,
+    "origin_hash": _0x2df23b.origin_hash
   };
 }
-function formatArtistItem(_0x1bac77) {
+function formatImportMusicItem(_0x908190) {
+  var _0x589448, _0xf7e1fc, _0x463141, _0x1ab8ad, _0x5c47ae, _0x17c001, _0x19b03a;
+  let _0x2b0027 = _0x908190.name;
+  const _0x4344b6 = _0x908190.singername;
+  if (_0x4344b6 && _0x2b0027) {
+    const _0x3b2f59 = _0x2b0027.indexOf(_0x4344b6);
+    _0x3b2f59 !== -1 && (_0x2b0027 = (_0x589448 = _0x2b0027.substring(_0x3b2f59 + _0x4344b6.length + 2)) === null || _0x589448 === undefined ? undefined : _0x589448.trim());
+    !_0x2b0027 && (_0x2b0027 = _0x4344b6);
+  }
+  const _0x1b8fba = _0x908190.relate_goods;
   return {
-    "id": _0x1bac77.ARTISTID,
-    "avatar": _0x1bac77.hts_PICPATH,
-    "name": he.decode(_0x1bac77.ARTIST || ""),
-    "artistId": _0x1bac77.ARTISTID,
-    "description": he.decode(_0x1bac77.desc || ""),
-    "worksNum": _0x1bac77.SONGNUM
+    "id": _0x908190.hash,
+    "title": _0x2b0027,
+    "artist": _0x4344b6,
+    "album": (_0xf7e1fc = _0x908190.albumname) !== null && _0xf7e1fc !== undefined ? _0xf7e1fc : "",
+    "album_id": _0x908190.album_id,
+    "album_audio_id": _0x908190.album_audio_id,
+    "artwork": (_0x1ab8ad = (_0x463141 = _0x908190 === null || _0x908190 === undefined ? undefined : _0x908190.info) === null || _0x463141 === undefined ? undefined : _0x463141.image) === null || _0x1ab8ad === undefined ? undefined : _0x1ab8ad.replace("{size}", "400"),
+    "320hash": (_0x5c47ae = _0x1b8fba === null || _0x1b8fba === undefined ? undefined : _0x1b8fba[1]) === null || _0x5c47ae === undefined ? undefined : _0x5c47ae.hash,
+    "sqhash": (_0x17c001 = _0x1b8fba === null || _0x1b8fba === undefined ? undefined : _0x1b8fba[2]) === null || _0x17c001 === undefined ? undefined : _0x17c001.hash,
+    "origin_hash": (_0x19b03a = _0x1b8fba === null || _0x1b8fba === undefined ? undefined : _0x1b8fba[3]) === null || _0x19b03a === undefined ? undefined : _0x19b03a.hash
   };
 }
-function formatMusicSheet(_0x2888e0) {
-  return {
-    "id": _0x2888e0.playlistid,
-    "title": he.decode(_0x2888e0.name || ""),
-    "artist": he.decode(_0x2888e0.nickname || ""),
-    "artwork": _0x2888e0.pic,
-    "playCount": _0x2888e0.playcnt,
-    "description": he.decode(_0x2888e0.intro || ""),
-    "worksNum": _0x2888e0.songnum
-  };
-}
-async function searchMusic(_0x231dc3, _0xe4f966) {
-  const _0x88f7a0 = (await (0, axios_1.default)({
-      "method": "get",
-      "url": "http://search.kuwo.cn/r.s",
+const headers = {
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36",
+  "Accept": "*/*",
+  "Accept-Encoding": "gzip, deflate",
+  "Accept-Language": "zh-CN,zh;q=0.9"
+};
+async function searchMusic(_0x1b11a3, _0x5e8aa8) {
+  const _0xcc5a6a = (await axios_1.default.get("https://songsearch.kugou.com/song_search_v2", {
+      "headers": headers,
       "params": {
-        "client": "kt",
-        "all": _0x231dc3,
-        "pn": _0xe4f966 - 1,
-        "rn": pageSize,
-        "uid": 2574109560,
-        "ver": "kwplayer_ar_8.5.4.2",
-        "vipver": 1,
-        "ft": "music",
-        "cluster": 0,
-        "strategy": 2012,
-        "encoding": "utf8",
-        "rformat": "json",
-        "vermerge": 1,
-        "mobi": 1
+        "keyword": _0x1b11a3,
+        "page": _0x5e8aa8,
+        "pagesize": pageSize,
+        "userid": 0,
+        "clientver": "",
+        "platform": "WebFilter",
+        "filter": 2,
+        "iscorrection": 1,
+        "privilege_filter": 0,
+        "area_code": 1
       }
     })).data,
-    _0xd1be0b = _0x88f7a0.abslist.map(formatMusicItem);
+    _0x9177cc = _0xcc5a6a.data.lists.map(formatMusicItem);
   return {
-    "isEnd": (+_0x88f7a0.PN + 1) * +_0x88f7a0.RN >= +_0x88f7a0.TOTAL,
-    "data": _0xd1be0b
+    "isEnd": _0x5e8aa8 * pageSize >= _0xcc5a6a.data.total,
+    "data": _0x9177cc
   };
 }
-async function searchAlbum(_0x490ce5, _0x21c0dc) {
-  const _0x49d094 = (await (0, axios_1.default)({
-      "method": "get",
-      "url": "http://search.kuwo.cn/r.s",
+async function searchAlbum(_0x4e22ce, _0x13b348) {
+  const _0x5096f8 = (await axios_1.default.get("http://msearch.kugou.com/api/v3/search/album", {
+      "headers": headers,
       "params": {
-        "all": _0x490ce5,
-        "ft": "album",
-        "itemset": "web_2013",
-        "client": "kt",
-        "pn": _0x21c0dc - 1,
-        "rn": pageSize,
-        "rformat": "json",
-        "encoding": "utf8",
-        "pcjson": 1
+        "version": 9108,
+        "iscorrection": 1,
+        "highlight": "em",
+        "plat": 0,
+        "keyword": _0x4e22ce,
+        "pagesize": 20,
+        "page": _0x13b348,
+        "sver": 2,
+        "with_res_tag": 0
       }
     })).data,
-    _0x50b289 = _0x49d094.albumlist.map(formatAlbumItem);
-  return {
-    "isEnd": (+_0x49d094.PN + 1) * +_0x49d094.RN >= +_0x49d094.TOTAL,
-    "data": _0x50b289
-  };
-}
-async function searchArtist(_0x5883e1, _0x522fb7) {
-  const _0x12305c = (await (0, axios_1.default)({
-      "method": "get",
-      "url": "http://search.kuwo.cn/r.s",
-      "params": {
-        "all": _0x5883e1,
-        "ft": "artist",
-        "itemset": "web_2013",
-        "client": "kt",
-        "pn": _0x522fb7 - 1,
-        "rn": pageSize,
-        "rformat": "json",
-        "encoding": "utf8",
-        "pcjson": 1
-      }
-    })).data,
-    _0xc83bb = _0x12305c.abslist.map(formatArtistItem);
-  return {
-    "isEnd": (+_0x12305c.PN + 1) * +_0x12305c.RN >= +_0x12305c.TOTAL,
-    "data": _0xc83bb
-  };
-}
-async function searchMusicSheet(_0x42437a, _0x334820) {
-  const _0x296517 = (await (0, axios_1.default)({
-      "method": "get",
-      "url": "http://search.kuwo.cn/r.s",
-      "params": {
-        "all": _0x42437a,
-        "ft": "playlist",
-        "itemset": "web_2013",
-        "client": "kt",
-        "pn": _0x334820 - 1,
-        "rn": pageSize,
-        "rformat": "json",
-        "encoding": "utf8",
-        "pcjson": 1
-      }
-    })).data,
-    _0x31cd09 = _0x296517.abslist.map(formatMusicSheet);
-  return {
-    "isEnd": (+_0x296517.PN + 1) * +_0x296517.RN >= +_0x296517.TOTAL,
-    "data": _0x31cd09
-  };
-}
-async function getArtistMusicWorks(_0x2121b9, _0x1439ba) {
-  const _0x5b997d = (await (0, axios_1.default)({
-      "method": "get",
-      "url": "http://search.kuwo.cn/r.s",
-      "params": {
-        "pn": _0x1439ba - 1,
-        "rn": pageSize,
-        "artistid": _0x2121b9.id,
-        "stype": "artist2music",
-        "sortby": 0,
-        "alflac": 1,
-        "show_copyright_off": 1,
-        "pcmp4": 1,
-        "encoding": "utf8",
-        "plat": "pc",
-        "thost": "search.kuwo.cn",
-        "vipver": "MUSIC_9.1.1.2_BCS2",
-        "devid": "38668888",
-        "newver": 1,
-        "pcjson": 1
-      }
-    })).data,
-    _0x2decef = _0x5b997d.musiclist.map(_0x2b2928 => {
+    _0x215eff = _0x5096f8.data.info.map(_0x3310c2 => {
+      var _0x1dcf9c, _0xf8d2c9;
       return {
-        "id": _0x2b2928.musicrid,
-        "artwork": artworkShort2Long(_0x2b2928.web_albumpic_short),
-        "title": he.decode(_0x2b2928.name || ""),
-        "artist": he.decode(_0x2b2928.artist || ""),
-        "album": he.decode(_0x2b2928.album || ""),
-        "albumId": _0x2b2928.albumid,
-        "artistId": _0x2b2928.artistid,
-        "formats": _0x2b2928.formats
+        "id": _0x3310c2.albumid,
+        "artwork": (_0x1dcf9c = _0x3310c2.imgurl) === null || _0x1dcf9c === undefined ? undefined : _0x1dcf9c.replace("{size}", "400"),
+        "artist": _0x3310c2.singername,
+        "title": (0, cheerio_1.load)(_0x3310c2.albumname).text(),
+        "description": _0x3310c2.intro,
+        "date": (_0xf8d2c9 = _0x3310c2.publishtime) === null || _0xf8d2c9 === undefined ? undefined : _0xf8d2c9.slice(0, 10)
       };
     });
   return {
-    "isEnd": (+_0x5b997d.pn + 1) * pageSize >= +_0x5b997d.total,
-    "data": _0x2decef
+    "isEnd": _0x13b348 * 20 >= _0x5096f8.data.total,
+    "data": _0x215eff
   };
 }
-async function getArtistAlbumWorks(_0x1f6180, _0x4d6809) {
-  const _0x237a96 = (await (0, axios_1.default)({
-      "method": "get",
-      "url": "http://search.kuwo.cn/r.s",
+async function searchMusicSheet(_0x182495, _0x52f025) {
+  const _0x557ede = (await axios_1.default.get("http://mobilecdn.kugou.com/api/v3/search/special", {
+      "headers": headers,
       "params": {
-        "pn": _0x4d6809 - 1,
-        "rn": pageSize,
-        "artistid": _0x1f6180.id,
-        "stype": "albumlist",
-        "sortby": 1,
-        "alflac": 1,
-        "show_copyright_off": 1,
-        "pcmp4": 1,
-        "encoding": "utf8",
-        "plat": "pc",
-        "thost": "search.kuwo.cn",
-        "vipver": "MUSIC_9.1.1.2_BCS2",
-        "devid": "38668888",
-        "newver": 1,
-        "pcjson": 1
+        "format": "json",
+        "keyword": _0x182495,
+        "page": _0x52f025,
+        "pagesize": pageSize,
+        "showtype": 1
       }
     })).data,
-    _0x599673 = _0x237a96.albumlist.map(formatAlbumItem);
+    _0x1f68dc = _0x557ede.data.info.map(_0x164293 => ({
+      "title": _0x164293.specialname,
+      "createAt": _0x164293.publishtime,
+      "description": _0x164293.intro,
+      "artist": _0x164293.nickname,
+      "coverImg": _0x164293.imgurl,
+      "gid": _0x164293.gid,
+      "playCount": _0x164293.playcount,
+      "id": _0x164293.specialid,
+      "worksNum": _0x164293.songcount
+    }));
   return {
-    "isEnd": (+_0x237a96.pn + 1) * pageSize >= +_0x237a96.total,
-    "data": _0x599673
-  };
-}
-async function getArtistWorks(_0xc1466c, _0x5bc753, _0x7efbc8) {
-  if (_0x7efbc8 === "music") {
-    return getArtistMusicWorks(_0xc1466c, _0x5bc753);
-  } else {
-    if (_0x7efbc8 === "album") return getArtistAlbumWorks(_0xc1466c, _0x5bc753);
-  }
-}
-async function getLyric(_0xb4b44a) {
-  const _0xbd2451 = (await axios_1.default.get("http://m.kuwo.cn/newh5/singles/songinfoandlrc", {
-      "params": {
-        "musicId": _0xb4b44a.id,
-        "httpStatus": 1
-      }
-    })).data,
-    _0x3d5ab5 = _0xbd2451.data.lrclist;
-  return {
-    "rawLrc": _0x3d5ab5.map(_0x460f32 => "[" + _0x460f32.time + "]" + _0x460f32.lineLyric).join("\n")
-  };
-}
-async function getAlbumInfo(_0x1427fd) {
-  const _0x11e2d4 = (await (0, axios_1.default)({
-      "method": "get",
-      "url": "http://search.kuwo.cn/r.s",
-      "params": {
-        "pn": 0,
-        "rn": 100,
-        "albumid": _0x1427fd.id,
-        "stype": "albuminfo",
-        "sortby": 0,
-        "alflac": 1,
-        "show_copyright_off": 1,
-        "pcmp4": 1,
-        "encoding": "utf8",
-        "plat": "pc",
-        "thost": "search.kuwo.cn",
-        "vipver": "MUSIC_9.1.1.2_BCS2",
-        "devid": "38668888",
-        "newver": 1,
-        "pcjson": 1
-      }
-    })).data,
-    _0x42d80c = _0x11e2d4.musiclist.map(_0x5b7a08 => {
-      {
-        var _0x3b0a27;
-        return {
-          "id": _0x5b7a08.id,
-          "artwork": (_0x3b0a27 = _0x1427fd.artwork) !== null && _0x3b0a27 !== undefined ? _0x3b0a27 : _0x11e2d4.img,
-          "title": he.decode(_0x5b7a08.name || ""),
-          "artist": he.decode(_0x5b7a08.artist || ""),
-          "album": he.decode(_0x5b7a08.album || ""),
-          "albumId": _0x1427fd.id,
-          "artistId": _0x5b7a08.artistid,
-          "formats": _0x5b7a08.formats
-        };
-      }
-    });
-  return {
-    "musicList": _0x42d80c
-  };
-}
-async function getTopLists() {
-  const _0x260b10 = (await axios_1.default.get("http://wapi.kuwo.cn/api/pc/bang/list")).data.child;
-  return _0x260b10.map(_0x3d14b6 => ({
-    "title": _0x3d14b6.disname,
-    "data": _0x3d14b6.child.map(_0x2c0749 => {
-      {
-        var _0x5caad0, _0x5ea00c;
-        return {
-          "id": _0x2c0749.sourceid,
-          "coverImg": (_0x5ea00c = (_0x5caad0 = _0x2c0749.pic5) !== null && _0x5caad0 !== undefined ? _0x5caad0 : _0x2c0749.pic2) !== null && _0x5ea00c !== undefined ? _0x5ea00c : _0x2c0749.pic,
-          "title": _0x2c0749.name,
-          "description": _0x2c0749.intro
-        };
-      }
-    })
-  }));
-}
-async function getTopListDetail(_0x18242f) {
-  const _0x424f31 = await axios_1.default.get("http://kbangserver.kuwo.cn/ksong.s", {
-    "params": {
-      "from": "pc",
-      "fmt": "json",
-      "pn": 0,
-      "rn": 80,
-      "type": "bang",
-      "data": "content",
-      "id": _0x18242f.id,
-      "show_copyright_off": 0,
-      "pcmp4": 1,
-      "isbang": 1,
-      "userid": 0,
-      "httpStatus": 1
-    }
-  });
-  return Object.assign(Object.assign({}, _0x18242f), {
-    "musicList": _0x424f31.data.musiclist.map(_0x2a2635 => {
-      return {
-        "id": _0x2a2635.id,
-        "title": he.decode(_0x2a2635.name || ""),
-        "artist": he.decode(_0x2a2635.artist || ""),
-        "album": he.decode(_0x2a2635.album || ""),
-        "albumId": _0x2a2635.albumid,
-        "artistId": _0x2a2635.artistid,
-        "formats": _0x2a2635.formats
-      };
-    })
-  });
-}
-async function getMusicSheetResponseById(_0x4daa8c, _0x56ceba, _0x2e3cbd = 50) {
-  return (await axios_1.default.get("http://nplserver.kuwo.cn/pl.svc", {
-    "params": {
-      "op": "getlistinfo",
-      "pid": _0x4daa8c,
-      "pn": _0x56ceba - 1,
-      "rn": _0x2e3cbd,
-      "encode": "utf8",
-      "keyset": "pl2012",
-      "vipver": "MUSIC_9.1.1.2_BCS2",
-      "newver": 1
-    }
-  })).data;
-}
-async function importMusicSheet(_0x2b96a6) {
-  var _0x5dea39, _0x1c184d;
-  let _0x2f2fab;
-  !_0x2f2fab && (_0x2f2fab = (_0x5dea39 = _0x2b96a6.match(/https?:\/\/www\/kuwo\.cn\/playlist_detail\/(\d+)/)) === null || _0x5dea39 === undefined ? undefined : _0x5dea39[1]);
-  !_0x2f2fab && (_0x2f2fab = (_0x1c184d = _0x2b96a6.match(/https?:\/\/m\.kuwo\.cn\/h5app\/playlist\/(\d+)/)) === null || _0x1c184d === undefined ? undefined : _0x1c184d[1]);
-  if (!_0x2f2fab) {
-    _0x2f2fab = _0x2b96a6.match(/^\s*(\d+)\s*$/);
-  }
-  if (!_0x2f2fab) return;
-  let _0x54af4e = 1,
-    _0x468291 = 30,
-    _0x4fe928 = [];
-  while (_0x54af4e < _0x468291) {
-    try {
-      const _0x2d6118 = await getMusicSheetResponseById(_0x2f2fab, _0x54af4e, 80);
-      _0x468291 = Math.ceil(_0x2d6118.total / 80);
-      isNaN(_0x468291) && (_0x468291 = 1);
-      _0x4fe928 = _0x4fe928.concat(_0x2d6118.musicList.map(_0xdfab1c => ({
-        "id": _0xdfab1c.id,
-        "title": he.decode(_0xdfab1c.name || ""),
-        "artist": he.decode(_0xdfab1c.artist || ""),
-        "album": he.decode(_0xdfab1c.album || ""),
-        "albumId": _0xdfab1c.albumid,
-        "artistId": _0xdfab1c.artistid,
-        "formats": _0xdfab1c.formats
-      })));
-    } catch (_0x15600b) {}
-    await new Promise(_0x10b57e => {
-      setTimeout(() => {
-        _0x10b57e();
-      }, 200 + Math.random() * 100);
-    });
-    ++_0x54af4e;
-  }
-  return _0x4fe928;
-}
-async function getRecommendSheetTags() {
-  const _0x3a336d = (await axios_1.default.get("http://wapi.kuwo.cn/api/pc/classify/playlist/getTagList?cmd=rcm_keyword_playlist&user=0&prod=kwplayer_pc_9.0.5.0&vipver=9.0.5.0&source=kwplayer_pc_9.0.5.0&loginUid=0&loginSid=0&appUid=76039576")).data.data,
-    _0x182aa6 = _0x3a336d.map(_0x4ba3be => ({
-      "title": _0x4ba3be.name,
-      "data": _0x4ba3be.data.map(_0x545407 => ({
-        "id": _0x545407.id,
-        "digest": _0x545407.digest,
-        "title": _0x545407.name
-      }))
-    })).filter(_0x4cdfd6 => _0x4cdfd6.data.length),
-    _0x825463 = [{
-      "id": "1848",
-      "title": "ç¿»å”±",
-      "digest": "10000"
-    }, {
-      "id": "621",
-      "title": "ç½‘ç»œ",
-      "digest": "10000"
-    }, {
-      "title": "ä¼¤æ„Ÿ",
-      "digest": "10000",
-      "id": "146"
-    }, {
-      "title": "æ¬§ç¾Ž",
-      "digest": "10000",
-      "id": "35"
-    }];
-  return {
-    "data": _0x182aa6,
-    "pinned": _0x825463
-  };
-}
-async function getRecommendSheetsByTag(_0x265d93, _0x5009e1) {
-  const _0x2fe014 = 20;
-  let _0x5d66ff;
-  if (_0x265d93.id) {
-    if (_0x265d93.digest === "10000") _0x5d66ff = (await axios_1.default.get("http://wapi.kuwo.cn/api/pc/classify/playlist/getTagPlayList?loginUid=0&loginSid=0&appUid=76039576&pn=" + (_0x5009e1 - 1) + "&id=" + _0x265d93.id + "&rn=" + _0x2fe014)).data.data;else {
-      {
-        let _0x50f79a = (await axios_1.default.get("http://mobileinterfaces.kuwo.cn/er.s?type=get_pc_qz_data&f=web&id=" + _0x265d93.id + "&prod=pc")).data;
-        _0x5d66ff = {
-          "total": 0,
-          "data": _0x50f79a.reduce((_0x350016, _0x13e1b6) => [..._0x350016, ..._0x13e1b6.list])
-        };
-      }
-    }
-  } else _0x5d66ff = (await axios_1.default.get("https://wapi.kuwo.cn/api/pc/classify/playlist/getRcmPlayList?loginUid=0&loginSid=0&appUid=76039576&&pn=" + (_0x5009e1 - 1) + "&rn=" + _0x2fe014 + "&order=hot")).data.data;
-  const _0x103422 = _0x5009e1 * _0x2fe014 >= _0x5d66ff.total;
-  return {
-    "isEnd": _0x103422,
-    "data": _0x5d66ff.data.map(_0x1b19a3 => ({
-      "title": _0x1b19a3.name,
-      "artist": _0x1b19a3.uname,
-      "id": _0x1b19a3.id,
-      "artwork": _0x1b19a3.img,
-      "playCount": _0x1b19a3.listencnt,
-      "createUserId": _0x1b19a3.uid
-    }))
-  };
-}
-async function getMusicSheetInfo(_0x385f14, _0x54d775) {
-  const _0x47709b = await getMusicSheetResponseById(_0x385f14.id, _0x54d775, pageSize);
-  return {
-    "isEnd": _0x54d775 * pageSize >= _0x47709b.total,
-    "musicList": _0x47709b.musiclist.map(_0x2aa9d7 => ({
-      "id": _0x2aa9d7.id,
-      "title": he.decode(_0x2aa9d7.name || ""),
-      "artist": he.decode(_0x2aa9d7.artist || ""),
-      "album": he.decode(_0x2aa9d7.album || ""),
-      "albumId": _0x2aa9d7.albumid,
-      "artistId": _0x2aa9d7.artistid,
-      "formats": _0x2aa9d7.formats
-    }))
+    "isEnd": _0x52f025 * pageSize >= _0x557ede.data.total,
+    "data": _0x1f68dc
   };
 }
 const qualityLevels = {
-  "low": "exhigh",
+  "low": "standard",
   "standard": "exhigh",
   "high": "lossless",
-  "super": "lossless"
+  "super": "hires"
 };
-async function getMediaSource(_0x3448a7, _0x596f0d) {
-  const _0x1f3686 = (await axios_1.default.get("https://music.haitangw.cc/music/kw.php?id=" + _0x3448a7.id + "&level=" + qualityLevels[_0x596f0d])).data;
+async function getMediaSource(_0x349135, _0x5815d3) {
+  const _0x2d3600 = (await axios_1.default.get("https://musicapi.haitangw.net/music/kg_song_kw.php?id=" + _0x349135.id + "&type=json&level=" + qualityLevels[_0x5815d3])).data;
   return {
-    "url": _0x1f3686.data.url
+    "url": _0x2d3600.data.url
   };
 }
-async function getMusicInfo(_0x2062f6) {
-  const _0x113507 = (await axios_1.default.get("http://m.kuwo.cn/newh5/singles/songinfoandlrc", {
-      "params": {
-        "musicId": _0x2062f6.id,
-        "httpStatus": 1
-      }
+async function getTopLists() {
+  const _0x27a16e = (await axios_1.default.get("http://mobilecdnbj.kugou.com/api/v3/rank/list?version=9108&plat=0&showtype=2&parentid=0&apiver=6&area_code=1&withsong=0&with_res_tag=0", {
+      "headers": headers
+    })).data.data.info,
+    _0x40c0c = [{
+      "title": "热门榜单",
+      "data": []
+    }, {
+      "title": "ç‰¹è‰²éŸ³ä¹æ¦œ",
+      "data": []
+    }, {
+      "title": "全球榜",
+      "data": []
+    }],
+    _0x582ede = {
+      "title": "å…¶ä»–",
+      "data": []
+    };
+  _0x27a16e.forEach(_0x439734 => {
+    var _0x5d2052, _0x1e5f83, _0x5dfaae, _0xc0354f;
+    if (_0x439734.classify === 1 || _0x439734.classify === 2) _0x40c0c[0].data.push({
+      "id": _0x439734.rankid,
+      "description": _0x439734.intro,
+      "coverImg": (_0x5d2052 = _0x439734.imgurl) === null || _0x5d2052 === undefined ? undefined : _0x5d2052.replace("{size}", "400"),
+      "title": _0x439734.rankname
+    });else {
+      if (_0x439734.classify === 3 || _0x439734.classify === 5) _0x40c0c[1].data.push({
+        "id": _0x439734.rankid,
+        "description": _0x439734.intro,
+        "coverImg": (_0x1e5f83 = _0x439734.imgurl) === null || _0x1e5f83 === undefined ? undefined : _0x1e5f83.replace("{size}", "400"),
+        "title": _0x439734.rankname
+      });else _0x439734.classify === 4 ? _0x40c0c[2].data.push({
+        "id": _0x439734.rankid,
+        "description": _0x439734.intro,
+        "coverImg": (_0x5dfaae = _0x439734.imgurl) === null || _0x5dfaae === undefined ? undefined : _0x5dfaae.replace("{size}", "400"),
+        "title": _0x439734.rankname
+      }) : _0x582ede.data.push({
+        "id": _0x439734.rankid,
+        "description": _0x439734.intro,
+        "coverImg": (_0xc0354f = _0x439734.imgurl) === null || _0xc0354f === undefined ? undefined : _0xc0354f.replace("{size}", "400"),
+        "title": _0x439734.rankname
+      });
+    }
+  });
+  _0x582ede.data.length !== 0 && _0x40c0c.push(_0x582ede);
+  return _0x40c0c;
+}
+async function getTopListDetail(_0x154c49) {
+  const _0x502b83 = await axios_1.default.get("http://mobilecdnbj.kugou.com/api/v3/rank/song?version=9108&ranktype=0&plat=0&pagesize=100&area_code=1&page=1&volid=35050&rankid=" + _0x154c49.id + "&with_res_tag=0", {
+    "headers": headers
+  });
+  return Object.assign(Object.assign({}, _0x154c49), {
+    "musicList": _0x502b83.data.data.info.map(formatMusicItem2)
+  });
+}
+async function getLyricDownload(_0x168e7f) {
+  const _0x42b3a1 = (await (0, axios_1.default)({
+    "url": "http://lyrics.kugou.com/download?ver=1&client=pc&id=" + _0x168e7f.id + "&accesskey=" + _0x168e7f.accessKey + "&fmt=lrc&charset=utf8",
+    "headers": {
+      "KG-RC": 1,
+      "KG-THash": "expand_search_manager.cpp:852736169:451",
+      "User-Agent": "KuGou2012-9020-ExpandSearchManager"
+    },
+    "method": "get",
+    "xsrfCookieName": "XSRF-TOKEN",
+    "withCredentials": true
+  })).data;
+  return {
+    "rawLrc": he.decode(CryptoJs.enc.Base64.parse(_0x42b3a1.content).toString(CryptoJs.enc.Utf8))
+  };
+}
+async function getLyric(_0xe523de) {
+  const _0x24ec80 = (await (0, axios_1.default)({
+      "url": "http://lyrics.kugou.com/search?ver=1&man=yes&client=pc&keyword=" + _0xe523de.title + "&hash=" + _0xe523de.id + "&timelength=" + _0xe523de.duration,
+      "headers": {
+        "KG-RC": 1,
+        "KG-THash": "expand_search_manager.cpp:852736169:451",
+        "User-Agent": "KuGou2012-9020-ExpandSearchManager"
+      },
+      "method": "get",
+      "xsrfCookieName": "XSRF-TOKEN",
+      "withCredentials": true
     })).data,
-    _0x126bec = _0x113507.data.songinfo.pic;
-  let _0x11f031;
-  if (_0x126bec.includes("starheads/")) _0x11f031 = _0x126bec.replace(/starheads\/\d+/, "starheads/800");else {
-    if (_0x126bec.includes("albumcover/")) {
-      _0x11f031 = _0x126bec.replace(/albumcover\/\d+/, "albumcover/800");
+    _0x1c8305 = _0x24ec80.candidates[0];
+  return await getLyricDownload({
+    "id": _0x1c8305.id,
+    "accessKey": _0x1c8305.accesskey
+  });
+}
+async function getAlbumInfo(_0x44b1a3, _0x4a51d4 = 1) {
+  const _0x5c8b14 = (await axios_1.default.get("http://mobilecdn.kugou.com/api/v3/album/song", {
+    "params": {
+      "version": 9108,
+      "albumid": _0x44b1a3.id,
+      "plat": 0,
+      "pagesize": 100,
+      "area_code": 1,
+      "page": _0x4a51d4,
+      "with_res_tag": 0
+    }
+  })).data;
+  return {
+    "isEnd": _0x4a51d4 * 100 >= _0x5c8b14.data.total,
+    "albumItem": {
+      "worksNum": _0x5c8b14.data.total
+    },
+    "musicList": _0x5c8b14.data.info.map(_0x454fbe => {
+      var _0x4c5c8a;
+      const [_0x5d1458, _0x15d93c] = _0x454fbe.filename.split("-");
+      return {
+        "id": _0x454fbe.hash,
+        "title": _0x15d93c.trim(),
+        "artist": _0x5d1458.trim(),
+        "album": (_0x4c5c8a = _0x454fbe.album_name) !== null && _0x4c5c8a !== undefined ? _0x4c5c8a : _0x454fbe.remark,
+        "album_id": _0x454fbe.album_id,
+        "album_audio_id": _0x454fbe.album_audio_id,
+        "artwork": _0x44b1a3.artwork,
+        "320hash": _0x454fbe.HQFileHash,
+        "sqhash": _0x454fbe.SQFileHash,
+        "origin_hash": _0x454fbe.id
+      };
+    })
+  };
+}
+async function importMusicSheet(_0x56ea83) {
+  var _0x1fa4cb;
+  let _0x1e89b8 = (_0x1fa4cb = _0x56ea83.match(/^(?:.*?)(\d+)(?:.*?)$/)) === null || _0x1fa4cb === undefined ? undefined : _0x1fa4cb[1],
+    _0x1b4b33 = [];
+  if (!_0x1e89b8) return;
+  let _0x5608cf = await axios_1.default.post("http://t.kugou.com/command/", {
+    "appid": 1001,
+    "clientver": 9020,
+    "mid": "21511157a05844bd085308bc76ef3343",
+    "clienttime": 640612895,
+    "key": "36164c4015e704673c588ee202b9ecb8",
+    "data": _0x1e89b8
+  });
+  if (_0x5608cf.status === 200 && _0x5608cf.data.status === 1) {
+    {
+      let _0x18118a = _0x5608cf.data.data,
+        _0x29fa41 = await axios_1.default.post("http://www2.kugou.kugou.com/apps/kucodeAndShare/app/", {
+          "appid": 1001,
+          "clientver": 10112,
+          "mid": "70a02aad1ce4648e7dca77f2afa7b182",
+          "clienttime": 722219501,
+          "key": "381d7062030e8a5a94cfbe50bfe65433",
+          "data": {
+            "id": _0x18118a.info.id,
+            "type": 3,
+            "userid": _0x18118a.info.userid,
+            "collect_type": _0x18118a.info.collect_type,
+            "page": 1,
+            "pagesize": _0x18118a.info.count
+          }
+        });
+      if (_0x29fa41.status === 200 && _0x29fa41.data.status === 1) {
+        {
+          let _0xf10d42 = [];
+          _0x29fa41.data.data.forEach(_0x336da1 => {
+            _0xf10d42.push({
+              "album_audio_id": 0,
+              "album_id": "0",
+              "hash": _0x336da1.hash,
+              "id": 0,
+              "name": _0x336da1.filename.replace(".mp3", ""),
+              "page_id": 0,
+              "type": "audio"
+            });
+          });
+          let _0x54875f = {
+            "appid": 1001,
+            "area_code": "1",
+            "behavior": "play",
+            "clientver": "10112",
+            "dfid": "2O3jKa20Gdks0LWojP3ly7ck",
+            "mid": "70a02aad1ce4648e7dca77f2afa7b182",
+            "need_hash_offset": 1,
+            "relate": 1,
+            "resource": _0xf10d42,
+            "token": "",
+            "userid": "0",
+            "vip": 0
+          };
+          var _0x512e2d = await axios_1.default.post("https://gateway.kugou.com/v2/get_res_privilege/lite?appid=1001&clienttime=1668883879&clientver=10112&dfid=2O3jKa20Gdks0LWojP3ly7ck&mid=70a02aad1ce4648e7dca77f2afa7b182&userid=390523108&uuid=92691C6246F86F28B149BAA1FD370DF1", _0x54875f, {
+            "headers": {
+              "x-router": "media.store.kugou.com"
+            }
+          });
+          _0x29fa41.status === 200 && _0x29fa41.data.status === 1 && (_0x1b4b33 = _0x512e2d.data.data.map(formatImportMusicItem));
+        }
+      }
     }
   }
-  return {
-    "artwork": _0x11f031
-  };
+  return _0x1b4b33;
 }
 module.exports = {
-  "platform": "元力KW",
-  "author": "公众号:科技长青",
+  "platform": "元力KG",
   "version": "0.1.0",
+  "author": "公众号:科技长青",
   "appVersion": ">0.1.0-alpha.0",
-  "srcUrl": "http://music.haitangw.net/cqapi/kw.js",
+  "srcUrl": "http://music.haitangw.net/cqapi/kg.js",
   "cacheControl": "no-cache",
+  "description": "",
+  "primaryKey": ["id", "album_id", "album_audio_id"],
   "hints": {
-    "importMusicSheet": ["酷我APP：自建歌单-分享-复制试听链接，直接粘贴即可", "H5：复制URL并粘贴，或者直接输入纯数字歌单ID即可", "å¯¼å…¥æ—¶é—´å’Œæ­Œå•å¤§å°æœ‰å…³ï¼Œè¯·è€å¿ƒç­‰å¾…"]
+    "importMusicSheet": ["仅支持酷狗APP通过酷狗码导入，输入纯数字酷狗码即可。", "导入时间和歌单大小有关，请耐心等待"]
   },
-  "supportedSearchType": ["music", "album", "sheet", "artist"],
-  async "search"(_0x5d666b, _0x453f28, _0x17c4bd) {
-    if (_0x17c4bd === "music") return await searchMusic(_0x5d666b, _0x453f28);
-    if (_0x17c4bd === "album") return await searchAlbum(_0x5d666b, _0x453f28);
-    if (_0x17c4bd === "artist") return await searchArtist(_0x5d666b, _0x453f28);
-    if (_0x17c4bd === "sheet") return await searchMusicSheet(_0x5d666b, _0x453f28);
+  "supportedSearchType": ["music", "album", "sheet"],
+  async "search"(_0x1bd84a, _0x146ead, _0x350e36) {
+    if (_0x350e36 === "music") {
+      return await searchMusic(_0x1bd84a, _0x146ead);
+    } else {
+      if (_0x350e36 === "album") return await searchAlbum(_0x1bd84a, _0x146ead);else {
+        if (_0x350e36 === "sheet") return await searchMusicSheet(_0x1bd84a, _0x146ead);
+      }
+    }
   },
   "getMediaSource": getMediaSource,
-  "getMusicInfo": getMusicInfo,
-  "getAlbumInfo": getAlbumInfo,
-  "getLyric": getLyric,
-  "getArtistWorks": getArtistWorks,
   "getTopLists": getTopLists,
+  "getLyric": getLyric,
   "getTopListDetail": getTopListDetail,
-  "importMusicSheet": importMusicSheet,
-  "getRecommendSheetTags": getRecommendSheetTags,
-  "getRecommendSheetsByTag": getRecommendSheetsByTag,
-  "getMusicSheetInfo": getMusicSheetInfo
+  "getAlbumInfo": getAlbumInfo,
+  "importMusicSheet": importMusicSheet
 };
