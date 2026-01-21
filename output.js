@@ -1,220 +1,191 @@
-//Wed Jan 21 2026 03:42:04 GMT+0000 (Coordinated Universal Time)
+//Wed Jan 21 2026 03:43:47 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-const DEV_ENABLE = false,
-  API_URL = "https://m-api.ceseet.me",
-  API_KEY = "",
-  MUSIC_QUALITY = JSON.parse("{\"kw\":[\"128k\",\"320k\",\"flac\",\"flac24bit\"],\"kg\":[\"128k\",\"320k\",\"flac\",\"flac24bit\"],\"tx\":[\"128k\",\"320k\",\"flac\",\"flac24bit\"],\"wy\":[\"128k\",\"320k\",\"flac\"],\"mg\":[\"128k\",\"320k\",\"flac\",\"flac24bit\"]}"),
-  MUSIC_SOURCE = Object.keys(MUSIC_QUALITY);
-MUSIC_SOURCE.push("local");
+(function () {})();
 const {
-    EVENT_NAMES,
-    request,
-    on,
-    send,
-    utils,
-    env,
-    version
+    EVENT_NAMES: _0x8f8d47,
+    request: _0x122003,
+    on: _0x55b5ee,
+    send: _0x525768
   } = globalThis.lx,
-  httpFetch = (_0x328412, _0x13d3ca = {
-    "method": "GET"
-  }) => {
-    return new Promise((_0x4a6f56, _0x485901) => {
-      console.log("--- start --- " + _0x328412);
-      request(_0x328412, _0x13d3ca, (_0x373473, _0x49a82e) => {
-        {
-          if (_0x373473) return _0x485901(_0x373473);
-          console.log("API Response: ", _0x49a82e);
-          _0x4a6f56(_0x49a82e);
-        }
-      });
+  _0x587808 = {
+    "tx": {
+      "128k": "6",
+      "320k": "8",
+      "flac": "10",
+      "flac24bit": "11"
+    },
+    "kg": {
+      "128k": "128k",
+      "320k": "320k",
+      "flac": "flac",
+      "flac24bit": "flac24bit"
+    },
+    "kw": {
+      "128k": "128kmp3",
+      "320k": "320kmp3",
+      "flac": "2000kflac",
+      "flac24bit": "4000kflac"
+    },
+    "wy": {
+      "128k": "standard",
+      "320k": "exhigh",
+      "flac": "lossless",
+      "flac24bit": "hires"
+    },
+    "mg": {
+      "128k": "PQ",
+      "320k": "HQ"
+    }
+  },
+  _0x27a32e = (_0x309ff2, _0xc8ff30) => new Promise((_0x499e3f, _0x53131c) => {
+    _0x122003(_0x309ff2, _0xc8ff30, (_0xbee71a, _0x42709f) => {
+      if (_0xbee71a) return _0x53131c(_0xbee71a);
+      _0x499e3f(_0x42709f.body);
     });
-  },
-  handleBase64Encode = _0x1459c1 => {
-    var _0x1459c1 = utils.buffer.from(_0x1459c1, "utf-8");
-    return utils.buffer.bufToString(_0x1459c1, "base64");
-  },
-  handleGetMusicUrl = async (_0x4b9c1a, _0x46220e, _0x9c0567) => {
-    if (_0x4b9c1a == "local") {
-      if (!_0x46220e.songmid.startsWith("server_")) throw new Error("upsupported local file");
-      const _0x5b6baf = _0x46220e.songmid,
-        _0x354e1d = {
-          "p": _0x5b6baf.replace("server_", "")
+  }),
+  _0x4035b7 = {
+    "tx": {
+      async "musicUrl"({
+        songmid: _0x133598
+      }, _0x532a0d) {
+        let _0x24f45f = "https://api.vkeys.cn/v2/music/tencent/geturl?mid=" + _0x133598 + "&quality=" + _0x532a0d;
+        const {
+          data: _0x2efdba
+        } = await _0x27a32e(_0x24f45f, {
+          "method": "GET"
+        });
+        if (_0x2efdba?.["url"]) return _0x2efdba.url;
+        const _0x1169a8 = {
+          "6": "128k",
+          "8": "320k",
+          "10": "flac",
+          "11": "flac24bit"
         };
-      var _0x1b663b = "c",
-        _0x174673 = handleBase64Encode(JSON.stringify(_0x354e1d)).replace(/\+/g, "-").replace(/\//g, "_");
-      const _0x78790c = API_URL + "/local/" + _0x1b663b + "?q=" + _0x174673,
-        _0x37fd00 = await httpFetch(_0x78790c, {
+        _0x24f45f = "https://88.lxmusic.中国/lxmusicv3/url/tx/" + _0x133598 + "/" + _0x1169a8[_0x532a0d];
+        return _0x27a32e(_0x24f45f, {
+          "method": "GET"
+        }).then(_0x31a2cc => _0x31a2cc.data);
+      }
+    },
+    "kg": {
+      "musicUrl"({
+        hash: _0x1e0823
+      }, _0x1790b8) {
+        const _0x4ffb2b = "https://88.lxmusic.中国/lxmusicv3/url/kg/" + _0x1e0823 + "/" + _0x1790b8;
+        return _0x27a32e(_0x4ffb2b, {
+          "method": "GET"
+        }).then(_0x1614e0 => _0x1614e0.data);
+      }
+    },
+    "kw": {
+      "musicUrl"({
+        songmid: _0x132559
+      }, _0x4624f6) {
+        const _0x18d59e = "https://nmobi.kuwo.cn/mobi.s?f=web&user=0&source=kwplayer_ar_8.5.5.0_jiakong.apk&type=convert_url_with_sign&br=" + _0x4624f6 + "&rid=" + _0x132559;
+        return _0x27a32e(_0x18d59e, {
+          "method": "GET"
+        }).then(_0x4cb62d => _0x4cb62d.data.url.split("?")[0]);
+      }
+    },
+    "wy": {
+      async "musicUrl"({
+        songmid: _0x2d46ef
+      }, _0x94eca1) {
+        let _0x6edfab = "https://api.cenguigui.cn/api/netease/music_v1.php?type=json&id=" + _0x2d46ef + "&level=" + _0x94eca1;
+        const {
+          data: _0x422bbe
+        } = await _0x27a32e(_0x6edfab, {
+          "method": "GET"
+        });
+        if (_0x422bbe?.["url"]) return _0x422bbe.url;
+        _0x6edfab = "https://wyapi.toubiec.cn/api/music/url";
+        const _0xa72fcf = await _0x27a32e(_0x6edfab, {
+          "method": "POST",
+          "headers": {
+            "Origin": "https://wyapi.toubiec.cn",
+            "Referer": "https://wyapi.toubiec.cn/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+          },
+          "body": JSON.stringify({
+            "id": _0x2d46ef,
+            "level": _0x94eca1
+          })
+        });
+        if (_0xa72fcf?.["data"]?.[0]?.["url"]) return _0xa72fcf.data[0].url;
+        const _0x4a857c = {
+          "standard": "128",
+          "exhigh": "320",
+          "lossless": "999",
+          "hires": "999"
+        };
+        _0x6edfab = "https://music-api.gdstudio.xyz/api.php?types=url&source=netease&id=" + _0x2d46ef + "&br=" + _0x4a857c[_0x94eca1];
+        return _0x27a32e(_0x6edfab, {
+          "method": "GET"
+        }).then(_0x557020 => _0x557020.url);
+      }
+    },
+    "mg": {
+      async "musicUrl"({
+        copyrightId: _0x777b77
+      }, _0x2ac57b) {
+        let _0x5754f8 = "https://c.musicapp.migu.cn/MIGUM2.0/v1.0/content/resourceinfo.do?resourceType=2&copyrightId=" + _0x777b77;
+        const {
+          resource: [{
+            contentId: _0x11d382
+          }]
+        } = await _0x27a32e(_0x5754f8, {
+          "method": "GET"
+        });
+        _0x5754f8 = "https://c.musicapp.migu.cn/MIGUM3.0/strategy/listen-url/v2.3?resourceType=2&toneFlag=PQ&contentId=" + _0x11d382;
+        return _0x27a32e(_0x5754f8, {
           "method": "GET",
           "headers": {
-            "Content-Type": "application/json",
-            "User-Agent": "" + (env ? "lx-music-" + env + "/" + version : "lx-music-request/" + version),
-            "X-Request-Key": API_KEY
-          },
-          "follow_max": 5
-        }),
-        {
-          body: _0xe46027
-        } = _0x37fd00;
-      if (_0xe46027.code == 0 && _0xe46027.data && _0xe46027.data.file) {
-        {
-          var _0x1b663b = "u",
-            _0x174673 = handleBase64Encode(JSON.stringify(_0x354e1d)).replace(/\+/g, "-").replace(/\//g, "_");
-          return API_URL + "/local/" + _0x1b663b + "?q=" + _0x174673;
-        }
-      }
-      throw new Error("404 Not Found");
-    }
-    const _0x504d17 = _0x46220e.hash ?? _0x46220e.songmid,
-      _0x1adef0 = await httpFetch(API_URL + "/url/" + _0x4b9c1a + "/" + _0x504d17 + "/" + _0x9c0567, {
-        "method": "GET",
-        "headers": {
-          "Content-Type": "application/json",
-          "User-Agent": "" + (env ? "lx-music-" + env + "/" + version : "lx-music-request/" + version),
-          "X-Request-Key": API_KEY
-        },
-        "follow_max": 5
-      }),
-      {
-        body: _0x3c9965
-      } = _0x1adef0;
-    if (!_0x3c9965 || isNaN(Number(_0x3c9965.code))) throw new Error("unknow error");
-    if (env != "mobile") console.groupEnd();
-    switch (_0x3c9965.code) {
-      case 0:
-        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") success, URL: " + _0x3c9965.data);
-        return _0x3c9965.data;
-      case 1:
-        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") failed: ip被封禁");
-        throw new Error("block ip");
-      case 2:
-        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") failed, " + _0x3c9965.msg);
-        throw new Error("get music url failed");
-      case 4:
-        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") failed, 远程服务器错误");
-        throw new Error("internal server error");
-      case 5:
-        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") failed, 请求过于频繁，请休息一下吧");
-        throw new Error("too many requests");
-      case 6:
-        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") failed, 请求参数错误");
-        throw new Error("param error");
-      default:
-        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") failed, " + (_0x3c9965.msg ? _0x3c9965.msg : "unknow error"));
-        throw new Error(_0x3c9965.msg ?? "unknow error");
-    }
-  },
-  handleGetMusicPic = async (_0x582c06, _0x4cd8fa) => {
-    switch (_0x582c06) {
-      case "local":
-        if (!_0x4cd8fa.songmid.startsWith("server_")) throw new Error("upsupported local file");
-        const _0x128fb0 = _0x4cd8fa.songmid,
-          _0x1c58fa = {
-            "p": _0x128fb0.replace("server_", "")
-          };
-        var _0x476b0a = "c",
-          _0x55ca34 = handleBase64Encode(JSON.stringify(_0x1c58fa)).replace(/\+/g, "-").replace(/\//g, "_");
-        const _0x4bcecd = API_URL + "/local/" + _0x476b0a + "?q=" + _0x55ca34,
-          _0xa947c0 = await httpFetch(_0x4bcecd, {
-            "method": "GET",
-            "headers": {
-              "Content-Type": "application/json",
-              "User-Agent": "" + (env ? "lx-music-" + env + "/" + version : "lx-music-request/" + version)
-            },
-            "follow_max": 5
-          }),
-          {
-            body: _0x3a1ba5
-          } = _0xa947c0;
-        if (_0x3a1ba5.code === 0 && _0x3a1ba5.data.cover) {
-          var _0x476b0a = "p",
-            _0x55ca34 = handleBase64Encode(JSON.stringify(_0x1c58fa)).replace(/\+/g, "-").replace(/\//g, "_");
-          return API_URL + "/local/" + _0x476b0a + "?q=" + _0x55ca34;
-        }
-        throw new Error("get music pic failed");
-      default:
-        throw new Error("action(pic) does not support source(" + _0x582c06 + ")");
-    }
-  },
-  handleGetMusicLyric = async (_0x21ee56, _0x3287bd) => {
-    switch (_0x21ee56) {
-      case "local":
-        if (!_0x3287bd.songmid.startsWith("server_")) throw new Error("upsupported local file");
-        const _0x536737 = _0x3287bd.songmid,
-          _0x3ce9b7 = {
-            "p": _0x536737.replace("server_", "")
-          };
-        var _0x512902 = "c",
-          _0x51215d = handleBase64Encode(JSON.stringify(_0x3ce9b7)).replace(/\+/g, "-").replace(/\//g, "_");
-        const _0x27aa5b = API_URL + "/local/" + _0x512902 + "?q=" + _0x51215d,
-          _0x16c336 = await httpFetch(_0x27aa5b, {
-            "method": "GET",
-            "headers": {
-              "Content-Type": "application/json",
-              "User-Agent": "" + (env ? "lx-music-" + env + "/" + version : "lx-music-request/" + version)
-            },
-            "follow_max": 5
-          }),
-          {
-            body: _0x58d252
-          } = _0x16c336;
-        if (_0x58d252.code === 0 && _0x58d252.data.lyric) {
-          {
-            var _0x512902 = "l",
-              _0x51215d = handleBase64Encode(JSON.stringify(_0x3ce9b7)).replace(/\+/g, "-").replace(/\//g, "_");
-            const _0x1ea8ce = await httpFetch(API_URL + "/local/" + _0x512902 + "?q=" + _0x51215d, {
-              "method": "GET",
-              "headers": {
-                "Content-Type": "application/json",
-                "User-Agent": "" + (env ? "lx-music-" + env + "/" + version : "lx-music-request/" + version)
-              },
-              "follow_max": 5
-            });
-            if (_0x1ea8ce.body.code === 0) {
-              return {
-                "lyric": _0x1ea8ce.body.data ?? "",
-                "tlyric": "",
-                "rlyric": "",
-                "lxlyric": ""
-              };
-            }
-            throw new Error("get music lyric failed");
+            "channel": "0140210"
           }
-        }
-        throw new Error("get music lyric failed");
-      default:
-        throw new Error("action(lyric) does not support source(" + _0x21ee56 + ")");
+        }).then(_0x2c900b => _0x2ac57b === "HQ" ? _0x2c900b.data.url.replace("MP3_128", "MP3_320") : _0x2c900b.data.url);
+      }
     }
-  },
-  musicSources = {};
-MUSIC_SOURCE.forEach(_0x260e7a => {
-  musicSources[_0x260e7a] = {
-    "name": _0x260e7a,
-    "type": "music",
-    "actions": _0x260e7a == "local" ? ["musicUrl", "pic", "lyric"] : ["musicUrl"],
-    "qualitys": _0x260e7a == "local" ? [] : MUSIC_QUALITY[_0x260e7a]
   };
-});
-on(EVENT_NAMES.request, ({
-  action: _0x3fc33c,
-  source: _0x583f3e,
-  info: _0x525238
+_0x55b5ee(_0x8f8d47.request, ({
+  source: _0x298ca0,
+  info: _0x45c259
 }) => {
-  switch (_0x3fc33c) {
-    case "musicUrl":
-      env != "mobile" ? (console.group("Handle Action(musicUrl)"), console.log("source", _0x583f3e), console.log("quality", _0x525238.type), console.log("musicInfo", _0x525238.musicInfo)) : (console.log("Handle Action(musicUrl)"), console.log("source", _0x583f3e), console.log("quality", _0x525238.type), console.log("musicInfo", _0x525238.musicInfo));
-      return handleGetMusicUrl(_0x583f3e, _0x525238.musicInfo, _0x525238.type).then(_0x4af1d4 => Promise.resolve(_0x4af1d4)).catch(_0x148035 => Promise.reject(_0x148035));
-    case "pic":
-      return handleGetMusicPic(_0x583f3e, _0x525238.musicInfo).then(_0x7ec6cc => Promise.resolve(_0x7ec6cc)).catch(_0xcfc86e => Promise.reject(_0xcfc86e));
-    case "lyric":
-      return handleGetMusicLyric(_0x583f3e, _0x525238.musicInfo).then(_0x7a464e => Promise.resolve(_0x7a464e)).catch(_0x5001ad => Promise.reject(_0x5001ad));
-    default:
-      console.error("action(" + _0x3fc33c + ") not support");
-      return Promise.reject("action not support");
-  }
+  return _0x4035b7[_0x298ca0].musicUrl(_0x45c259.musicInfo, _0x587808[_0x298ca0][_0x45c259.type]).catch(_0x586f09 => {
+    return Promise.reject(_0x586f09);
+  });
 });
-send(EVENT_NAMES.inited, {
-  "status": true,
-  "openDevTools": DEV_ENABLE,
-  "sources": musicSources
+_0x525768(_0x8f8d47.inited, {
+  "sources": {
+    "tx": {
+      "name": "QQ音乐",
+      "type": "music",
+      "actions": ["musicUrl"],
+      "qualitys": ["128k", "320k", "flac", "flac24bit"]
+    },
+    "kg": {
+      "name": "酷狗音乐",
+      "type": "music",
+      "actions": ["musicUrl"],
+      "qualitys": ["128k", "320k", "flac", "flac24bit"]
+    },
+    "kw": {
+      "name": "酷我音乐",
+      "type": "music",
+      "actions": ["musicUrl"],
+      "qualitys": ["128k", "320k", "flac", "flac24bit"]
+    },
+    "wy": {
+      "name": "网易云音乐",
+      "type": "music",
+      "actions": ["musicUrl"],
+      "qualitys": ["128k", "320k", "flac", "flac24bit"]
+    },
+    "mg": {
+      "name": "咪咕音乐",
+      "type": "music",
+      "actions": ["musicUrl"],
+      "qualitys": ["128k", "320k"]
+    }
+  }
 });
