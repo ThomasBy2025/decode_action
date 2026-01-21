@@ -1,233 +1,140 @@
-//Wed Jan 21 2026 02:59:55 GMT+0000 (Coordinated Universal Time)
+//Wed Jan 21 2026 03:03:09 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
+const DEV_ENABLE = false;
+const API_URL = "https://music.ikun0014.top";
+const API_KEY = "";
+const SCRIPT_MD5 = "3c8dea35f141969b0e3f4a627fe5d7f6";
+const MUSIC_QUALITY = JSON.parse("{\"wy\":[\"128k\",\"320k\"]}");
+const MUSIC_SOURCE = Object.keys(MUSIC_QUALITY);
 const {
   EVENT_NAMES,
   request,
   on,
-  send
+  send,
+  utils,
+  env,
+  version
 } = globalThis.lx;
-const CURRENT_VERSION = "1.0.0";
-const VERSION_CHECK_URL = "https://13413.kstore.vip/lxmusic/changqing.json";
-const qualitys = {
-  kg: {
-    "128k": "standard",
-    "320k": "exhigh",
-    flac: "lossless"
-  },
-  tx: {
-    "128k": "standard",
-    "320k": "exhigh",
-    flac: "lossless"
-  },
-  wy: {
-    "128k": "standard",
-    "320k": "exhigh",
-    flac: "lossless"
-  },
-  kw: {
-    "128k": "standard",
-    "320k": "exhigh",
-    flac: "lossless"
-  },
-  mg: {
-    "128k": "standard",
-    "320k": "exhigh",
-    flac: "lossless"
-  }
+const _0x4e184c = {
+  method: "GET"
 };
-const apis = {
-  kg: {
-    musicUrl(_0x3b5ccc, _0x54ced6) {
-      let _0x2417ef = "";
-      const _0x5bc271 = _0x3b5ccc.hash;
-      console.log(_0x54ced6, _0x5bc271);
-      _0x2417ef = "https://musicapi.haitangw.net/music/kg_song%E6%8D%A2%E6%BA%90%E7%89%88.php?type=mp3&id=" + _0x5bc271 + "&level=" + _0x54ced6;
-      return new Promise(_0x578fa9 => {
-        _0x578fa9(_0x2417ef);
+const httpFetch = (_0x2b5243, _0x1526dd = _0x4e184c) => {
+  return new Promise((_0x3cf1fd, _0x3f461c) => {
+    {
+      console.log("--- start --- " + _0x2b5243);
+      request(_0x2b5243, _0x1526dd, (_0x3bcda4, _0x30609e) => {
+        {
+          if (_0x3bcda4) {
+            return _0x3f461c(_0x3bcda4);
+          }
+          console.log("API Response: ", _0x30609e);
+          _0x3cf1fd(_0x30609e);
+        }
       });
     }
-  },
-  tx: {
-    musicUrl(_0x4b54c4, _0xdebdea) {
-      let _0x1096ac = "";
-      const _0x5ab3b9 = _0x4b54c4.songmid;
-      console.log(_0xdebdea, _0x5ab3b9);
-      _0x1096ac = "https://musicapi.haitangw.net/music/qq_song_kw.php?type=mp3&id=" + _0x5ab3b9 + "&level=" + _0xdebdea;
-      return new Promise(_0xeef49a => {
-        _0xeef49a(_0x1096ac);
-      });
-    }
-  },
-  wy: {
-    musicUrl(_0x3893f9, _0x3602db) {
-      let _0x24739a = "";
-      const _0x22757d = _0x3893f9.songmid;
-      console.log(_0x3602db, _0x22757d);
-      _0x24739a = "https://musicapi.haitangw.net/music/wy.php?type=mp3&id=" + _0x22757d + "&level=" + _0x3602db;
-      return new Promise(_0x1e0b9c => {
-        _0x1e0b9c(_0x24739a);
-      });
-    }
-  },
-  kw: {
-    musicUrl(_0x46986c, _0x11136b) {
-      let _0x52d4ef = "";
-      const _0x5d0289 = _0x46986c.songmid;
-      console.log(_0x11136b, _0x5d0289);
-      _0x52d4ef = "https://musicapi.haitangw.net/music/kw.php?type=mp3&id=" + _0x5d0289 + "&level=" + _0x11136b;
-      return new Promise(_0x24f4a8 => {
-        _0x24f4a8(_0x52d4ef);
-      });
-    }
-  },
-  mg: {
-    musicUrl(_0x195706, _0x43d9c8) {
-      let _0x1691f1 = "";
-      const _0x1b2410 = _0x195706.songmid;
-      console.log(_0x43d9c8, _0x1b2410);
-      _0x1691f1 = "https://musicapi.haitangw.net/musicapi/mg.php?type=mp3&id=" + _0x1b2410 + "&level=" + _0x43d9c8;
-      return new Promise(_0x4c5061 => {
-        _0x4c5061(_0x1691f1);
-      });
-    }
-  }
+  });
 };
-const compareVersions = (_0x3457c6, _0x3d8fcc) => {
-  const _0x9787b6 = _0x3457c6.split(".").map(Number);
-  const _0x41053d = _0x3d8fcc.split(".").map(Number);
-  for (let _0x6b567f = 0; _0x6b567f < Math.max(_0x9787b6.length, _0x41053d.length); _0x6b567f++) {
-    const _0xce365c = _0x9787b6[_0x6b567f] || 0;
-    const _0x62997a = _0x41053d[_0x6b567f] || 0;
-    if (_0xce365c > _0x62997a) {
-      return 1;
-    }
-    if (_0xce365c < _0x62997a) {
-      return -1;
-    }
+const handleGetMusicUrl = async (_0x48662a, _0x32c31d, _0x559232) => {
+  const _0x5a0e8d = _0x32c31d.hash ?? _0x32c31d.songmid;
+  const _0x237f2f = await httpFetch(API_URL + "/url?source=" + _0x48662a + "&songId=" + _0x5a0e8d + "&quality=" + _0x559232, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "User-Agent": "" + (env ? "lx-music-" + env + "/" + version : "lx-music-request/" + version),
+      "X-Request-Key": API_KEY
+    },
+    follow_max: 5
+  });
+  const {
+    body: _0x5ab80a
+  } = _0x237f2f;
+  if (!_0x5ab80a || isNaN(Number(_0x5ab80a.code))) {
+    throw new Error("unknow error");
   }
-  return 0;
+  if (env != "mobile") {
+    console.groupEnd();
+  }
+  switch (_0x5ab80a.code) {
+    case 200:
+      console.log("handleGetMusicUrl(" + _0x48662a + "_" + _0x32c31d.songmid + ", " + _0x559232 + ") success, URL: " + _0x5ab80a.url);
+      return _0x5ab80a.url;
+    case 403:
+      console.log("handleGetMusicUrl(" + _0x48662a + "_" + _0x32c31d.songmid + ", " + _0x559232 + ") failed: Key失效/鉴权失败");
+      throw new Error("Key失效/鉴权失败");
+    case 500:
+      console.log("handleGetMusicUrl(" + _0x48662a + "_" + _0x32c31d.songmid + ", " + _0x559232 + ") failed, " + _0x5ab80a.message);
+      throw new Error("获取URL失败, " + (_0x5ab80a.message ?? "未知错误"));
+    case 429:
+      console.log("handleGetMusicUrl(" + _0x48662a + "_" + _0x32c31d.songmid + ", " + _0x559232 + ") failed, 请求过于频繁，请休息一下吧");
+      throw new Error("请求过速");
+    default:
+      console.log("handleGetMusicUrl(" + _0x48662a + "_" + _0x32c31d.songmid + ", " + _0x559232 + ") failed, " + (_0x5ab80a.message ? _0x5ab80a.message : "未知错误"));
+      throw new Error(_0x5ab80a.message ?? "未知错误");
+  }
 };
 const checkUpdate = async () => {
-  return new Promise((_0x1a08f4, _0x1590b3) => {
-    request(VERSION_CHECK_URL, {
-      method: "GET",
-      timeout: 3000
-    }, (_0x3a7e5f, _0xe27011) => {
-      if (_0x3a7e5f || _0xe27011.statusCode !== 200) {
-        console.log("检查更新失败:", _0x3a7e5f || _0xe27011.statusMessage);
-        _0x1a08f4(null);
-        return;
-      }
-      try {
-        const _0x37b163 = _0xe27011.body;
-        compareVersions(CURRENT_VERSION, _0x37b163.version) < 0 ? _0x1a08f4({
-          version: _0x37b163.version,
-          updateUrl: _0x37b163.updateUrl,
-          description: _0x37b163.description || ""
-        }) : _0x1a08f4(null);
-      } catch (_0x40afca) {
-        {
-          console.log("解析版本信息失败:", _0x40afca);
-          _0x1a08f4(null);
-        }
-      }
-    });
-  });
-};
-on(EVENT_NAMES.request, ({
-  source: _0x380dfb,
-  action: _0x34bc54,
-  info: _0x132efc
-}) => {
-  switch (_0x34bc54) {
-    case "musicUrl":
-      console.log(apis[_0x380dfb].musicUrl(_0x132efc.musicInfo, qualitys[_0x380dfb][_0x132efc.type]), _0x380dfb);
-      return apis[_0x380dfb].musicUrl(_0x132efc.musicInfo, qualitys[_0x380dfb][_0x132efc.type]);
-  }
-});
-checkUpdate().then(_0x41d224 => {
-  if (_0x41d224) {
-    const _0x43a87d = "发现新版本 v" + _0x41d224.version + "\n" + (_0x41d224.description ? "更新内容: " + _0x41d224.description + "\n" : "") + "请更新后使用";
-    send(EVENT_NAMES.updateAlert, {
-      log: _0x43a87d,
-      updateUrl: _0x41d224.updateUrl
-    });
-    console.log("发现新版本,需要更新,脚本将不会初始化:", _0x41d224);
-    return;
-  } else {
-    console.log("当前已是最新版本,正常初始化");
-    send(EVENT_NAMES.inited, {
-      openDevTools: false,
-      sources: {
-        kg: {
-          name: "kg音乐",
-          type: "music",
-          actions: ["musicUrl"],
-          qualitys: ["128k", "320k", "flac"]
-        },
-        tx: {
-          name: "tx音乐",
-          type: "music",
-          actions: ["musicUrl"],
-          qualitys: ["128k", "320k", "flac"]
-        },
-        wy: {
-          name: "wy音乐",
-          type: "music",
-          actions: ["musicUrl"],
-          qualitys: ["128k", "320k", "flac"]
-        },
-        kw: {
-          name: "kw音乐",
-          type: "music",
-          actions: ["musicUrl"],
-          qualitys: ["128k", "320k", "flac"]
-        },
-        mg: {
-          name: "mg音乐",
-          type: "music",
-          actions: ["musicUrl"],
-          qualitys: ["128k", "320k", "flac"]
-        }
-      }
-    });
-  }
-}).catch(_0x49e070 => {
-  console.log("检查更新出错,正常初始化:", _0x49e070);
-  send(EVENT_NAMES.inited, {
-    openDevTools: false,
-    sources: {
-      kg: {
-        name: "kg音乐",
-        type: "music",
-        actions: ["musicUrl"],
-        qualitys: ["128k", "320k", "flac"]
-      },
-      tx: {
-        name: "tx音乐",
-        type: "music",
-        actions: ["musicUrl"],
-        qualitys: ["128k", "320k", "flac"]
-      },
-      wy: {
-        name: "wy音乐",
-        type: "music",
-        actions: ["musicUrl"],
-        qualitys: ["128k", "320k", "flac"]
-      },
-      kw: {
-        name: "kw音乐",
-        type: "music",
-        actions: ["musicUrl"],
-        qualitys: ["128k", "320k", "flac"]
-      },
-      mg: {
-        name: "mg音乐",
-        type: "music",
-        actions: ["musicUrl"],
-        qualitys: ["128k", "320k", "flac"]
-      }
+  const _0x14b3c1 = await httpFetch(API_URL + "/script?key=" + API_KEY + "&checkUpdate=" + SCRIPT_MD5, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "User-Agent": "" + (env ? "lx-music-" + env + "/" + version : "lx-music-request/" + version)
     }
   });
+  const {
+    body: _0x174c4f
+  } = _0x14b3c1;
+  if (!_0x174c4f || _0x174c4f.code !== 200) {
+    console.log("checkUpdate failed");
+  } else {
+    console.log("checkUpdate success");
+    if (_0x174c4f.data != null) {
+      const _0xa967c5 = {
+        log: _0x174c4f.data.updateMsg,
+        updateUrl: _0x174c4f.data.updateUrl
+      };
+      globalThis.lx.send(lx.EVENT_NAMES.updateAlert, _0xa967c5);
+    }
+  }
+};
+const musicSources = {};
+MUSIC_SOURCE.forEach(_0x3a8a20 => {
+  musicSources[_0x3a8a20] = {
+    name: _0x3a8a20,
+    type: "music",
+    actions: ["musicUrl"],
+    qualitys: MUSIC_QUALITY[_0x3a8a20]
+  };
 });
+on(EVENT_NAMES.request, ({
+  action: _0x4017b8,
+  source: _0x540f6e,
+  info: _0x1131c0
+}) => {
+  switch (_0x4017b8) {
+    case "musicUrl":
+      if (env != "mobile") {
+        {
+          console.group("Handle Action(musicUrl)");
+          console.log("source", _0x540f6e);
+          console.log("quality", _0x1131c0.type);
+          console.log("musicInfo", _0x1131c0.musicInfo);
+        }
+      } else {
+        console.log("Handle Action(musicUrl)");
+        console.log("source", _0x540f6e);
+        console.log("quality", _0x1131c0.type);
+        console.log("musicInfo", _0x1131c0.musicInfo);
+      }
+      return handleGetMusicUrl(_0x540f6e, _0x1131c0.musicInfo, _0x1131c0.type).then(_0x2ff49f => Promise.resolve(_0x2ff49f)).catch(_0x136e31 => Promise.reject(_0x136e31));
+    default:
+      console.error("action(" + _0x4017b8 + ") not support");
+      return Promise.reject("action not support");
+  }
+});
+const _0x4d6701 = {
+  status: true,
+  openDevTools: DEV_ENABLE,
+  sources: musicSources
+};
+send(EVENT_NAMES.inited, _0x4d6701);
