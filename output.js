@@ -1,150 +1,220 @@
-//Wed Jan 21 2026 03:35:09 GMT+0000 (Coordinated Universal Time)
+//Wed Jan 21 2026 03:42:04 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
 const DEV_ENABLE = false,
-  MUSIC_QUALITY = {
-    "tx": ["128k", "320k", "flac", "flac24bit"],
-    "wy": ["128k", "320k", "flac", "flac24bit"],
-    "kg": ["128k", "320k", "flac", "flac24bit"],
-    "kw": ["128k", "320k", "flac"],
-    "mg": ["320k", "flac"]
-  },
-  MUSIC_SOURCE = Object.keys(MUSIC_QUALITY),
-  {
+  API_URL = "https://m-api.ceseet.me",
+  API_KEY = "",
+  MUSIC_QUALITY = JSON.parse("{\"kw\":[\"128k\",\"320k\",\"flac\",\"flac24bit\"],\"kg\":[\"128k\",\"320k\",\"flac\",\"flac24bit\"],\"tx\":[\"128k\",\"320k\",\"flac\",\"flac24bit\"],\"wy\":[\"128k\",\"320k\",\"flac\"],\"mg\":[\"128k\",\"320k\",\"flac\",\"flac24bit\"]}"),
+  MUSIC_SOURCE = Object.keys(MUSIC_QUALITY);
+MUSIC_SOURCE.push("local");
+const {
     EVENT_NAMES,
     request,
     on,
     send,
     utils,
     env,
-    version,
-    currentScriptInfo
+    version
   } = globalThis.lx,
-  httpFetch = (_0x569402, _0x3d5730 = {
+  httpFetch = (_0x328412, _0x13d3ca = {
     "method": "GET"
   }) => {
-    return new Promise((_0x173a9f, _0x29fcdb) => {
-      request(_0x569402, _0x3d5730, (_0xa129ff, _0x5c45fb) => {
-        if (_0xa129ff) return _0x29fcdb(_0xa129ff);
-        _0x173a9f(_0x5c45fb);
+    return new Promise((_0x4a6f56, _0x485901) => {
+      console.log("--- start --- " + _0x328412);
+      request(_0x328412, _0x13d3ca, (_0x373473, _0x49a82e) => {
+        {
+          if (_0x373473) return _0x485901(_0x373473);
+          console.log("API Response: ", _0x49a82e);
+          _0x4a6f56(_0x49a82e);
+        }
       });
     });
   },
-  handleGetMusicUrl = async (_0x42f452, _0x4d19d6, _0x51b3b3) => {
-    if (_0x42f452 == "tx") {
-      const _0x1bb250 = {
-          "128k": "7",
-          "320k": "9",
-          "flac": "11",
-          "flac24bit": "14"
-        },
-        _0x159557 = "https://api.xingzhige.com/API/QQmusicVIP/?type=json&mid=" + _0x4d19d6.songmid + "&br=" + _0x1bb250[_0x51b3b3],
-        _0x5c45cb = await httpFetch(_0x159557, {
-          "method": "GET"
+  handleBase64Encode = _0x1459c1 => {
+    var _0x1459c1 = utils.buffer.from(_0x1459c1, "utf-8");
+    return utils.buffer.bufToString(_0x1459c1, "base64");
+  },
+  handleGetMusicUrl = async (_0x4b9c1a, _0x46220e, _0x9c0567) => {
+    if (_0x4b9c1a == "local") {
+      if (!_0x46220e.songmid.startsWith("server_")) throw new Error("upsupported local file");
+      const _0x5b6baf = _0x46220e.songmid,
+        _0x354e1d = {
+          "p": _0x5b6baf.replace("server_", "")
+        };
+      var _0x1b663b = "c",
+        _0x174673 = handleBase64Encode(JSON.stringify(_0x354e1d)).replace(/\+/g, "-").replace(/\//g, "_");
+      const _0x78790c = API_URL + "/local/" + _0x1b663b + "?q=" + _0x174673,
+        _0x37fd00 = await httpFetch(_0x78790c, {
+          "method": "GET",
+          "headers": {
+            "Content-Type": "application/json",
+            "User-Agent": "" + (env ? "lx-music-" + env + "/" + version : "lx-music-request/" + version),
+            "X-Request-Key": API_KEY
+          },
+          "follow_max": 5
         }),
         {
-          body: _0x460b4d
-        } = _0x5c45cb;
-      if (!_0x460b4d || isNaN(Number(_0x460b4d.code)) || Number(_0x460b4d.code) != 0) throw new Error("get url error");
-      return _0x460b4d.data.src;
-    } else {
-      if (_0x42f452 == "wy") {
-        const _0x306da6 = {
-            "128k": "standard",
-            "320k": "exhigh",
-            "flac": "lossless",
-            "flac24bit": "hires"
-          },
-          _0xdeb2a9 = "https://api.cenguigui.cn/api/netease/music_v1.php?id=" + _0x4d19d6.songmid + "&type=json&level=" + _0x306da6[_0x51b3b3],
-          _0x7a48cc = await httpFetch(_0xdeb2a9, {
-            "method": "GET"
-          }),
-          {
-            body: _0x3ce470
-          } = _0x7a48cc;
-        if (!_0x3ce470 || isNaN(Number(_0x3ce470.code)) || Number(_0x3ce470.code) != 200) throw new Error("get url error");
-        return _0x3ce470.data.url;
-      } else {
-        if (_0x42f452 == "kg") {
-          const _0x3854f7 = {
-              "128k": "128",
-              "320k": "320",
-              "flac": "flac",
-              "flac24bit": "high"
-            },
-            _0x351ef1 = "https://www.hhlqilongzhu.cn/api/dg_kugouSQ.php?type=json&hash=" + _0x4d19d6.hash + "&quality=" + _0x3854f7[_0x51b3b3],
-            _0x25a238 = await httpFetch(_0x351ef1, {
-              "method": "GET"
-            }),
-            {
-              body: _0x565f80
-            } = _0x25a238;
-          if (!_0x565f80 || isNaN(Number(_0x565f80.code)) || Number(_0x565f80.code) != 200) throw new Error("get url error");
-          return _0x565f80.music_url;
-        } else {
-          if (_0x42f452 == "kw") {
-            const _0x2467b5 = {
-                "128k": "standard",
-                "320k": "exhigh",
-                "flac": "lossless"
-              },
-              _0x220d53 = "https://api.cenguigui.cn/api/kuwo/?rid=" + _0x4d19d6.songmid + "&type=json&level=" + _0x2467b5[_0x51b3b3],
-              _0x3b7912 = await httpFetch(_0x220d53, {
-                "method": "GET"
-              }),
-              {
-                body: _0x5ab28e
-              } = _0x3b7912;
-            if (!_0x5ab28e || isNaN(Number(_0x5ab28e.code)) || Number(_0x5ab28e.code) != 200) throw new Error("get url error");
-            return _0x5ab28e.data.url;
-          } else {
-            if (_0x42f452 == "mg") {
-              const _0x5a1b31 = {
-                  "320k": "2",
-                  "flac": "1"
-                },
-                _0x34fbde = "https://www.hhlqilongzhu.cn/api/dg_mgmusic_24bit.php?msg=" + msg + "&n=1&type=json&br=" + _0x5a1b31[_0x51b3b3],
-                _0x326054 = await httpFetch(_0x34fbde, {
-                  "method": "GET"
-                }),
-                {
-                  body: _0x3571e6
-                } = _0x326054;
-              if (!_0x3571e6 || isNaN(Number(_0x3571e6.code)) || Number(_0x3571e6.code) != 200) throw new Error("unknow error");
-              return _0x3571e6.music_url;
-            }
-          }
+          body: _0xe46027
+        } = _0x37fd00;
+      if (_0xe46027.code == 0 && _0xe46027.data && _0xe46027.data.file) {
+        {
+          var _0x1b663b = "u",
+            _0x174673 = handleBase64Encode(JSON.stringify(_0x354e1d)).replace(/\+/g, "-").replace(/\//g, "_");
+          return API_URL + "/local/" + _0x1b663b + "?q=" + _0x174673;
         }
       }
+      throw new Error("404 Not Found");
+    }
+    const _0x504d17 = _0x46220e.hash ?? _0x46220e.songmid,
+      _0x1adef0 = await httpFetch(API_URL + "/url/" + _0x4b9c1a + "/" + _0x504d17 + "/" + _0x9c0567, {
+        "method": "GET",
+        "headers": {
+          "Content-Type": "application/json",
+          "User-Agent": "" + (env ? "lx-music-" + env + "/" + version : "lx-music-request/" + version),
+          "X-Request-Key": API_KEY
+        },
+        "follow_max": 5
+      }),
+      {
+        body: _0x3c9965
+      } = _0x1adef0;
+    if (!_0x3c9965 || isNaN(Number(_0x3c9965.code))) throw new Error("unknow error");
+    if (env != "mobile") console.groupEnd();
+    switch (_0x3c9965.code) {
+      case 0:
+        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") success, URL: " + _0x3c9965.data);
+        return _0x3c9965.data;
+      case 1:
+        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") failed: ip被封禁");
+        throw new Error("block ip");
+      case 2:
+        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") failed, " + _0x3c9965.msg);
+        throw new Error("get music url failed");
+      case 4:
+        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") failed, 远程服务器错误");
+        throw new Error("internal server error");
+      case 5:
+        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") failed, 请求过于频繁，请休息一下吧");
+        throw new Error("too many requests");
+      case 6:
+        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") failed, 请求参数错误");
+        throw new Error("param error");
+      default:
+        console.log("handleGetMusicUrl(" + _0x4b9c1a + "_" + _0x46220e.songmid + ", " + _0x9c0567 + ") failed, " + (_0x3c9965.msg ? _0x3c9965.msg : "unknow error"));
+        throw new Error(_0x3c9965.msg ?? "unknow error");
+    }
+  },
+  handleGetMusicPic = async (_0x582c06, _0x4cd8fa) => {
+    switch (_0x582c06) {
+      case "local":
+        if (!_0x4cd8fa.songmid.startsWith("server_")) throw new Error("upsupported local file");
+        const _0x128fb0 = _0x4cd8fa.songmid,
+          _0x1c58fa = {
+            "p": _0x128fb0.replace("server_", "")
+          };
+        var _0x476b0a = "c",
+          _0x55ca34 = handleBase64Encode(JSON.stringify(_0x1c58fa)).replace(/\+/g, "-").replace(/\//g, "_");
+        const _0x4bcecd = API_URL + "/local/" + _0x476b0a + "?q=" + _0x55ca34,
+          _0xa947c0 = await httpFetch(_0x4bcecd, {
+            "method": "GET",
+            "headers": {
+              "Content-Type": "application/json",
+              "User-Agent": "" + (env ? "lx-music-" + env + "/" + version : "lx-music-request/" + version)
+            },
+            "follow_max": 5
+          }),
+          {
+            body: _0x3a1ba5
+          } = _0xa947c0;
+        if (_0x3a1ba5.code === 0 && _0x3a1ba5.data.cover) {
+          var _0x476b0a = "p",
+            _0x55ca34 = handleBase64Encode(JSON.stringify(_0x1c58fa)).replace(/\+/g, "-").replace(/\//g, "_");
+          return API_URL + "/local/" + _0x476b0a + "?q=" + _0x55ca34;
+        }
+        throw new Error("get music pic failed");
+      default:
+        throw new Error("action(pic) does not support source(" + _0x582c06 + ")");
+    }
+  },
+  handleGetMusicLyric = async (_0x21ee56, _0x3287bd) => {
+    switch (_0x21ee56) {
+      case "local":
+        if (!_0x3287bd.songmid.startsWith("server_")) throw new Error("upsupported local file");
+        const _0x536737 = _0x3287bd.songmid,
+          _0x3ce9b7 = {
+            "p": _0x536737.replace("server_", "")
+          };
+        var _0x512902 = "c",
+          _0x51215d = handleBase64Encode(JSON.stringify(_0x3ce9b7)).replace(/\+/g, "-").replace(/\//g, "_");
+        const _0x27aa5b = API_URL + "/local/" + _0x512902 + "?q=" + _0x51215d,
+          _0x16c336 = await httpFetch(_0x27aa5b, {
+            "method": "GET",
+            "headers": {
+              "Content-Type": "application/json",
+              "User-Agent": "" + (env ? "lx-music-" + env + "/" + version : "lx-music-request/" + version)
+            },
+            "follow_max": 5
+          }),
+          {
+            body: _0x58d252
+          } = _0x16c336;
+        if (_0x58d252.code === 0 && _0x58d252.data.lyric) {
+          {
+            var _0x512902 = "l",
+              _0x51215d = handleBase64Encode(JSON.stringify(_0x3ce9b7)).replace(/\+/g, "-").replace(/\//g, "_");
+            const _0x1ea8ce = await httpFetch(API_URL + "/local/" + _0x512902 + "?q=" + _0x51215d, {
+              "method": "GET",
+              "headers": {
+                "Content-Type": "application/json",
+                "User-Agent": "" + (env ? "lx-music-" + env + "/" + version : "lx-music-request/" + version)
+              },
+              "follow_max": 5
+            });
+            if (_0x1ea8ce.body.code === 0) {
+              return {
+                "lyric": _0x1ea8ce.body.data ?? "",
+                "tlyric": "",
+                "rlyric": "",
+                "lxlyric": ""
+              };
+            }
+            throw new Error("get music lyric failed");
+          }
+        }
+        throw new Error("get music lyric failed");
+      default:
+        throw new Error("action(lyric) does not support source(" + _0x21ee56 + ")");
     }
   },
   musicSources = {};
-MUSIC_SOURCE.forEach(_0x238e3a => {
-  musicSources[_0x238e3a] = {
-    "name": _0x238e3a,
+MUSIC_SOURCE.forEach(_0x260e7a => {
+  musicSources[_0x260e7a] = {
+    "name": _0x260e7a,
     "type": "music",
-    "actions": _0x238e3a == "local" ? [] : ["musicUrl"],
-    "qualitys": _0x238e3a == "local" ? [] : MUSIC_QUALITY[_0x238e3a]
+    "actions": _0x260e7a == "local" ? ["musicUrl", "pic", "lyric"] : ["musicUrl"],
+    "qualitys": _0x260e7a == "local" ? [] : MUSIC_QUALITY[_0x260e7a]
   };
 });
 on(EVENT_NAMES.request, ({
-  action: _0x1581a9,
-  source: _0x3c5ae4,
-  info: _0x17eeb1
+  action: _0x3fc33c,
+  source: _0x583f3e,
+  info: _0x525238
 }) => {
-  switch (_0x1581a9) {
+  switch (_0x3fc33c) {
     case "musicUrl":
-      return handleGetMusicUrl(_0x3c5ae4, _0x17eeb1.musicInfo, _0x17eeb1.type).then(_0x136577 => Promise.resolve(_0x136577)).catch(_0x591312 => Promise.reject(_0x591312));
+      env != "mobile" ? (console.group("Handle Action(musicUrl)"), console.log("source", _0x583f3e), console.log("quality", _0x525238.type), console.log("musicInfo", _0x525238.musicInfo)) : (console.log("Handle Action(musicUrl)"), console.log("source", _0x583f3e), console.log("quality", _0x525238.type), console.log("musicInfo", _0x525238.musicInfo));
+      return handleGetMusicUrl(_0x583f3e, _0x525238.musicInfo, _0x525238.type).then(_0x4af1d4 => Promise.resolve(_0x4af1d4)).catch(_0x148035 => Promise.reject(_0x148035));
+    case "pic":
+      return handleGetMusicPic(_0x583f3e, _0x525238.musicInfo).then(_0x7ec6cc => Promise.resolve(_0x7ec6cc)).catch(_0xcfc86e => Promise.reject(_0xcfc86e));
+    case "lyric":
+      return handleGetMusicLyric(_0x583f3e, _0x525238.musicInfo).then(_0x7a464e => Promise.resolve(_0x7a464e)).catch(_0x5001ad => Promise.reject(_0x5001ad));
     default:
+      console.error("action(" + _0x3fc33c + ") not support");
       return Promise.reject("action not support");
   }
 });
-const scriptInfo = globalThis.lx.currentScriptInfo;
-if (scriptInfo.name !== "聚合API接口 (by lerd)" || scriptInfo.description !== "理论可听全平台无损" || scriptInfo.version !== "v2.0.0" || scriptInfo.author !== "lerd") {
-  throw new Error("初始化失败！将音源 名字、描述、版本号、作者和主页回正，以初始化成功");
-}
 send(EVENT_NAMES.inited, {
-  status: true,
-  openDevTools: DEV_ENABLE,
-  sources: musicSources
+  "status": true,
+  "openDevTools": DEV_ENABLE,
+  "sources": musicSources
 });
