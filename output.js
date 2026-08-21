@@ -1,471 +1,2057 @@
-//Tue Aug 18 2026 03:28:45 GMT+0000 (Coordinated Universal Time)
+//Fri Aug 21 2026 12:29:20 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-globalThis['SERVER_SCRIPT_CONFIG'] = {
-  "apiUrl": "https:\/\/88.lxmusic.xn--fiqs8s",
-  "apiKey": "lxmusic",
-  "signSalt": "LxSrv@2026#Sig",
-  "fingerprint": "74c52ba24b386a2301983d94596246c2"
+"use strict";
+
+const {
+  EVENT_NAMES: KH99_0x39563d,
+  request: KH99_0x5d2dfd,
+  on: KH99_0x5960ac,
+  send: KH99_0x1ad6fa,
+  env: KH99_0x5c9d14,
+  version: KH99_0x1e6c89
+} = globalThis.lx;
+const KH99_0x4e325e = "KonekoHYW_v176_SecretKey_2026";
+const KH99_0x5c36cf = "ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba9876543210+/";
+const KH99_0x3cc856 = 有缘q => {
+  if (!有缘q || "X" !== 有缘q[0]) {
+    return 有缘q;
+  }
+  try {
+    const 奈可v = 有缘q.slice(1).split("").reverse().join("");
+    let 奈可11 = "";
+    let 有缘12 = "";
+    for (const 终章13 of 奈可v) "=" === 终章13 ? 奈可11 += 终章13 : 有缘12 += 终章13;
+    const 云淡1a = 有缘12 + 奈可11;
+    let 奈可1d = "";
+    for (let 有缘1e = 0; 有缘1e < 云淡1a.length; 有缘1e += 4) {
+      const 奈可1j = KH99_0x5c36cf.indexOf(云淡1a[有缘1e]);
+      const 铃响1n = KH99_0x5c36cf.indexOf(云淡1a[有缘1e + 1]);
+      const 终章1r = KH99_0x5c36cf.indexOf(云淡1a[有缘1e + 2]);
+      const 奈可1v = KH99_0x5c36cf.indexOf(云淡1a[有缘1e + 3]);
+      if (奈可1j < 0 || 铃响1n < 0) {
+        break;
+      }
+      奈可1d += String.fromCharCode(奈可1j << 2 | 铃响1n >> 4);
+      终章1r >= 0 && "=" !== 云淡1a[有缘1e + 2] && (奈可1d += String.fromCharCode((15 & 铃响1n) << 4 | 终章1r >> 2));
+      奈可1v >= 0 && "=" !== 云淡1a[有缘1e + 3] && (奈可1d += String.fromCharCode((3 & 终章1r) << 6 | 奈可1v));
+    }
+    let 奈可2j = "";
+    for (let 有缘2k = 0; 有缘2k < 奈可1d.length; 有缘2k++) {
+      奈可2j += String.fromCharCode(奈可1d.charCodeAt(有缘2k) ^ KH99_0x4e325e.charCodeAt(有缘2k % 29));
+    }
+    try {
+      return decodeURIComponent(escape(奈可2j));
+    } catch (终章2x) {
+      return 奈可2j;
+    }
+  } catch (铃响2z) {
+    return 有缘q;
+  }
 };
-;
-(function ﱡﹶ(ﱡﹲ, ﱡﱣ, ﹲ‌, ﱞﹶ, ﹲﹰ, ﹸﹼ, ﹰﱣ, ﹰﹼ, ﹴﱠ, ﹸﹸ, ءﱟ, ﱟﹸ, ﹰﹲ, ﱠﹴ, ﱞﹲ, ﹼﱣ, ﹶﹲ, ﹶﹰ) {
-  return ﹶﹰ = function (ﱟﹺ, ﹼ, ﹰﹺ, ءﱟ) {
-    return function (ﹼﹶ, ﱡء, ءﱡ, ﱡﹲ, ﹲ‌, ﹲﹰ, ﹸﹼ, ﹰﱣ, ﹴﱠ) {
-      if (ﹼﹶ = ﹼﹶ ^ ﱡء, ﹲﹰ = 66666 - ﹼﹶ, ﹸﹼ = ﹶﹲ[ﹲﹰ], ﹸﹼ !== undefined) return ﹸﹼ;
-      for (ﹲ‌ = ﱡﱣ[ﹼﹶ], ﱡﹲ = [], ﹸﹼ = ﹰﹺ(ﹼﹶ, ﱡء, ﹲ‌.length, ﹼ, ﱟﹺ), ﹰﱣ = 0, ﹼﹶ = (ﹸﹼ ^ ﹸﹼ >>> 16 ^ ﱡء ^ ﹼﹶ) & 65535, ءﱡ = 0; ءﱡ < ﹲ‌.length; ءﱡ++) {
-        (ءﱡ & 1) === 0 && (ﹸﹼ = ﹸﹼ + 2654435769 >>> 0, ﹰﱣ = ﹼ(ﹸﹼ, ﱟﹺ));
-        ﱡء = ﹰﱣ >>> ((ءﱡ & 1) << 4) & 65535, ﹴﱠ = ﹲ‌[ءﱡ], ﹰﹼ(ﱡﹲ, (ﹴﱠ ^ ﱡء ^ ﹼﹶ) & 65535), ﹼﹶ = ﹴﱠ + (ﹰﱣ >>> 16 & 65535) + ءﱡ + 40503 & 65535;
-      }
-      return ﹶﹲ[ﹲﹰ] = ﹸﹸ(ﱡﹲ);
-    };
-  }(function (ﹼﹶ, ﱟﹺ, ﱡء, ﹼ) {
-    return ﱡء = ﹼﹶ >>> 16 & 65535, ﹼﹶ = ﹼﹶ & 65535, ﹼ = ﱟﹺ >>> 16 & 65535, ﱟﹺ = ﱟﹺ & 65535, ﹼﹶ * ﱟﹺ + (ﱡء * ﱟﹺ + ﹼﹶ * ﹼ << 16 >>> 0) | 0;
-  }, function (ﹼﹶ, ﱟﹺ) {
-    return ﹼﹶ >>>= 0, ﹼﹶ = ﱟﹺ(ﹼﹶ ^ ﹼﹶ >>> 16, 569420461), ﹼﹶ = ﱟﹺ(ﹼﹶ ^ ﹼﹶ >>> 15, 1935289751), (ﹼﹶ ^ ﹼﹶ >>> 15) >>> 0;
-  }, function (ﹸ‍, ﱡء, ءﱡ, ﹼ, ﱟﹺ) {
-    return ﹼ(1327381188 ^ ﱟﹺ(ﹸ‍ + 1 >>> 0, 2654435761) ^ ﱟﹺ(ﱡء + 1 >>> 0, 2246822507) ^ ﱟﹺ(ءﱡ + 1 >>> 0, 3266489909), ﱟﹺ);
-  }), function ﹰﹺ(ﹼﹶ, ﱟﹺ, ﱡء, ﹼ, ءﱡ) {
-    ﱟﹺ = ﱟﹺ || [], ﱡء = ﱡء || [], ﹼ = ﹼ || [];
-    for (var ﱡﹴ = ﱡء.length, ءﹶ, ﹰﹸ; ﹰﹸ = ﱡﹲ[ﹼﹶ++];) if (61 < ﹰﹸ) ﹰﹸ < 68 && ((ﹰﹸ > 65 || (ﹰﹸ < 64 && ((ﹰﹸ-- > 62 || (ﱡء[++ﱡﹴ - ﹰﹸ++ + 60] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﹶﹰ(ﱡء, ﱡﹴ);
-      };
-    }(ﱡﹲ[ﹼﹶ++] ^ -++ﹰﹸ + 32881 + ﹼﹶ, ﱡﹲ[ﹼﹶ++] ^ -ﹰﹸ-- + 49974 + ﹼﹶ), false)) && (ﱡء[ﱡﹴ++ + ﹰﹸ-- - 62] = function (ﱡء) {
-      return function () {
-        return ﱟﹺ[ﱡء]++;
-      };
-    }(ﱡﹲ[ﹼﹶ++] ^ --ﹰﹸ + 57119 + ﹼﹶ)), true) || ﹰﹸ > 64 && (ﱡء[ﱡﹴ++ + ﹰﹸ - 67]() || (ﹼﹶ = ﱡء[ﱡﹴ - ﹰﹸ++ + 63]()), (ﱡﹴ -= 3) + ﹰﹸ++ + 31, 1) || (ﱡء[ﱡﹴ++ + ﹰﹸ - 64] = function () {
-      return function () {
-        return typeof process;
-      };
-    }()), "")) && (66 < ﹰﹸ || (ﱡء[(ﱡﹴ += 101) - --ﹰﹸ - 38] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return new ﹰﹲ(ﱡء(), ﱡﹴ());
-      };
-    }(ﱡء[++ﱡﹴ - 104], ﱡء[(ﱡﹴ -= 103) + ﹰﹸ++ - 65]), undefined)) && (ﱡء[--ﱡﹴ + ﹰﹸ - 67] = function (ﱡء) {
-      return function () {
-        return !ﱡء();
-      };
-    }(ﱡء[++ﱡﹴ - --ﹰﹸ + 65])), true) || 73 > ﹰﹸ && (ﹰﹸ < 70 && (ﹰﹸ < 69 && (ﱡء[++ﱡﹴ + ++ﹰﹸ - 70] = function () {
-      return function () {
-        return parseInt;
-      };
-    }(), true) || (ﱡء[ﱡﹴ++ + ++ﹰﹸ - 70] = function () {
-      return function () {
-        return Promise;
-      };
-    }()), true) || (71 < ﹰﹸ || ((71 < ++ﹰﹸ || (ﱡء[(ﱡﹴ += --ﹰﹸ) - 78] = function (ﱡء, ﱡﹴ, ﹰﹸ, ﹼﹶ, ﹰﱞ, ﹰء, ﹲﹼ, ﹼﱡ) {
-      return function () {
-        return ﹰﱣ(ﱡء())(ﱡﹴ(), ﹰﹸ(), ﹼﹶ(), ﹰﱞ(), ﹰء(), ﹲﹼ(), ﹼﱡ())();
-      };
-    }(ﱡء[(ﱡﹴ += 43) - ++ﹰﹸ - 49], ﱡء[--ﱡﹴ + ﹰﹸ++ - 191], ﱡء[ﱡﹴ++ - 118], ﱡء[(ﱡﹴ += 8) + ﹰﹸ-- - 198], ﱡء[--ﱡﹴ - ﹰﹸ - 53], ﱡء[(ﱡﹴ += ﹰﹸ--) - 194], ﱡء[ﱡﹴ + ﹰﹸ++ - 263], ﱡء[(ﱡﹴ -= 198) - ﹰﹸ + 77]), false)) && (ﱡء[(ﱡﹴ += 3) - ﹰﹸ-- + 67]() && (ﹼﹶ = ﱡء[ﱡﹴ - ﹰﹸ-- + 67]()), (ﱡﹴ -= 5) - ﹰﹸ++ + 115), null)) && (ﱡء[ﱡﹴ++ + ++ﹰﹸ - 73] = function () {
-      return function () {
-        return console;
-      };
-    }()), true) || ﹰﹸ > 77 && (ﹰﹸ > 81 && (83 > ﹰﹸ-- && (ﱡء[ﱡﹴ++ + ﹰﹸ-- - 81] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }(ﹼﱣ), true) || (ﱡء[(ﱡﹴ -= 10) - ﹰﹸ + 89] = function (ﱡء, ﱡﹴ, ﹰﹸ, ﹼﹶ) {
-      return function () {
-        return ﹸﹼ(ﱡء(), (ﱡﹴ()[0] = ﹰﹸ(), ﹼﹶ()))();
-      };
-    }(ﱡء[ﱡﹴ + ﹰﹸ - 74], ﱡء[(ﱡﹴ += 36) + ﹰﹸ - 109], ﱡء[(ﱡﹴ += ﹰﹸ) - 111], ﱡء[(ﱡﹴ -= 110) + ﹰﹸ-- - 81])), true) || ++ﹰﹸ > 81 && (ﱡء[ﱡﹴ - ﹰﹸ + 80] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return delete ﱡء()[ﱡﹴ()];
-      };
-    }(ﱡء[(ﱡﹴ += ﹰﹸ++) - 84], ﱡء[(ﱡﹴ -= 83) + ﹰﹸ-- - 83]), true) || ﹰﹸ > 80 && (ﱡء[ﱡﹴ++ + ++ﹰﹸ - 82] = function () {
-      return function () {
-        return Symbol;
-      };
-    }(), 1) || 80 > ﹰﹸ && (ﱡء[ﱡﹴ++] = function () {
-      return function () {
-        return Object;
-      };
-    }(), true) || (ﱡء[ﱡﹴ++] = function () {
-      return function () {
-        return require;
-      };
-    }()), true) || (ﹰﹸ > 76 || ((ﹰﹸ > 75 || (ﹰﹸ < 75 && ((ﹰﹸ < 74 || (ﱡء[(ﱡﹴ += 92) + ++ﹰﹸ - 168] = function (ﱡء) {
-      return function () {
-        return -ﱡء();
-      };
-    }(ﱡء[(ﱡﹴ -= 92) - ++ﹰﹸ + 75]), undefined)) && (ﱡء[ﱡﹴ-- + --ﹰﹸ - 74] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﱡء() + ﱡﹴ();
-      };
-    }(ﱡء[(ﱡﹴ -= --ﹰﹸ) + 70], ﱡء[(ﱡﹴ += 71) - ﹰﹸ-- + 71])), 1) || (ﱡء[(ﱡﹴ += ﹰﹸ) - 77] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﱡء() * ﱡﹴ();
-      };
-    }(ﱡء[ﱡﹴ++ - ﹰﹸ++ - 2], ﱡء[(ﱡﹴ -= 77) + --ﹰﹸ - 75])), undefined)) && (ﱡء[++ﱡﹴ - ﹰﹸ-- + 73] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﱡء() <= ﱡﹴ();
-      };
-    }(ﱡء[--ﱡﹴ + ﹰﹸ-- - 77], ﱡء[--ﱡﹴ + --ﹰﹸ - 73])), 0)) && ﱡء[(ﱡﹴ -= 2) - ﹰﹸ-- + 77]() && (ﹼﹶ = ﱡء[--ﱡﹴ + ﹰﹸ - 74]());else if (ﹰﹸ < 22) ﹰﹸ > 16 && ((++ﹰﹸ > 21 || ((20 > ﹰﹸ || ((ﹰﹸ > 20 || (ﱡء[++ﱡﹴ + ﹰﹸ++ - 21] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }(undefined), "")) && (ﱡء[ﱡﹴ++ + ﹰﹸ - 21] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }([])), "")) && (ﹰﹸ++ < 19 && (ﱡء[ﱡﹴ++ + --ﹰﹸ - 18] = function () {
-      return function () {
-        return Number;
-      };
-    }(), true) || (ﱡء[--ﱡﹴ - --ﹰﹸ + 18] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﱡء() < ﱡﹴ();
-      };
-    }(ﱡء[ﱡﹴ - ﹰﹸ++ + 18], ﱡء[ﱡﹴ]))), "")) && (ﱡء[++ﱡﹴ - ++ﹰﹸ + 22] = function () {
-      return function () {
-        return Error;
-      };
-    }()), true) || 11 < ﹰﹸ && ((ﹰﹸ > 15 || (ﹰﹸ > 14 && (ﱡء[ﱡﹴ++ - ++ﹰﹸ + 16] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }({}), true) || 14 < ++ﹰﹸ && (ﱡء[++ﱡﹴ - 1] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }(ﱞﹲ), 1) || (ﹰﹸ > 13 || (function () {
-      throw ﱡء[(ﱡﹴ += 2) - 3]();
-    }(), "")) && (ﱡء[++ﱡﹴ + --ﹰﹸ - 14] = function () {
-      return function () {
-        return typeof Symbol;
-      };
-    }()), "")) && (ﱡء[(ﱡﹴ += 76) - ++ﹰﹸ - 61] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﱟﹺ[ﱡء()] = ﱡﹴ();
-      };
-    }(ﱡء[ﱡﹴ++ - 78], ﱡء[(ﱡﹴ -= 78) + ﹰﹸ - 17])), true) || ﹰﹸ < 7 && ((ﹰﹸ > 4 || (3 > ﹰﹸ-- && (ﹰﹸ > 0 && (ﱡء[--ﱡﹴ + ﹰﹸ - 2] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return new (ﱡء())(ﱡﹴ());
-      };
-    }(ﱡء[--ﱡﹴ + ﹰﹸ-- - 1], ﱡء[ﱡﹴ++ + ++ﹰﹸ]), true) || (ﱡء[ﱡﹴ++ - ﹰﹸ] = function () {
-      return function () {
-        return typeof require;
-      };
-    }()), true) || (2 < ﹰﹸ || (ﱡء[ﱡﹴ-- - ﹰﹸ-- + 1](), 0)) && (ﱡء[++ﱡﹴ + ﹰﹸ-- - 4] = function (ﱡء) {
-      return function () {
-        return ﱟﹺ[ﱡء];
-      };
-    }(ﱡﹲ[ﹼﹶ++] ^ -ﹰﹸ + 28941 + ﹼﹶ)), undefined)) && (6 > ﹰﹸ || (ﱡء[(ﱡﹴ -= 94) + ++ﹰﹸ + 80] = function (ﱡء, ﱡﹴ, ﹰﹸ, ﹼﹶ, ﹰﱞ, ﹰء, ﹲﹼ) {
-      return function () {
-        return ﹰﱣ(ﱡء(), ﱡﹴ())(ﹰﹸ(), ﹼﹶ(), ﹰﱞ())(ﹰء(), ﹲﹼ());
-      };
-    }(ﱡء[ﱡﹴ-- - ﹰﹸ + 95], ﱡء[ﱡﹴ++ - ﹰﹸ + 95], ﱡء[(ﱡﹴ += --ﹰﹸ) + 83], ﱡء[(ﱡﹴ -= 55) - ﹰﹸ + 145], ﱡء[(ﱡﹴ += 65) + ﹰﹸ-- + 69], ﱡء[ﱡﹴ-- - --ﹰﹸ + 80], ﱡء[(ﱡﹴ += 73) + ﹰﹸ + 1]), undefined)) && (ﱡء[ﱡﹴ++ - ﹰﹸ-- + 5] = ﱡء[(ﱡﹴ -= 105) + --ﹰﹸ + 100] = function (ﱡء, ﱡﹴ, ﹰﹸ, ﹼﹶ, ﱟﹺ) {
-      return ﹰﹸ = function () {
-        return ﱡﹴ;
-      }, ﱟﹺ = function () {
-        return ﱡﹴ = ﱡء(), ﹼﹶ = ﹰﹸ, ﱡﹴ;
-      }, ﹼﹶ = ﱟﹺ, function () {
-        return ﹼﹶ();
-      };
-    }(ﱡء[(ﱡﹴ += 105) - ﹰﹸ + 1])), true) || 9 > ﹰﹸ && (7 < ﹰﹸ++ && (ﱡء[(ﱡﹴ += ++ﹰﹸ) - 11] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }(ﱡء[(ﱡﹴ -= 10) + --ﹰﹸ - 10]()), true) || (ﱡء[ﱡﹴ + --ﹰﹸ - 9] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﱡء() === ﱡﹴ();
-      };
-    }(ﱡء[++ﱡﹴ - 3], ﱡء[(ﱡﹴ -= 2) + ++ﹰﹸ - 8])), true) || 10 > ﹰﹸ && (ﱡء[ﱡﹴ++ - ﹰﹸ++ + 9] = function () {
-      return function () {
-        return SCRIPT_MD5;
-      };
-    }(), true) || (10 < ﹰﹸ || (ﱡء[--ﱡﹴ - ﹰﹸ-- + 9] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﱡء() - ﱡﹴ();
-      };
-    }(ﱡء[--ﱡﹴ + --ﹰﹸ - 8], ﱡء[++ﱡﹴ + --ﹰﹸ - 7]), false)) && (ﱡء[--ﱡﹴ + --ﹰﹸ - 14] = function (ﱡء, ﱡﹴ, ﹰﹸ, ﹼﹶ, ﹰﱞ) {
-      return function () {
-        return ﹰﱣ(ﱡء())(ﱡﹴ(), ﹰﹸ(), ﹼﹶ())(ﹰﱞ());
-      };
-    }(ﱡء[(ﱡﹴ -= ++ﹰﹸ) + 8], ﱡء[++ﱡﹴ - ﹰﹸ++ + 17], ﱡء[(ﱡﹴ += ++ﹰﹸ) - 5], ﱡء[ﱡﹴ-- + ﹰﹸ++ - 17], ﱡء[(ﱡﹴ -= 5) + 3]));else if (41 < ﹰﹸ--) {
-      if (ﹰﹸ > 56) {
-        if (ﹰﹸ > 59) ﹼﹶ = ﱡء[ءﹶ = ﹼﹶ, --ﱡﹴ + ﹰﹸ-- - 60]();else if (59 > ﹰﹸ) 57 < ﹰﹸ-- && (ﱡء[ﱡﹴ++ - ++ﹰﹸ + 58] = function (ﱡء) {
-          return function () {
-            return ﱡء;
-          };
-        }(null), true) || (ﱡء[++ﱡﹴ - ﹰﹸ-- + 53] = function (ﱡء, ﱡﹴ) {
-          return function () {
-            return ﱡء() != ﱡﹴ();
-          };
-        }(ﱡء[++ﱡﹴ + ﹰﹸ - 59], ﱡء[(ﱡﹴ -= 3) + ﹰﹸ - 55]));else return ءﱡ.ﹼﱠ = 0;
-      } else if (47 > ﹰﹸ) {
-        if (43 > ﹰﹸ) 42 > ﹰﹸ++ && (ﱡء[ﱡﹴ-- - ++ﹰﹸ + 41] = function (ﱡء, ﱡﹴ) {
-          return function () {
-            return ﱡء() % ﱡﹴ();
-          };
-        }(ﱡء[ﱡﹴ-- + ++ﹰﹸ - 45], ﱡء[ﱡﹴ++ + 1]), true) || (ﱡء[ﱡﹴ-- + ﹰﹸ++ - 45] = function (ﱡء, ﱡﹴ) {
-          return function () {
-            return ﱡء() == ﱡﹴ();
-          };
-        }(ﱡء[(ﱡﹴ += 113) - 114], ﱡء[(ﱡﹴ -= 113) + ﹰﹸ++ - 44]));else if (--ﹰﹸ < 43) ﱡء[(ﱡﹴ -= ﹰﹸ--) + 39] = function (ﱡء, ﱡﹴ, ﹰﹸ) {
-          return function () {
-            return ﹼ[ﹼ.length - ﱡء()][ﱡﹴ()] = ﹰﹸ();
-          };
-        }(ﱡء[ﱡﹴ++ - ﹰﹸ + 81], ﱡء[(ﱡﹴ -= ﹰﹸ) + 79], ﱡء[(ﱡﹴ += 80) + 1]);else if (ﹰﹸ < 44) return ﱡء[ﱡﹴ-- - ﹰﹸ-- + 42]();else (ﹰﹸ > 44 || (ﱡء[ﱡﹴ++] = function () {
-          return function () {
-            return lx;
-          };
-        }(), 0)) && (ﱡء[++ﱡﹴ - 10] = function (ﱠﹼ, ﹴﹴ, ﹴﹰ, ﱣﱣ, ﱠﹺ, ءﹰ, ﱞﱡ, ﱢﹸ, ﱠﱣ, ﹺﹴ, ﹸﱣ) {
-          return ﹺﹴ = ﹴﱠ(ﹼ, [ﱟﹺ]), ﹸﱣ = function ﹸﱣ() {
-            var ﱡ = arguments.length > ﱢﹸ().length ? ﱢﹸ().length : arguments.length,
-              ﹲﹴ = [];
-            for (var ﹶﱣ = 0; ﹶﱣ < ﱡ; ﹶﱣ++) ﹲﹴ[ﱢﹸ()[ﹶﱣ]] = arguments[ﹶﱣ];
-            return ﱠﹺ() && function (ﱡء, ﱡﹴ, ﹼﹶ) {
-              try {
-                for (ﱡﹴ = ﱡ - 1, ﹼﹶ = []; ﱡﹴ >= 0; ﱡﹴ--) (function (ﱡﹴ, ﹰﹸ) {
-                  ﹰﹸ in ﹼﹶ || (ءﱟ(ﱡء, ﱡﹴ, {
-                    get: function () {
-                      return ﹲﹴ[ﹰﹸ];
-                    },
-                    set: function (ﱡء) {
-                      ﹲﹴ[ﹰﹸ] = ﱡء;
-                    },
-                    configurable: true
-                  }), ﹼﹶ[ﹰﹸ] = 1);
-                })(ﱡﹴ, ﱢﹸ()[ﱡﹴ]);
-              } catch (ﱣﹰ) {}
-            }(ﹲﹴ[ﹴﹰ()] = arguments), ﱠﱣ() && (ﹲﹴ[ﱞﱡ()] = this), ﱣﱣ() && function () {
-              try {
-                ءﱟ(ﹲﹴ, ﹴﹴ(), {
-                  value: ﹸﱣ,
-                  writable: false
-                });
-              } catch (ﱣﹰ) {}
-            }(), ﹰﹺ(ءﹰ(), ﹲﹴ, [], ﹺﹴ);
-          }, function () {
-            try {
-              ءﱟ(ﹸﱣ, "length", {
-                value: ﱠﹼ(),
-                configurable: true
-              });
-            } catch (ﱣﹰ) {}
-          }(), function () {
-            return function () {
-              return ﹸﱣ;
-            };
-          }();
-        }(ﱡء[ﱡﹴ-- - ﹰﹸ++ + 43], ﱡء[ﱡﹴ - ﹰﹸ + 44], ﱡء[--ﱡﹴ - ﹰﹸ + 41], ﱡء[ﱡﹴ-- - ﹰﹸ-- + 44], ﱡء[ﱡﹴ-- - --ﹰﹸ + 39], ﱡء[++ﱡﹴ + ﹰﹸ++ - 51], ﱡء[ﱡﹴ-- + ﹰﹸ - 47], ﱡء[++ﱡﹴ + --ﹰﹸ - 50], ﱡء[(ﱡﹴ -= 6) + ﹰﹸ-- - 41]));
-      } else (51 < ﹰﹸ++ || (ﹰﹸ < 50 && ((ﹰﹸ < 49 || (ﱡء[ﱡﹴ + ﹰﹸ++ - 52] = function (ﱡء, ﱡﹴ, ﹰﹸ) {
-        return function () {
-          return ﹸﹼ(ﱡء(), [ﱡﹴ(), ﹰﹸ()])();
-        };
-      }(ﱡء[--ﱡﹴ - 1], ﱡء[ﱡﹴ-- - 2], ﱡء[ﱡﹴ + --ﹰﹸ - 48]), !{})) && (ﱡء[++ﱡﹴ - 1] = function (ﱡء) {
-        return function () {
-          return ﱡء;
-        };
-      }(false)), true) || (51 < ﹰﹸ || ((--ﹰﹸ < 50 || (ﱡء[ﱡﹴ++ - ﹰﹸ + 50] = function () {
-        return function () {
-          return JSON;
-        };
-      }(), "")) && (ﱡء[ﱡﹴ++ + --ﹰﹸ - 48] = function () {
-        return function () {
-          return String;
-        };
-      }()), false)) && (ﱡء[++ﱡﹴ + ++ﹰﹸ - 54] = function () {
-        return function () {
-          return TypeError;
-        };
-      }()), false)) && (55 > ﹰﹸ-- && ((52 < ﹰﹸ || (ﱡء[ﱡﹴ++ - ﹰﹸ++ + 52] = function (ﱡء) {
-        return function () {
-          return ﱡء;
-        };
-      }(true), false)) && (ﱡء[++ﱡﹴ - ++ﹰﹸ + 53] = function () {
-        return function () {
-          return encodeURIComponent;
-        };
-      }()), 1) || (ﹰﹸ++ > 55 || ((56 > ﹰﹸ || (ﱡء[ﱡﹴ++ + ++ﹰﹸ - 57] = function () {
-        return function () {
-          return process;
-        };
-      }(), false)) && (ﱡء[++ﱡﹴ - --ﹰﹸ + 53] = function (ﱡء) {
-        return function () {
-          return ﱡء;
-        };
-      }(ﱡﹲ[ﹼﹶ++] ^ 35843 + ﹼﹶ)), 0)) && (ﱡء[(ﱡﹴ += 102) - ﹰﹸ - 48] = function (ﱡء, ﱡﹴ, ﹰﹸ) {
-        return function () {
-          return ﱡء()[ﱡﹴ()] = ﹰﹸ();
-        };
-      }(ﱡء[--ﱡﹴ + ﹰﹸ++ - 161], ﱡء[ﱡﹴ++ - 103], ﱡء[(ﱡﹴ -= 104) + --ﹰﹸ - 56])));
-    } else if (ﹰﹸ > 36) {
-      if (39 < ﹰﹸ) try {
-        var ﹰﱡ = ﱡﹲ[ﹼﹶ++] ^ --ﹰﹸ + 44385 + ﹼﹶ,
-          ﱣ = ﱡﹲ[ﹼﹶ++] ^ -ﹰﹸ++ + 48647 + ﹼﹶ,
-          ﱞﹼ = ﱡﹲ[ﹼﹶ++] ^ -ﹰﹸ + 16051 + ﹼﹶ,
-          ﹰﹰ = ﱡﹲ[ﹼﹶ++] ^ -ﹰﹸ-- + 46121 + ﹼﹶ,
-          ﱞﹸ = {
-            ﹼﱠ: 1
-          },
-          ﱞ‌ = ﹰﹺ(ﹼﹶ, ﱟﹺ, [], ﹼ, ﱞﹸ);
-        if (ﱞﹸ.ﹼﱠ) return ﱞ‌;
-        if (ﱞﹸ.ﱞﹰ !== undefined) if (ﹰﱡ = ﱞﹸ.ﱞﹰ, ﱞﹸ.ﱣﹴ > 1) return ءﱡ.ﱞﹰ = ﹰﱡ, ءﱡ.ﱣﹴ = --ﱞﹸ.ﱣﹴ, ءﱡ.ﹼﱠ = 0;
-      } catch (ﱣﹰ) {
-        ﱟﹺ[ﹰﹰ] = ﱣﹰ, ﱞﹸ = {
-          ﹼﱠ: 1
-        }, ﱞ‌ = ﹰﹺ(ﱣ, ﱟﹺ, [], ﹼ, ﱞﹸ);
-        if (ﱞﹸ.ﹼﱠ) return ﱞ‌;
-        if (ﱞﹸ.ﱞﹰ !== undefined) if (ﹰﱡ = ﱞﹸ.ﱞﹰ, ﱞﹸ.ﱣﹴ > 1) return ءﱡ.ﱞﹰ = ﹰﱡ, ءﱡ.ﱣﹴ = --ﱞﹸ.ﱣﹴ, ءﱡ.ﹼﱠ = 0;
-      } finally {
-        ﱞﹸ = {
-          ﹼﱠ: 1
-        }, ﱞ‌ = ﹰﹺ(ﱞﹼ, ﱟﹺ, [], ﹼ, ﱞﹸ);
-        if (ﱞﹸ.ﹼﱠ) return ءﱡ && (ءﱡ.ﹼﱠ = 1), ﱞ‌;
-        if (ﱞﹸ.ﱞﹰ !== undefined) {
-          if (ﹰﱡ = ﱞﹸ.ﱞﹰ, ﱞﹸ.ﱣﹴ > 1) return ءﱡ.ﱞﹰ = ﹰﱡ, ءﱡ.ﱣﹴ = --ﱞﹸ.ﱣﹴ, ءﱡ.ﹼﱠ = 0;
-          return ﹰﹺ(ﹰﱡ, ﱟﹺ, [], ﹼ, ءﱡ);
-        }
-        ﹼﹶ = ﹰﱡ;
-      } else (++ﹰﹸ < 40 || (ﱡء[(ﱡﹴ += 53) - --ﹰﹸ - 16] = function (ﱡء, ﱡﹴ) {
-        return function () {
-          return ﱡء()[ﱡﹴ()];
-        };
-      }(ﱡء[--ﱡﹴ - ﹰﹸ - 15], ﱡء[ﱡﹴ -= 53]), false)) && (ﹰﹸ > 38 && (ﱡء[ﱡﹴ++ - ﹰﹸ++ + 39] = function (ﱡء) {
-        return function () {
-          return ﱡء;
-        };
-      }(ﱡﹲ[ﹼﹶ++] - (++ﹰﹸ + 19983 + ﹼﹶ)), true) || (ﱡء[++ﱡﹴ - 1] = function () {
-        return function () {
-          return isNaN;
-        };
-      }()));
-    } else if (ﹰﹸ > 31) ﹰﹸ > 35 && (ﱡء[++ﱡﹴ - ﹰﹸ + 31] = function (ﱡء, ﱡﹴ, ﹰﹸ, ﹼﹶ) {
-      return function () {
-        return ﹲﹰ(ﱡء(), ﱡﹴ(), ﹰﹸ())(ﹼﹶ());
-      };
-    }(ﱡء[++ﱡﹴ - ﹰﹸ + 31], ﱡء[(ﱡﹴ += ﹰﹸ--) - 42], ﱡء[++ﱡﹴ - --ﹰﹸ - 7], ﱡء[(ﱡﹴ -= 42) + --ﹰﹸ - 31]), true) || (34 > ﹰﹸ || (ﹰﹸ < 35 && (ﱡء[(ﱡﹴ -= ﹰﹸ++) + 32] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﱡء() > ﱡﹴ();
-      };
-    }(ﱡء[ﱡﹴ + ++ﹰﹸ - 4], ﱡء[ﱡﹴ += 33]), true) || (ﱡء[++ﱡﹴ - ﹰﹸ++ + 34] = function () {
-      return function () {
-        return Date;
-      };
-    }()), null)) && (32 < ﹰﹸ || (ﱡء[(ﱡﹴ += 42) - ++ﹰﹸ - 11] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﱡء() ^ ﱡﹴ();
-      };
-    }(ﱡء[ﱡﹴ++ - ﹰﹸ-- - 11], ﱡء[(ﱡﹴ -= 44) - ++ﹰﹸ + 33]), 0)) && (ﱡء[ﱡﹴ++] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﹼ[ﹼ.length - ﱡء][ﱡﹴ]++;
-      };
-    }(ﱡﹲ[ﹼﹶ++] ^ -ﹰﹸ-- + 50681 + ﹼﹶ, ﱡﹲ[ﹼﹶ++] ^ ﹰﹸ-- + 53617 + ﹼﹶ));else if (26 < ﹰﹸ) (ﹰﹸ > 30 || ((ﹰﹸ < 29 || ((28 < --ﹰﹸ || (ﱡء[ﱡﹴ + --ﹰﹸ - 28] = function (ﱡء) {
-      return function () {
-        return void ﱡء();
-      };
-    }(ﱡء[ﱡﹴ - --ﹰﹸ + 25]), false)) && (ﱡء[ﱡﹴ++ - ﹰﹸ + 29] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }(ﱡﹲ[ﹼﹶ++]), ﱡء[ﱡﹴ] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }(ﱡﹲ[ﹼﹶ++]), ﱡء[ﱡﹴ + ﹰﹸ - 28] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }(ﱡﹲ[ﹼﹶ++]), ﱡء[(ﱡﹴ += ﹰﹸ--) - 27] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }(ﱡﹲ[ﹼﹶ++]), ﱡء[(ﱡﹴ += 24) + ﹰﹸ-- - 78] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }(ﱡﹲ[ﹼﹶ++]), ﱡء[ﱡﹴ++ - 49] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }(ﱡﹲ[ﹼﹶ++]), ﱡء[(ﱡﹴ -= 48) + --ﹰﹸ - 27] = function (ﱡء) {
-      return function () {
-        return ﱡء;
-      };
-    }(ﱡﹲ[ﹼﹶ++])), null)) && (27 < ﹰﹸ && (ﱡء[ﱡﹴ++ + ﹰﹸ - 28] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﹼ[ﹼ.length - ﱡء][ﱡﹴ];
-      };
-    }(ﱡﹲ[ﹼﹶ++] ^ 62427 + ﹼﹶ, ﱡﹲ[ﹼﹶ++] ^ ﹰﹸ++ + 42457 + ﹼﹶ), true) || (ﱡء[(ﱡﹴ += ﹰﹸ) - 29] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﹸﹼ(ﱡء(), [ﱡﹴ()])();
-      };
-    }(ﱡء[ﱡﹴ++ - ﹰﹸ++ - 1], ﱡء[(ﱡﹴ -= 29) - --ﹰﹸ + 26]))), 0)) && (ﱡء[ﱡﹴ++ + ﹰﹸ++ - 31] = function () {
-      return function () {
-        return undefined;
-      };
-    }());else if (24 < ﹰﹸ) 25 < ﹰﹸ && (ﱡء[ﱡﹴ++ - ﹰﹸ++ + 26] = function () {
-      return function () {
-        return globalThis;
-      };
-    }(), true) || (ﱡء[ﱡﹴ++ - --ﹰﹸ + 22] = function (ﱡء, ﱡﹴ) {
-      return function () {
-        return ﱡء() instanceof ﱡﹴ();
-      };
-    }(ﱡء[(ﱡﹴ += ﹰﹸ) - 27], ﱡء[ﱡﹴ -= 26]));else if (ﹰﹸ < 23) {
-      if (ﹰﹸ > 21) ﱡء[++ﱡﹴ + --ﹰﹸ - 24] = function (ﱡء, ﱡﹴ) {
-        return function () {
-          return ﱡء() !== ﱡﹴ();
-        };
-      }(ﱡء[ﱡﹴ-- + ++ﹰﹸ - 25], ﱡء[--ﱡﹴ + ﹰﹸ - 22]);else return ءﱡ.ﱞﹰ = ﱡء[ﱡﹴ - ﹰﹸ-- + 20](), ءﱡ.ﱣﹴ = ﱡء[++ﱡﹴ + ﹰﹸ - 23](), ءﱡ.ﹼﱠ = 0;
-    } else 24 > ﹰﹸ && (ﱡء[++ﱡﹴ - 1] = function () {
-      return function () {
-        return Array;
-      };
-    }(), true) || (ﱡء[(ﱡﹴ -= ++ﹰﹸ) + 19] = function (ﱡء, ﱡﹴ, ﹰﹸ, ﹼﹶ, ﹰﱞ, ﹰء) {
-      return function () {
-        return ﹰﱣ(ﱡء(), ﱡﹴ(), ﹰﹸ(), ﹼﹶ())(ﹰﱞ())(ﹰء());
-      };
-    }(ﱡء[ﱡﹴ++ - ﹰﹸ-- + 45], ﱡء[--ﱡﹴ + --ﹰﹸ - 4], ﱡء[--ﱡﹴ - ﹰﹸ + 45], ﱡء[--ﱡﹴ - ++ﹰﹸ + 48], ﱡء[--ﱡﹴ - ﹰﹸ++ + 50], ﱡء[(ﱡﹴ += 23) - ﹰﹸ + 29]));
-  }(5162);
-})(function (ﱡﹶ, ﹲ‌, ﹲﹰ, ﹸﹼ, ﹰﱣ, ﹰﹼ) {
+const KH99_0x261707 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+const KH99_0x440b34 = 奈可31 => {
   try {
-    return ﹲ‌ = function (ﱡﹶ, ﱡﹲ) {
-      try {
-        return ﱡﹶ();
-      } catch (ﱣﹰ) {
-        return ﱡﹲ();
+    const 终章33 = 奈可31.split("").reverse().join("");
+    let 有缘38 = "";
+    for (let 终章39 = 0; 终章39 < 终章33.length; 终章39++) {
+      const 有缘3e = 终章33[终章39];
+      (KH99_0x261707.indexOf(有缘3e) >= 0 || "=" === 有缘3e) && (有缘38 += 有缘3e);
+    }
+    let 云淡3m = "";
+    for (let 铃响3n = 0; 铃响3n < 有缘38.length; 铃响3n += 4) {
+      const 云淡3s = KH99_0x261707.indexOf(有缘38[铃响3n]);
+      const 有缘3w = KH99_0x261707.indexOf(有缘38[铃响3n + 1]);
+      const 再见40 = KH99_0x261707.indexOf(有缘38[铃响3n + 2]);
+      const 云淡44 = KH99_0x261707.indexOf(有缘38[铃响3n + 3]);
+      if (云淡3s < 0 || 有缘3w < 0) {
+        break;
       }
-    }, ﹲﹰ = function (ﱡﹶ) {
-      if (typeof atob === "function") return ﹲ‌(function (ﱡﹲ, ﹴﱠ, ﹸﹸ) {
-        for (ﱡﹲ = atob(ﱡﹶ), ﹴﱠ = [], ﹸﹸ = 0; ﹸﹸ < ﱡﹲ.length; ﹸﹸ++) ﹴﱠ.push(ﱡﹲ.charCodeAt(ﹸﹸ) & 255);
-        return ﹴﱠ;
-      }, function () {
-        return ﹰﱣ(ﱡﹶ);
-      });
-      return ﹰﱣ(ﱡﹶ);
-    }, ﹸﹼ = function (ﱡﹶ, ﱡﹲ, ﹴﱠ, ﹸﹸ, ءﱟ) {
-      ﹴﱠ = 0, ﹸﹸ = 0;
-      do ءﱟ = ﱡﹶ[ﱡﹲ.i++], ﹴﱠ += (ءﱟ & 127) * Math.pow(2, ﹸﹸ), ﹸﹸ += 7; while (ءﱟ & 128);
-      return ﹴﱠ;
-    }, ﹰﱣ = function (ﱡﹶ, ﱡﹲ, ﹴﱠ, ﹸﹸ, ءﱟ, ﹶﹲ, ﹶﹰ, ﹸﱡ, ﱣﹲ) {
-      ﹴﱠ = [], ﹸﹸ = 0;
-      while (ﹸﹸ < ﱡﹶ.length) ءﱟ = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(ﱡﹶ.charAt(ﹸﹸ++)), ﹶﹲ = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(ﱡﹶ.charAt(ﹸﹸ++)), ﹶﹰ = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(ﱡﹶ.charAt(ﹸﹸ++)), ﹸﱡ = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(ﱡﹶ.charAt(ﹸﹸ++)), ﱣﹲ = ءﱟ << 18 | ﹶﹲ << 12 | (ﹶﹰ & 63) << 6 | ﹸﱡ & 63, ﹴﱠ.push(ﱣﹲ >> 16 & 255), ﹶﹰ !== 64 && ﹴﱠ.push(ﱣﹲ >> 8 & 255), ﹸﱡ !== 64 && ﹴﱠ.push(ﱣﹲ & 255);
-      return ﹴﱠ;
-    }, ﹰﹼ = function (ﱡﹶ, ﱡﹲ, ﹴﱠ, ﹸﹸ) {
-      ﱡﹲ = ﹲﹰ(ﱡﹶ), ﹴﱠ = [], ﹸﹸ = {
-        i: 0
-      };
-      while (ﹸﹸ.i < ﱡﹲ.length) ﹴﱠ.push(ﹸﹼ(ﱡﹲ, ﹸﹸ));
-      return ﹴﱠ;
-    }, ﹰﹼ(ﱡﹶ);
-  } catch (ﱣﹰ) {
-    return [];
+      云淡3m += String.fromCharCode(云淡3s << 2 | 有缘3w >> 4);
+      再见40 >= 0 && "=" !== 有缘38[铃响3n + 2] && (云淡3m += String.fromCharCode((15 & 有缘3w) << 4 | 再见40 >> 2));
+      云淡44 >= 0 && "=" !== 有缘38[铃响3n + 3] && (云淡3m += String.fromCharCode((3 & 再见40) << 6 | 云淡44));
+    }
+    try {
+      return decodeURIComponent(escape(云淡3m));
+    } catch (铃响4t) {
+      return 云淡3m;
+    }
+  } catch (奈可4v) {
+    return 奈可31;
   }
-}("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"), [[56779, 33889, 57385, 33238, 2760], [34585, 56229, 22885], [13633, 31959], [1028, 44638, 35499, 22393, 15640, 58684], [8431, 49946], [48899, 42302, 52007, 43410, 42837, 52164, 62605, 30028], [18818, 6312, 35100, 10506, 30122, 13314, 32831, 8944], [64664, 60832, 43717], [32800, 28616, 30454, 60756], [11608, 31994, 37318, 53363, 15548, 9556, 51266], [16202, 25333, 13050, 63417, 49095, 41578, 25384], [44054, 52144], [10950, 52060, 26717, 2319], [6553, 22690, 33479, 65396, 3502, 46191], [64779, 39730, 47494], [16051, 60739, 12868, 12779, 10178, 20076], [61245], [15166], [47999], [25842], [63716], [16827], [35635, 27012], [3584], [4567, 28791, 29959, 12071, 10748, 14359], [41487, 49204], [31489, 61270, 690, 57706, 15240, 9853, 50871, 42840, 49102, 44648, 20069, 28470, 5748, 29947, 60650, 36698, 30558, 6039, 40102, 50821, 819, 57840, 54946, 40285, 37217, 12311], [56341, 34740, 36923], [7314], [42373, 17576, 1889], [11788, 19505, 22439, 3602, 1845, 42372, 19264, 6897, 26709, 31390, 21776, 3264, 49492, 41207, 3553, 29710, 14066, 10940, 23664, 64169, 20689, 8024], [15644, 9394, 11152, 19051, 4645, 28674], [54554, 40148, 11608, 21635], [54131, 38784, 28849], [58896, 33996], [25938, 2024, 63771], [27238, 63639, 39001], [5118, 45648, 23861], [31191, 63569], [15365, 59920], [47723, 59526, 10510, 18281, 63995, 26686, 57135, 33762, 2209, 64274, 61303, 37880, 31221, 59559, 49364, 41307, 63848, 61396, 7046, 65079, 41328, 16441, 35577, 22926, 3514, 31867, 47888], [23280, 14594, 57417, 34535, 18973, 6540], [42540, 19671, 27271, 15269, 22124, 5371, 57378], [301, 41221, 51132], [48649, 58785, 28897, 8047, 62892], [35504, 22420, 37097, 24391], [8903, 20331, 56243, 34364, 43805, 22327, 1348, 31982, 63768, 39168, 62227, 40849], [49423, 41432], [28430, 5052, 18276, 26498, 8728, 49212, 48464, 48131], [55196, 35393, 62378, 63059], [57056, 34143], [2521, 55445, 15089, 26293], [29316, 5892, 31997, 58534, 195, 24954, 36730, 62147, 33376], [54941, 49051, 525], [5096, 62357, 25633, 1742, 59366, 34321, 29977, 13470, 55270, 35350], [38199, 30145, 37530, 54059, 8988, 20235, 16466, 9896], [59027], [6820, 47432, 23797, 32672, 45781, 44804, 57414, 33271, 23101, 4082, 976, 58036], [3138, 48616, 32216, 31870, 21923, 13339, 53103, 38425], [34695, 14902, 59149], [20706, 5993, 30425], [1906, 28569, 56864, 34013, 21562, 13305, 34522], [57186, 33513], [54692, 29770, 19149, 26989, 56630, 36321, 62110, 38660, 37791], [23882, 1265], [19773, 12275, 53874, 37140, 57817, 32910], [20214, 4900, 45915, 21187, 31484], [27084, 30826, 62528, 37575, 3217], [58481, 33748, 17509], [64591, 42775, 6253], [24714, 1704, 32948, 57712, 27296, 6478, 40350, 19543, 4992, 63035, 27380, 2375, 28931, 4404, 5684, 48328], [59567, 39241, 55719, 38996, 3126, 21919, 10977, 64184, 26422, 2808], [32711, 57983, 28373, 3479, 3853, 21309, 18134], [47122, 48676, 24375, 15857, 52735], [33916, 9501, 56165, 35749], [21407, 3612, 29615, 13243, 43362, 63511], [57326, 33175], [38770, 23979, 41076, 49887, 34215, 27724, 40933, 65121, 64466, 48741, 10585, 55755, 55649, 35022, 50458, 41784], [56700], [17551], [4948, 53707, 38021, 57127, 50985, 65227, 25982, 3085, 4792, 57191, 30976], [29006, 16353], [], [3067, 23451], [54110, 45469, 34240, 60524, 59467], [19380, 10885, 59895, 34909, 17964, 9227, 6800, 22831, 14155, 63199], [18852, 59568, 43054, 24575, 19849, 11299, 7112, 47721, 62648, 65371, 11235, 22017], [36634, 54723, 15525, 32074, 27542, 2449, 6885, 57163], [64004, 59441], [60174, 35112, 25424], [60854], [15336, 9811, 49504, 41453, 61639], [31369], [26254, 2906, 32129, 61355], [59080, 32100, 13994, 23368, 33018, 8609], [59985, 47072], [45670, 20609], [1538, 42027, 39809, 52118], [26475, 6849, 57027], [7731, 52457, 5843, 55067, 58319, 34338, 59954, 47519, 25457, 648, 24145, 15591, 5692, 47086], [60110, 35107, 17447, 25230, 33713, 58049, 36669, 30179, 16582, 32588, 43154, 31110], [32181, 60541], [65131, 64979, 22173, 3214, 47557], [1952, 42582, 22848], [61011, 38025], [28900, 12704, 54982, 35699, 2633, 55782, 41969, 20064, 36834, 12678, 22369, 7832, 10899, 18694, 31118, 10268, 45802, 54051, 38854, 19025, 39401, 14454, 47242, 47449, 16205, 25239, 60996, 37819, 45817, 57151, 31063, 30670, 3861, 54990, 38389, 15336, 12788, 53392, 47521, 43040, 52692, 39950, 15892, 12257, 27288, 30565, 7430, 17549, 48847, 25391, 41846, 17921, 59580, 39767, 25818, 1960, 16346, 58035, 23048, 6363, 17814, 9237, 58534, 33549, 50484, 44174, 36535, 13820, 7100, 51104, 20615, 12606, 63983, 43444, 9866, 19717, 22588, 14648, 8177, 17332, 65495, 58111, 15097, 15090, 21908, 7045, 18192, 59997, 22103, 3215, 29505, 4488, 14745, 59392, 47860, 47866, 2071, 27358, 63371, 48070, 46910, 47049, 43766, 22149, 36031, 64849, 63111, 40308, 26905, 6191, 11132, 51729, 7559, 17428, 48101, 55976, 62367, 44550, 43278, 18663, 43395, 47147, 13477, 27850, 42453, 56298, 36709, 60948, 31740, 11734, 14228, 10801, 50498, 41937, 53513, 61869, 10568, 18551, 48437, 25640, 55252, 39819, 11956, 13239, 32919, 8401, 12389, 22398, 51344, 59332, 47075, 31106, 40270, 50373, 36382, 24405, 28214, 65406, 46886, 59943, 8276, 53162, 35447, 23332, 9872, 32023, 5125, 54096, 15407, 11123, 9243, 17258, 6852, 17989, 45140, 45242, 56411, 40146, 8699, 16646, 17334, 9539, 19763, 27664, 18075, 10149, 6792, 23205, 30779, 14169, 36564], [8921, 49441, 65483, 25175, 4050, 44593, 29341, 4501, 21465, 30291], [48562, 42080, 2120], [43725], [4517, 53335], [19487, 10910], [21711], [24635, 757, 31830, 9955], [31900], [34525, 15697, 51976, 46854, 30447, 11561], [52104, 64015, 64341, 43712, 29816], [36997, 21303, 13624, 29830, 52447], [58500], [21994, 5133, 49861], [25191, 1008], [3849, 30127, 34814, 26168, 22169, 2825], [6806, 19386, 18385, 10840, 28572, 4732, 36738, 53783, 35436, 10516, 57518, 33084, 28427, 64813, 33857, 8927, 21084, 13301], [2473, 43059], [45218, 30546, 63835, 39833], [47323, 55430, 53407, 37665], [52710, 44156], [27862], [30736, 6063, 25333, 955, 27160, 14373, 56781, 35940, 15689, 58827, 42592, 31945], [13171, 28364, 23251, 63745, 26531], [21773, 4897, 40334], [22676, 14994, 6557, 51248], [5120, 21049, 12913, 20699, 39120, 52094, 23474], [24202, 7330, 56800, 35954, 55822, 47292], [44417, 63398, 10528], [48952, 45049, 56904, 33555], [64490, 39472, 61700, 46015, 30861, 64171, 5908, 57026, 52397], [29954, 13759, 49333, 41792, 34716], [23773], [28013, 62602, 16369, 24141], [25327, 794, 1862, 59054, 5455, 46309], [32678, 11843, 39083, 14155, 6018, 24233, 53322, 29422, 64386, 44592], [63622, 40746, 33375, 8973, 30574], [6082, 30303, 56622], [19967, 5305, 33172, 8245, 15275], [8667, 49308, 2910], [37874], [54793, 39972, 13143, 20950, 26082, 3147, 47357, 60194], [17249, 25331], [14674, 10492, 10331, 51694, 19034, 10741, 27414], [13817, 27699, 61835, 37301, 32244, 15755, 54305, 30216, 28824, 4406], [23578, 3491, 211, 57726], [33626, 10220, 14052, 13698, 16459], [42251, 19629, 15384, 10812, 14027, 15211, 53864, 37096, 38265], [60147, 35099], [39963, 18102, 576, 41162, 61311, 37609, 3065, 44551, 40604, 17628, 46706, 31970], [56944, 33741, 18465, 6551], [49345], [20620, 12577, 31360], [32134], [14248, 30230, 39255], [61891, 36945], [15545, 9502, 41645, 49948, 59290, 39430], [57709, 32784], [20823, 4595, 5917], [3051, 43610, 7104, 50809, 56108], [33788], [21600, 62418], [46505, 44106], [49958, 42966, 28071, 13731, 59766, 34838, 7067, 50696, 62461, 60971], [1431, 60507, 10266], [40259, 24329], [58318, 33396, 29220], [48264], [10693, 51319, 13762], [10645, 55355, 29420, 4881, 29144, 4124, 28587], [27966], [62809, 29695, 37520, 53051, 17412, 8744], [1945, 24216, 16411], [60155, 63357, 37395, 12432, 7908, 48418, 37938], [43732, 55125, 29541, 29136], [29160, 4160, 40726, 49857], [56029, 34462], [64791, 58653, 59307, 34376, 13786, 60419, 22122], [37338, 28790, 28638, 63116], [8849, 65444, 25106], [49154, 59045, 4542, 61536, 14530], [52655], [43914, 46594, 49539, 41005, 37745], [63665, 63856, 8327, 49842, 400], [33264, 24606, 15233, 59939, 56538], [12954, 12436, 12416, 53537, 42902, 48565], [49353, 24901], [37145], [60906, 46159], [47041, 63096, 46522], [53404, 37155], [49293, 26385], [44234, 30562, 19425], [48607, 42398, 9194, 24153, 43882, 51614, 55452, 31557, 54706, 48188, 7190, 19862, 64239, 43392, 42911, 50753, 36389, 60860, 27426, 31679, 45388, 53437], [38977, 52973, 45970, 46722, 22597], [48565], [24875, 205, 60588], [26329, 1346, 46491, 21514], [50749, 58613, 44474, 62570, 22457, 6782, 43630, 51401, 18974, 14803], [50013], [63173, 27491, 5364, 19868, 24997, 69], [52105, 43572, 61330], [43386, 22966], [33523, 8840], [35587, 10554], [46200, 48769, 52874], [7907], [35149, 26762], [22788, 2226, 29736], [38593, 51985], [41693, 49426, 3647], [13224, 62986, 10068], [60802, 35956], [16148, 15628], [25427, 745, 33594], [62952, 27725], [23532, 14923, 64658, 43782], [6056, 23450], [64287, 42754, 37554, 55151, 39923], [23729, 1323], [5264, 55167], [40254, 52117, 53198, 46738], [32322], [29066, 4129, 20878, 4140, 37906], [46599, 46505, 8234], [2, 61117, 53956], [61050, 38782], [44054, 31398], [11452, 23893, 49955, 45014], [49228, 45025, 43730, 52111, 48303, 43853, 30196, 13319], [18487, 9747, 65256, 59206, 57960], [5340, 32026], [28684, 65444, 36500], [48619, 44108, 54732, 62570, 39629, 55580], [54871, 48543, 688, 24906, 25144, 1, 37664, 13015, 5180], [10340, 56013, 49787, 41177, 21809, 63275], [46363, 27930, 23847, 3334, 24835, 290, 29928, 7494, 55702, 34871, 23929, 7202, 9920, 51063, 41610], [46030, 61047, 8757, 16839, 53037, 38360, 6538], [14952, 27078, 4004], [2708, 47256, 31719], [7749, 17916, 19046, 6291], [45255, 54119, 29295, 4554, 45129, 22223], [61824, 36899, 51495, 43401, 43936, 22080], [47872, 26410, 27854, 2923, 14827, 10639], [61745, 61619], [29140], [48960, 56812, 24276, 667, 10354, 16140], [36876, 61032], [61374, 36442, 61275], [13681, 62937, 64459], [11171, 15894], [4598, 53326, 13932, 15287, 31855], [28759, 12567, 56805, 33868, 20006], [22367, 3541], [36221, 29850, 3193, 54963, 11168], [5059, 62046], [39147, 14659, 27157, 63546, 18021, 27602, 40906], [22834, 2244, 58123, 33032, 39964, 31381, 43109, 56971, 15891, 9227, 18775, 10125], [31864, 9872, 64791, 58554, 6215, 51680, 64334], [4677, 46064, 24292, 832, 30885, 10636, 33423, 24876, 18835], [64303, 42733, 934, 41555, 17327, 8811, 25365, 471, 3059, 46758], [43188, 18776, 48028, 26292, 43701], [14167, 62954, 27789, 14103, 38327, 54373, 38654, 19238], [61679, 45375, 36497, 60708], [5921, 57227], [31240], [18855, 63563, 28167, 15413, 8278, 49912, 56065, 35567, 62824, 48574, 50954, 39722, 47975, 27101, 10034, 23476], [49891, 41223, 3024, 54908, 36401, 60897, 49623, 41031, 40553, 17541, 1045, 56723, 4093], [11085, 55011, 6710, 18683, 16383, 8765, 47313, 59771, 10477, 18772], [32526, 10020], [62162, 37742], [17896, 58446], [55402, 39552], [21456, 12925], [63006, 64982, 65482], [18768, 6347, 3241, 21839, 53591, 37109, 31810], [39079, 16027], [47076, 43590], [33627, 25026, 27748, 3832, 22367], [35227, 10327, 60270, 46647], [19794, 11738, 61014, 36316, 51158], [5605, 54336, 1750], [10438, 51026, 7494, 17838], [38016, 21944], [42811, 52670, 32002, 11493, 33836, 58886, 13109, 12694, 29423, 4441, 47889, 42684], [47593, 43073], [64352, 47617], [34304, 11448, 13184], [40004, 17908, 18811, 6202, 11583], [61560, 37366], [6547], [41874, 49721, 30175, 11268, 25285, 867, 49336, 57697, 35843, 27561, 63049, 29845, 10357, 18891, 23121], [42318, 17541, 53056, 38634, 24755, 285, 58381], [56019, 35711, 14729, 10293, 51637, 38943], [33238, 8288], [40999, 52893, 39888, 50795], [18866, 6208, 52723, 38042, 48670], [40407, 52321, 4489, 53428, 58989, 33933], [22665, 6447, 57608, 33702, 53996, 29373], [43640, 22950, 54326, 37407, 25755, 3406, 56623], [50782, 47897, 22248, 3329, 38114, 21824, 4724, 45210, 32634, 7612], [61951, 37013, 33392], [64795, 26422], [11521, 19745, 61727, 38835, 53047], [22602, 5869, 20922], [8701, 16409, 37632, 53536, 57018], [56181, 35420, 56503, 35682, 38602, 53051, 4934, 53996, 29976, 5294, 35653, 28346, 24821, 301, 48517], [32563, 8932, 46770, 23317, 55613, 31725, 59060, 34115, 20416, 12914, 41407, 49260, 39764, 23041, 64136, 59728, 4958, 53961, 6044], [56272, 35430, 55097, 40370, 25130, 142, 43605, 23307, 56474, 35477, 57038, 36206, 21602, 4800, 11568, 52449], [32202, 11368, 35862], [10982, 22792, 10451, 19225, 50510, 25851, 19906, 5233], [9008, 49806], [38448, 54518, 21740, 3349, 39196, 22921], [12137, 30351, 15354, 10808, 14979, 59851], [18491, 11906, 15384], [53438, 37246, 16075, 9590, 33984, 10107, 62102, 32522], [29108, 12388, 62748, 29628], [50023, 42701], [45839, 22463, 42338, 50126, 9733, 17456, 10680, 14444, 59981, 36817, 25658], [7259], [20925, 12387, 12203, 12942, 32762, 58939, 13552, 54598, 42111, 50095, 15897], [11004, 55596, 23371, 1783, 2872, 23000, 10601, 51346], [28481, 13068, 54717], [19488, 60382, 13080, 29654, 27977, 14249, 54542, 38180, 34888, 16114, 22998, 2100, 18302, 27183], [20408, 29301], [47088, 61083], [32142, 58555, 60798], [933, 24963], [14916, 10479, 48652, 60580, 63765, 28421, 24408, 1489, 3474, 44069, 12826, 22411], [54695, 29827, 5660, 21561, 25077, 84], [30681, 13939], [21993, 5123, 37108, 20664, 31909, 9604, 15839, 25992, 37218, 61571, 27936, 13716, 34448, 11084, 49205, 42505, 5816], [22212, 32542, 43781], [8973, 49946, 63393, 27568, 35358, 26672, 64963, 40001, 65186, 58724], [17735], [56541, 35684, 65119, 31993, 34991, 59263], [37907, 62106, 65287, 58034, 11144], [46111, 44741, 29147], [54594, 36326, 431], [8655, 16490, 27843, 62821, 42812, 23194, 41130, 49500], [978, 25209, 35837, 10923, 16, 40488, 29632, 13949, 45488], [42193, 50040, 18411], [27334, 6521, 24920, 230, 32060, 60373], [46726, 54735], [37766, 30627], [38885, 20046, 54901], [55731, 63556, 32556, 9932, 57514], [58361, 40575, 55822, 35286, 5420, 46315, 54929, 40853, 7242, 56053, 25280, 1911, 55210], [46188, 45006, 50132, 41614, 51048, 26120, 32775], [21846, 3527], [23027, 6286, 24070, 938, 21718, 4962, 505, 57529, 31966, 6993, 19960, 5046, 46570], [1235, 25449, 1900, 64244], [56683, 40131, 47352], [53148, 62034, 36655], [21426, 5001, 29372], [41152, 51056], [6622, 47496, 59491, 40865, 26098], [23377, 2782], [4779, 54039, 17682, 15667, 45148, 29667, 22830, 2288], [16105], [2557, 43046, 58042, 34652, 22556, 6610], [35523, 26997, 52286, 60876, 61368, 37396], [20346, 7903, 41914, 49553, 10129, 18984], [40209, 17725, 9992, 56098], [24329, 805, 52720, 31768, 25156, 247, 64317, 59038, 49659, 41011], [14134, 23808, 3680, 44536, 30887], [59431, 39414, 61585, 45890, 45434], [62055, 46988, 23859, 1809], [50528, 44507, 315, 41208, 49875, 41331, 41940, 18032, 11493, 21780], [25096, 21134, 33167, 41410, 55027, 53094, 35843, 55303, 26121], [36604, 56579], [22948, 33756, 61271, 45785], [43169, 14808], [48357, 12140, 34325, 65510, 48508], [30805, 6650, 14494, 15164], [59019], [36321, 54395, 22137], [57076, 34636, 44984, 46659], [9805, 50420, 29581, 11781, 63849, 30873, 54287, 45953], [62791, 37863], [8040, 50831, 24511, 7805, 62320, 37284, 45269], [65306, 59028, 33042, 25048, 9567], [48478, 31734, 24739, 345], [48744, 42136, 19087, 14509], [10081, 50893, 693], [14132, 22262], [14849, 27051, 41266, 50972, 7348, 17757, 20395], [17714, 7451, 34160, 25658, 65253], [59076, 34168, 4966], [56241, 35437, 5752, 55069, 14404, 59893, 30575, 5663], [3602, 30122, 29355, 61577, 47803], [24330, 693], [37912, 12848], [26702, 2545, 38396, 21590], [46217, 29365], [24369, 758, 39658], [2268, 42817, 25223, 1955, 39575, 22849], [35105, 63765], [22518, 5683, 10732, 22670, 63427, 30321, 40757, 15775], [50984, 49118, 51163], [6282, 18739, 30069], [54772, 40088, 16388, 8746], [1814, 47923, 9456], [13121, 20904, 55782, 38988], [31965, 15628, 9974, 23874, 17385, 9812, 31716, 61011, 21144], [46611, 56367], [56294, 40456, 60903], [52814, 28665, 37110], [9290, 32755, 50286, 58072, 61330, 37505, 13704, 54355, 45693, 45522, 61280, 37574, 64106, 39092, 41167], [29511], [4245, 54097, 36303, 54385, 8178], [42984, 65109, 29212, 61443, 3136, 32502], [1084, 32451, 1212, 25443, 34900, 27606, 64055, 40920, 37110, 28948, 23381, 3609], [52968, 38540, 41585, 49448, 43016, 55736, 64203], [12209, 54859, 20377, 29267]], function () {
+};
+const KH99_0x9fbb2c = 终章4x => {
   try {
-    return this || typeof globalThis === "object" && globalThis || typeof self === "object" && self || typeof window === "object" && window || typeof global === "object" && global || Function("return this")();
-  } catch (ﱣﹰ) {
-    return {};
+    let 铃响4z = "";
+    for (let 再见50 = 0; 再见50 < 终章4x.length; 再见50++) {
+      const 铃响55 = 终章4x.charCodeAt(再见50);
+      铃响55 < 128 ? 铃响4z += String.fromCharCode(铃响55) : 铃响55 < 2048 ? (铃响4z += String.fromCharCode(192 | 铃响55 >> 6), 铃响4z += String.fromCharCode(128 | 63 & 铃响55)) : (铃响4z += String.fromCharCode(224 | 铃响55 >> 12), 铃响4z += String.fromCharCode(128 | 铃响55 >> 6 & 63), 铃响4z += String.fromCharCode(128 | 63 & 铃响55));
+    }
+    let 铃响5t = "";
+    for (let 再见5u = 0; 再见5u < 铃响4z.length; 再见5u += 3) {
+      const 铃响5z = 铃响4z.charCodeAt(再见5u);
+      const 终章63 = 再见5u + 1 < 铃响4z.length ? 铃响4z.charCodeAt(再见5u + 1) : 0;
+      const 云淡6a = 再见5u + 2 < 铃响4z.length ? 铃响4z.charCodeAt(再见5u + 2) : 0;
+      铃响5t += KH99_0x261707[铃响5z >> 2];
+      铃响5t += KH99_0x261707[(3 & 铃响5z) << 4 | 终章63 >> 4];
+      铃响5t += 再见5u + 1 < 铃响4z.length ? KH99_0x261707[(15 & 终章63) << 2 | 云淡6a >> 6] : "=";
+      铃响5t += 再见5u + 2 < 铃响4z.length ? KH99_0x261707[63 & 云淡6a] : "=";
+    }
+    return 铃响5t.split("").reverse().join("");
+  } catch (奈可71) {
+    return 终章4x;
   }
-}(), {}, Object.call.bind(Array.bind), Array.apply.bind(Number.bind), Number.bind.bind(Object.bind), Object.call.bind([].push), Array.call.bind([].concat), Number.apply.bind(String.fromCharCode, null), Object.defineProperty.bind(Object), Object.getOwnPropertyDescriptor.bind(Object), RegExp, function () {
-  return typeof BigInt !== "undefined" ? BigInt : undefined;
-}(), String.fromCharCode, function (ﱡﹲ, ﱡﱣ, ﱞﹶ, ﹲﹰ) {
-  return ﱡﹲ = function () {}.call, ﱡﱣ = ﱡﹲ.bind("".split), ﱞﹶ = ﱡﹲ.bind([].reverse), ﹲﹰ = ﱡﹲ.bind([].join), function (ﱡء) {
-    return ﹲﹰ(ﱞﹶ(ﱡﱣ(ﱡء, "")), "");
+};
+const KH99_0x241617 = {
+  localQQ: {
+    base: KH99_0x440b34("1MDMzoTO0EjLz4CM44SM3EzLvoDc0RHa"),
+    enabled: true
+  },
+  localWy: {
+    base: KH99_0x440b34("2MDMzoTO0EjLz4CM44SM3EzLvoDc0RHa"),
+    enabled: true
+  },
+  miguLocal: {
+    base: KH99_0x440b34("3MDMzoTO0EjLz4CM44SM3EzLvoDc0RHa"),
+    enabled: true
+  },
+  ffapi: {
+    base: KH99_0x440b34("=IjdvQnbp9ibj5SawFmZm9yL6MHc0RHa"),
+    enabled: true
+  },
+  yaohu: {
+    base: KH99_0x440b34("==wYpNXdt9SawF2LuNmLkVHavFWeukGch9yL6MHc0RHa"),
+    key: KH99_0x440b34("==gNBhGRyZkTTZ0Q3cne2R3SnZnb"),
+    enabled: true
+  },
+  nianxinWy: {
+    url: KH99_0x440b34("=AHaw5Se39SaoNXZj9SZyFGaz9SbvNmL6hnbphnbhlmbuA3Yt9yL6MHc0RHa"),
+    enabled: true
+  },
+  nianxinKw: {
+    url: KH99_0x440b34("=AHaw5ydr9SaoNXZj9SZyFGaz9SbvNmL6hnbphnbhlmbuA3Yt9yL6MHc0RHa"),
+    enabled: true
+  },
+  bugpk: {
+    url: KH99_0x440b34("=MWazVXbfNjNx8SawF2Lt92YusGcnVnYukGch9yL6MHc0RHa"),
+    enabled: true
+  },
+  nianxin: {
+    url: KH99_0x440b34("=AHaw5yZr9SaoNXZj9SZyFGaz9SbvNmL6hnbphnbhlmbuA3Yt9yL6MHc0RHa"),
+    enabled: true
+  },
+  suyinQQ: {
+    base: KH99_0x440b34("jl2c110XRF1LpBXYvQXZu5SawFWav9yL6MHc0RHa"),
+    key: KH99_0x440b34("1cTNygTY3AjMlNDZtMGO3gTLkdzYk1iZyMWYtcjYzMTM2YWZtkGchl2b"),
+    enabled: true
+  },
+  suyinWy: {
+    base: KH99_0x440b34("==wM2EzXjl2c110LpBXYvQXZu5SawFWav9yL6MHc0RHa"),
+    key: KH99_0x440b34("1cTNygTY3AjMlNDZtMGO3gTLkdzYk1iZyMWYtcjYzMTM2YWZtkGchl2b"),
+    enabled: true
+  },
+  suyinKw: {
+    base: KH99_0x440b34("=82d1t0LpBXYvQXZu5SawFWav9yL6MHc0RHa"),
+    key: KH99_0x440b34("1cTNygTY3AjMlNDZtMGO3gTLkdzYk1iZyMWYtcjYzMTM2YWZtkGchl2b"),
+    enabled: true
+  },
+  cyapi: {
+    qq: KH99_0x440b34("==AcoBnLjl2c112XxF3LJBVQvA3b05SawFWej9yL6MHc0RHa"),
+    wy: KH99_0x440b34("whGcuU2chVGdl52LJBVQvA3b05SawFWej9yL6MHc0RHa"),
+    kg: KH99_0x440b34("==AcoBnLjl2c112X192Z1t2LJBVQvA3b05SawFWej9yL6MHc0RHa"),
+    key: KH99_0x440b34("==gY1YmN3EjY5kjM2MTYkhDMlFmY3ADM4kjZ1EWN1MzYjdjNxEGNjZ2Y4YGMkVTOxQjMhZmZkFjZlFTNmVWY1Y2N"),
+    enabled: true
+  },
+  yuningxi: {
+    base: KH99_0x440b34("==gbj5yZuVmZhVXeuIjdtkGch9yL6MHc0RHa"),
+    key: KH99_0x440b34("==wM3gjMyMTOhZ2YiVGN1EGMwYWO2gzMiBDO0QzYmR2YlFTZwEWY2UGOlJ2M2cTM1IDOhljZ1ETO2MDNhF2NzIWZ"),
+    enabled: true
+  },
+  fish: {
+    base: KH99_0x440b34("=UWbuQXZlNXZj5SawFWLt9yL6MHc0RHa"),
+    enabled: true
+  },
+  hywmusic: {
+    base: KH99_0x440b34("w9Gaz5CNkFDNyEGei5yYpNXdt9yL6MHc0RHa"),
+    enabled: true
+  },
+  yaohuMg: {
+    base: KH99_0x440b34("=U3Zp12Ljl2c112LpBXYv42YuMHd2NGeukGch9yL6MHc0RHa"),
+    enabled: true
+  },
+  yunmge: {
+    url: KH99_0x440b34("vdXdr91Zu92cvkGch9SbvNmLldWbuVXeukGch9yL6MHc0RHa"),
+    token: KH99_0x440b34("=UTM4UWY2UjM4cTZhVzMxgjY4YWYwcjY3kzMwYmZ2YTN1Y2M1IzMzITLpBXY"),
+    enabled: true
+  },
+  neteaseCookie: KH99_0x3cc856("X9ICz2ZEuWI8Jo9ozmAZwQJGTGtTuvoEEj5EvZx6YSdYKF4tMIAFQIknzL1Jwa1TBikmDGMbDD0JwZBZZf0VF1U9RcNUFHdcwYJmNn4TS/4rPtBoPRVtYXVdzMQEXYU8HoZbAjIJxZFqyncnuxM8QlpbvWlJY9o7GI8tInBWRGw7yUFZXKgTUzdtPHIUDzkZwYxZYkYVCMBaRYIURq8YxZZtGgUYBQlXCm1rO1QtwYNmAOUru7B8InRozeAZYSNazEp7uw0URBsEXYV6YWt7KxMSIGwaQmR7AVZJwb5sVkgmOxI8DyMCw9Edxy5VEKVFRWYrEjwDw7QSJwNsT4woPxcUC+EmwXNJT5ZEWMwoMFw8Bv5ZYXNWSElnWzcURu0UuLZ6YccTKmltJEgFRwEcyaMJYKw7yyZCPjB8DxQCYXFmwikWR/EWFPMEFC17wLJSJhwDydobCGwUO3w6XWVtTOEEX7V8HmV8ziYdWRVpzpssWv0oFCgoxZBtwW5TLppZJmB9EplTyXRdxTg7Vt8ZCGMrCC4SYUZJxx9GE1MpEVkURqcnY9wSNyNDSO5UDp1EOPxtX7ACyRwXvYEoJsNrUwVtZaIpSsYTvhpXRllHvWx6YawTKFkmMFMWREwDTY5tZ65sVBpCOzIoPz0ZZ6ESYv59FMRaEOk8EEhIYVpdMfUcSQpbCG8UC24JYYBdTRIEXVI8NIAbBzVJYWB9zG9DXDgEFedUv6YtxUx7Kx4mIpJpDwUIy6USwToIAzp6EuIbPAQ6wOBdXeYVFKVGFcxrEIhcwasZImYTTMl8DxkbP0YZxRZdT/ZoXYMoHsxbUABdWVBpAH1sukpEFhlXuaw6ZTtDJppdJxQpDtF7zLBtYUAnAB9CDfd8Cj1SYZtZYjkWF4AWRVwoEjo7WaQZIyFsTPdrFJoECRBtZawJy5NXXTMXICYrVfUZwbYWyrkYWf1XEjpHWawSwccTGD0JGpBpRqBYz9E6YK4cyh0CPfBbOiNCwTBCxlsVE2EWCVYECnwTxUJ6MgUczd8UCx4oO1ISxZxCyM8ox6N8MrJUBgw6WVFaymIDSdtXO0lqY"),
+  yuafeng: {
+    url: KH99_0x3cc856("X=9tY5N9CCoUxJFsPygJVMQJK3ZoEV0JxsB6AEsIUzhcR"),
+    apikey: "ak_d6c2d3eef8b8d16ac34b1fc38f6bfc198d8c2e6c25f38165" || "",
+    clientid: KH99_0x3cc856("X=J6T5R8ucBbHrB8AA5JwZFqAmUTvAoEExQXZ"),
+    enabled: true
+  },
+  ygking: {
+    url: KH99_0x3cc856("X=NJTJVVXopEJuh8OBl9LyVYCVhtL9VoGu1cO7B6AEsIUzhcR"),
+    enabled: true
+  },
+  xinghai: {
+    url: KH99_0x3cc856("X==JSAQpKD8cQyEISChFRnR8FOsoQfB6AEsIUzhcR"),
+    enabled: true
+  },
+  kuwoAnti: {
+    url: KH99_0x3cc856("X=9IJrRVCI8INzhVQWZITMwsMkJpFX0cP4taAZUEUzhcR"),
+    enabled: true
+  },
+  qqExploit: {
+    key: KH99_0x440b34("=ElZalmdyZ3VSJ1Qhp1bJh3YwNXNxdXSHJVRCpXcYhTcjd0Z3UDMjdnTOB3QFh1Xj9VQa1mRmJ0QtxWRsV3a1JGM30iVrBHW2Uzbwg2TtZUbo50MmNDRwY3YD50MrNjNfx0XI9VU"),
+    uin: KH99_0x440b34("==ANxgTO5IjN3YzM"),
+    enabled: true
+  }
+};
+const KH99_0x246094 = async (终章73, 云淡74) => {
+  const 再见76 = 终章73.songmid || 终章73.strMediaMid || 终章73.mediaMid || 终章73.id || "";
+  if (!再见76) {
+    throw new Error("xunhuisi: no mid");
+  }
+  KH99_0x1df815.d("巡回寺QQ请求:", 再见76, 云淡74);
+  const 奈可7j = await KH99_0x2f26ee(KH99_0x241617.xunhuisi.url, {
+    mid: 再见76
+  }, 8000);
+  if (奈可7j && 200 === 奈可7j.code && 奈可7j.music_url) {
+    KH99_0x1df815.d("巡回寺QQ成功:", 云淡74, "(quality=" + (奈可7j.quality || "?") + ")");
+    return 奈可7j.music_url;
+  }
+  throw new Error("xunhuisi fail: code=" + (奈可7j?.["code"] ?? "null") + " msg=" + (奈可7j?.["msg"] || ""));
+};
+const KH99_0x483715 = async (再见86, 奈可87) => {
+  const 终章89 = KH99_0xd6c618(再见86);
+  if (!终章89) {
+    throw new Error("kuwoAnti: no id");
+  }
+  const 奈可8d = String(终章89).startsWith("MUSIC_") ? String(终章89) : "MUSIC_" + String(终章89);
+  KH99_0x1df815.d("酷我官方anti请求:", 奈可8d, 奈可87);
+  const 铃响8n = await KH99_0x2f26ee(KH99_0x241617.kuwoAnti.url, {
+    type: "convert_url3",
+    rid: 奈可8d,
+    format: "mp3"
+  }, 8000);
+  if (铃响8n && 200 === 铃响8n.code && 铃响8n.url) {
+    if (铃响8n.url.includes("/lx/")) {
+      throw new Error("kuwoAnti: VIP试听片段，跳过");
+    }
+    if (await KH99_0x38d151(铃响8n.url)) {
+      KH99_0x1df815.d("酷我官方anti成功:", 奈可87);
+      return 铃响8n.url;
+    }
+    throw new Error("kuwoAnti: 直链校验失败");
+  }
+  throw new Error("kuwoAnti fail: code=" + (铃响8n?.["code"] ?? "null"));
+};
+const KH99_0x52bd3a = "K×H测试·铃响奈可";
+const KH99_0x7066d5 = "3.0·终章（最终版·超稳定）";
+const KH99_0x4d75f6 = "曲终云淡去，铃响奈可来。—— 最终版·超稳定。五平台全覆盖，master无损一键直达。此后更新移步 Koneko（小奈可）";
+const KH99_0x1ac47c = "测试";
+const KH99_0x4f3f69 = ["wy", "tx", "kw", "kg", "mg"];
+const KH99_0x1df818 = {
+  wy: "网易云音乐",
+  tx: "QQ音乐",
+  kw: "酷我音乐",
+  kg: "酷狗音乐",
+  mg: "咪咕音乐"
+};
+const KH99_0x5376f6 = {
+  master: ["master", "hires", "flac24bit", "flac", "320k", "128k"],
+  hires: ["hires", "flac24bit", "flac", "320k", "128k"],
+  flac24bit: ["flac24bit", "flac", "320k", "128k"],
+  flac: ["flac", "320k", "128k"],
+  atmos: ["atmos", "master", "flac", "320k", "128k"],
+  atmos_plus: ["atmos_plus", "atmos", "master", "flac", "320k", "128k"],
+  "320k": ["320k", "192k", "128k"],
+  "192k": ["192k", "320k", "128k"],
+  "128k": ["128k"]
+};
+const KH99_0x13a61b = {
+  tx: {
+    supported: ["128k", "320k", "flac", "hires", "master", "atmos", "atmos_plus"],
+    note: "QQ专属支持全音质"
+  },
+  wy: {
+    supported: ["128k", "320k", "flac", "hires", "master"],
+    note: "本地API/星海/念心/cyapi 多通道"
+  },
+  kw: {
+    supported: ["128k", "320k", "flac", "hires"],
+    note: "妖狐搜索返回无损"
+  },
+  kg: {
+    supported: ["128k", "320k", "flac"],
+    note: "妖狐搜索返回无损"
+  },
+  mg: {
+    supported: ["128k", "320k", "flac"],
+    note: "本地API: PQ/HQ/SQ"
+  }
+};
+const KH99_0x3486ec = 有缘9e => {
+  if (!有缘9e) {
+    return 有缘9e;
+  }
+  let 再见9i = String(有缘9e);
+  再见9i = 再见9i.replace(/([?&](?:key|apikey|api_key|token|access_token|qm_keyst|qqmusic_key|psrf_qqaccess_token|contentId|copyrightId|songId|songmid)=)([^&\s"'<>]+)/gi, (铃响9n, 再见9o, 奈可9p) => 再见9o + "<<E:" + KH99_0x9fbb2c(奈可9p) + ">>");
+  再见9i = 再见9i.replace(/(\d{1,3}\.\d{1,3})\.(\d{1,3}\.\d{1,3})(:\d+)?/g, (有缘9w, 终章9x, 云淡9y, 铃响9z) => 终章9x + ".<<E:" + KH99_0x9fbb2c(云淡9y) + ">>" + (铃响9z || ""));
+  再见9i = 再见9i.replace(/(https?:\/\/[^/]+\/)([^\s"'<>]{15,})/g, (奈可a7, 有缘a8, 终章a9) => 终章a9.includes("<<E:") ? 奈可a7 : 有缘a8 + "<<E:" + KH99_0x9fbb2c(终章a9) + ">>");
+  再见9i = 再见9i.replace(/(contentId[=:]\s?)(\d+)/gi, (有缘ak, 终章al, 云淡am) => 终章al + "<<E:" + KH99_0x9fbb2c(云淡am) + ">>");
+  再见9i = 再见9i.replace(/(copyrightId[=:]\s?)(\d+)/gi, (铃响at, 再见au, 奈可av) => 再见au + "<<E:" + KH99_0x9fbb2c(奈可av) + ">>");
+  再见9i = 再见9i.replace(/(qm_keyst=)([^;\s<>]+)/gi, (有缘b2, 终章b3, 云淡b4) => 终章b3 + "<<E:" + KH99_0x9fbb2c(云淡b4) + ">>");
+  再见9i = 再见9i.replace(/(uin=o)(\d+)/gi, (铃响bb, 再见bc, 奈可bd) => 再见bc + "<<E:" + KH99_0x9fbb2c(奈可bd) + ">>");
+  再见9i = 再见9i.replace(/(purl[=:]\s?)([^\s"'<>]{10,})/gi, (有缘bk, 终章bl, 云淡bm) => 终章bl + "<<E:" + KH99_0x9fbb2c(云淡bm) + ">>");
+  return 再见9i;
+};
+const KH99_0xbf1f13 = 终章br => 终章br.map(铃响bt => {
+  if ("string" == typeof 铃响bt) {
+    return KH99_0x3486ec(铃响bt);
+  }
+  if ("object" == typeof 铃响bt) {
+    try {
+      return KH99_0x3486ec(JSON.stringify(铃响bt));
+    } catch (有缘c2) {
+      return "[obj]";
+    }
+  }
+  return 铃响bt;
+});
+const KH99_0x14b7b2 = "[" + KH99_0x52bd3a + "]";
+const KH99_0x1df815 = {
+  i: (...铃响c5) => {
+    try {
+      console.log(KH99_0x14b7b2, ...KH99_0xbf1f13(铃响c5));
+    } catch (终章c9) {}
+  },
+  e: (...云淡ca) => {
+    try {
+      console.error(KH99_0x14b7b2 + " ERR", ...KH99_0xbf1f13(云淡ca));
+    } catch (终章cf) {}
+  },
+  w: (...云淡cg) => {
+    try {
+      console.warn(KH99_0x14b7b2 + " WARN", ...KH99_0xbf1f13(云淡cg));
+    } catch (终章cl) {}
+  },
+  d: (...云淡cm) => {
+    try {
+      console.debug(KH99_0x14b7b2 + " DBG", ...KH99_0xbf1f13(云淡cm));
+    } catch (终章cr) {}
+  },
+  t: (云淡cs, ...铃响ct) => {
+    try {
+      const 奈可cv = new Date().toISOString().substring(11, 19);
+      ("e" === 云淡cs ? console.error : "w" === 云淡cs ? console.warn : console.log)("[" + KH99_0x52bd3a + " " + 奈可cv + "]", ...KH99_0xbf1f13(铃响ct));
+    } catch (铃响d5) {}
+  }
+};
+const KH99_0x849c2a = 4000;
+const KH99_0x27ff5c = (再见d6, 奈可d7 = {}) => new Promise((有缘d8, 终章d9) => {
+  const 铃响db = {
+    method: "GET",
+    timeout: KH99_0x849c2a,
+    headers: {
+      "X-Client-Software": "lx"
+    },
+    ...奈可d7
   };
-}(), []);
+  KH99_0x1df815.d("HTTP", 铃响db.method, 再见d6.substring(0, 120));
+  KH99_0x5d2dfd(再见d6, 铃响db, (终章dl, 云淡dm) => {
+    if (终章dl) {
+      KH99_0x1df815.d("HTTP错误:", 终章dl.message || 终章dl);
+      return 终章d9(new Error("请求错误: " + (终章dl.message || 终章dl)));
+    }
+    let 云淡dy = 云淡dm?.["body"];
+    if ("string" == typeof 云淡dy) {
+      const 终章e3 = 云淡dy.trim();
+      if (终章e3.startsWith("{") || 终章e3.startsWith("[")) {
+        try {
+          云淡dy = JSON.parse(终章e3);
+        } catch (奈可ed) {}
+      }
+    }
+    有缘d8({
+      statusCode: 云淡dm?.["statusCode"] ?? 0,
+      headers: 云淡dm?.["headers"] || {},
+      body: 云淡dy
+    });
+  });
+});
+const KH99_0x2d1c7c = 有缘ek => {
+  if (!有缘ek || 有缘ek.statusCode >= 400) {
+    return false;
+  }
+  const 奈可ep = 有缘ek.body;
+  if (!奈可ep) {
+    return false;
+  }
+  if ("object" == typeof 奈可ep) {
+    return true;
+  }
+  if ("string" == typeof 奈可ep) {
+    const 终章ex = 奈可ep.trim().toLowerCase();
+    if (终章ex.startsWith("<!doctype") || 终章ex.startsWith("<html")) {
+      return false;
+    }
+    if (终章ex.includes("cloudflare") && 终章ex.includes("challenge")) {
+      return false;
+    }
+    if (终章ex.includes("just a moment")) {
+      return false;
+    }
+  }
+  return true;
+};
+const KH99_0x270354 = async (云淡fg, 铃响fh = {}) => {
+  const 奈可fj = await KH99_0x27ff5c(云淡fg, 铃响fh);
+  if (!KH99_0x2d1c7c(奈可fj)) {
+    throw new Error("HTTP " + 奈可fj.statusCode + ": " + KH99_0x3486ec(云淡fg).substring(0, 60));
+  }
+  let 云淡fs = 奈可fj.body;
+  if ("string" == typeof 云淡fs) {
+    const 终章fx = 云淡fs.trim();
+    try {
+      云淡fs = JSON.parse(终章fx);
+    } catch (终章g3) {
+      throw new Error("JSON解析失败: " + KH99_0x3486ec(终章fx).substring(0, 100));
+    }
+  }
+  return 云淡fs;
+};
+const KH99_0x2f26ee = async (有缘g8, 终章g9 = {}, 云淡ga = 4000, 铃响gb = {}) => {
+  const 奈可gd = Object.keys(终章g9).filter(铃响gh => undefined !== 终章g9[铃响gh] && null !== 终章g9[铃响gh]).map(铃响gn => encodeURIComponent(铃响gn) + "=" + encodeURIComponent(终章g9[铃响gn])).join("&");
+  const 云淡gs = 有缘g8.includes("?") ? "&" : "?";
+  return KH99_0x270354(有缘g8 + (奈可gd ? 云淡gs + 奈可gd : ""), {
+    method: "GET",
+    timeout: 云淡ga,
+    headers: 铃响gb
+  });
+};
+const KH99_0x560798 = async (有缘h2, 终章h3 = {}, 云淡h4 = 4000, 铃响h5 = "application/x-www-form-urlencoded;charset:utf-8;") => KH99_0x270354(有缘h2, {
+  method: "POST",
+  headers: {
+    "Content-Type": 铃响h5
+  },
+  body: 终章h3,
+  timeout: 云淡h4
+});
+const KH99_0xd6c618 = 云淡ha => {
+  if (!云淡ha || "object" != typeof 云淡ha) {
+    return "";
+  }
+  let 终章hf = "";
+  switch (云淡ha.source || "") {
+    case "kg":
+      终章hf = 云淡ha.hash || 云淡ha.FileHash || 云淡ha.fileHash || 云淡ha.songmid || 云淡ha.songId || 云淡ha.id || "";
+      break;
+    case "tx":
+      终章hf = 云淡ha.songmid || 云淡ha.songId || 云淡ha.strMediaMid || 云淡ha.mid || 云淡ha.id || "";
+      break;
+    case "wy":
+      终章hf = 云淡ha.songmid || 云淡ha.songId || 云淡ha.id || "";
+      break;
+    case "kw":
+      终章hf = 云淡ha.songmid || 云淡ha.rid || 云淡ha.songId || 云淡ha.musicId || 云淡ha.id || "";
+      break;
+    case "mg":
+      终章hf = 云淡ha.copyrightId || 云淡ha.copyrightid || 云淡ha.songmid || 云淡ha.songId || 云淡ha.id || "";
+      break;
+    default:
+      终章hf = 云淡ha.songmid || 云淡ha.songId || 云淡ha.hash || 云淡ha.rid || 云淡ha.musicId || 云淡ha.copyrightId || 云淡ha.songid || 云淡ha.mid || 云淡ha.strMediaMid || 云淡ha.FileHash || 云淡ha.fileHash || 云淡ha.copyrightid || "";
+  }
+  return 终章hf ? String(终章hf) : "";
+};
+const KH99_0x4cbdf5 = 终章jl => {
+  if (!终章jl || "string" != typeof 终章jl) {
+    return false;
+  }
+  if (!终章jl.startsWith("http://") && !终章jl.startsWith("https://")) {
+    return false;
+  }
+  if (终章jl.includes("404") && 终章jl.length < 50) {
+    return false;
+  }
+  const 奈可k1 = 终章jl.toLowerCase();
+  return !奈可k1.includes("music.163.com/song/media/outer") && [".mp3", ".flac", ".m4a", ".ogg", ".wav", "music.126.net", "qqmusic", "kuwo.cn", "kugou.com", "migu", "music"].some(奈可kj => 奈可k1.includes(奈可kj));
+};
+const KH99_0x38d151 = async (铃响kn, 再见ko = 500000) => {
+  try {
+    const 有缘kq = await KH99_0x27ff5c(铃响kn, {
+      method: "GET",
+      timeout: 3000,
+      headers: {
+        Range: "bytes=0-1"
+      }
+    });
+    if (!有缘kq || 有缘kq.statusCode >= 400) {
+      return false;
+    }
+    const 终章kx = 有缘kq.headers || {};
+    const 再见l0 = String(终章kx["content-range"] || 终章kx["Content-Range"] || "");
+    const 铃响l5 = parseInt(String(终章kx["content-length"] || 终章kx["Content-Length"] || "0"), 10);
+    const 云淡la = 再见l0.includes("/") ? parseInt(再见l0.split("/")[1], 10) : 铃响l5;
+    return !isNaN(云淡la) && 云淡la > 再见ko;
+  } catch (奈可lj) {
+    return false;
+  }
+};
+const KH99_0x17f9ce = 有缘lk => {
+  if (!有缘lk) {
+    return "";
+  }
+  if ("string" == typeof 有缘lk) {
+    return 有缘lk.startsWith("http") ? 有缘lk : "";
+  }
+  if ("object" != typeof 有缘lk) {
+    return "";
+  }
+  if ("string" == typeof 有缘lk.url && 有缘lk.url.startsWith("http")) {
+    return 有缘lk.url;
+  }
+  if (有缘lk.data) {
+    if ("string" == typeof 有缘lk.data && 有缘lk.data.startsWith("http")) {
+      return 有缘lk.data;
+    }
+    if ("string" == typeof 有缘lk.data.url && 有缘lk.data.url.startsWith("http")) {
+      return 有缘lk.data.url;
+    }
+    if (有缘lk.data.vipmusic && "string" == typeof 有缘lk.data.vipmusic.url && 有缘lk.data.vipmusic.url.startsWith("http")) {
+      return 有缘lk.data.vipmusic.url;
+    }
+    if ("string" == typeof 有缘lk.data.play_url && 有缘lk.data.play_url.startsWith("http")) {
+      return 有缘lk.data.play_url;
+    }
+    if (Array.isArray(有缘lk.data) && 有缘lk.data.length > 0) {
+      if ("string" == typeof 有缘lk.data[0].url && 有缘lk.data[0].url.startsWith("http")) {
+        return 有缘lk.data[0].url;
+      }
+      if ("string" == typeof 有缘lk.data[0] && 有缘lk.data[0].startsWith("http")) {
+        return 有缘lk.data[0];
+      }
+    }
+  }
+  if ((200 === 有缘lk.code || 0 === 有缘lk.code || 200 === 有缘lk.status) && 有缘lk.data) {
+    return KH99_0x17f9ce({
+      data: 有缘lk.data
+    });
+  }
+  if (有缘lk.text && "string" == typeof 有缘lk.text) {
+    const 终章or = 有缘lk.text.match(/https?:\/\/[^\s"']+/);
+    if (终章or) {
+      return 终章or[0];
+    }
+  }
+  if (有缘lk.data && 有缘lk.data.text && "string" == typeof 有缘lk.data.text) {
+    const 再见p6 = 有缘lk.data.text.match(/https?:\/\/[^\s"']+/);
+    if (再见p6) {
+      return 再见p6[0];
+    }
+  }
+  return "";
+};
+const KH99_0x37b286 = async (奈可pd, 有缘pe) => {
+  const 云淡pg = KH99_0xd6c618(奈可pd);
+  if (!云淡pg) {
+    throw new Error("no id");
+  }
+  KH99_0x1df815.d("本地QQ请求:", 云淡pg, 有缘pe);
+  const 铃响pn = await KH99_0x2f26ee(KH99_0x241617.localQQ.base + "/song/urls", {
+    mids: 云淡pg,
+    type: {
+      "128k": "MP3_128",
+      "192k": "MP3_320",
+      "320k": "MP3_320",
+      flac: "FLAC",
+      flac24bit: "Master",
+      hires: "Master",
+      master: "Master"
+    }[有缘pe] || "MP3_128"
+  });
+  const 奈可q1 = KH99_0x17f9ce(铃响pn) || 铃响pn && 铃响pn.data && 铃响pn.data[云淡pg] && 铃响pn.data[云淡pg].url || "";
+  if (奈可q1) {
+    return 奈可q1;
+  }
+  throw new Error("localQQ fail: " + KH99_0x3486ec(JSON.stringify(铃响pn)).substring(0, 100));
+};
+const KH99_0x249433 = async (奈可qj, 有缘qk) => {
+  const 云淡qm = KH99_0xd6c618(奈可qj);
+  if (!云淡qm) {
+    throw new Error("no id");
+  }
+  KH99_0x1df815.d("本地网易请求:", 云淡qm, 有缘qk);
+  const 铃响qt = await KH99_0x2f26ee(KH99_0x241617.localWy.base + "/song/url/v1", {
+    id: 云淡qm,
+    level: {
+      "128k": "standard",
+      "192k": "exhigh",
+      "320k": "exhigh",
+      flac: "lossless",
+      flac24bit: "hires",
+      hires: "hires",
+      master: "jymaster"
+    }[有缘qk] || "standard",
+    encodeType: "flac",
+    cookie: KH99_0x241617.neteaseCookie
+  });
+  if (铃响qt && 200 === 铃响qt.code && Array.isArray(铃响qt.data) && 铃响qt.data[0] && 铃响qt.data[0].url) {
+    return 铃响qt.data[0].url;
+  }
+  const 铃响rn = KH99_0x17f9ce(铃响qt);
+  if (铃响rn) {
+    return 铃响rn;
+  }
+  throw new Error("localWy fail: " + KH99_0x3486ec(JSON.stringify(铃响qt)).substring(0, 100));
+};
+const KH99_0x28c14f = async (奈可rv, 有缘rw) => {
+  const 云淡ry = KH99_0xd6c618(奈可rv);
+  const 再见s0 = 奈可rv.source;
+  if (!云淡ry) {
+    throw new Error("no id");
+  }
+  let 铃响s5 = "";
+  if ("tx" === 再见s0) {
+    铃响s5 = "https://y.qq.com/n/ryqq/songDetail/" + 云淡ry;
+  } else {
+    if ("wy" === 再见s0) {
+      铃响s5 = "https://music.163.com/song?id=" + 云淡ry;
+    } else {
+      if ("kw" === 再见s0) {
+        铃响s5 = "https://www.kuwo.cn/play_detail/" + 云淡ry;
+      } else {
+        if ("kg" === 再见s0) {
+          铃响s5 = "https://www.kugou.com/song/#hash=" + 云淡ry;
+        } else {
+          if ("mg" !== 再见s0) {
+            throw new Error("unsupported src: " + 再见s0);
+          }
+          铃响s5 = "https://music.migu.cn/v3/music/song/" + 云淡ry;
+        }
+      }
+    }
+  }
+  KH99_0x1df815.d("FFAPI请求:", 再见s0, 云淡ry);
+  const 奈可sv = await KH99_0x2f26ee(KH99_0x241617.ffapi.base + "/songurl", {
+    url: 铃响s5
+  });
+  const 再见t0 = KH99_0x17f9ce(奈可sv);
+  if (再见t0) {
+    return 再见t0;
+  }
+  throw new Error("ffapi fail");
+};
+const KH99_0x42cdf5 = async (铃响t5, 再见t6) => {
+  if (!KH99_0x241617.yuafeng.apikey) {
+    throw new Error("yuafengKg: 未配置 apikey");
+  }
+  let 铃响tb = 铃响t5.hash || 铃响t5.songmid || 铃响t5.id || "";
+  const 铃响th = 铃响t5.songName || 铃响t5.name || "";
+  const 云淡tm = 铃响t5.singer || "";
+  if (!铃响tb && !铃响th) {
+    throw new Error("yuafengKg: no hash and no songName");
+  }
+  KH99_0x1df815.d("yuafeng酷狗请求:", 铃响tb || 铃响th, 再见t6);
+  const 有缘tw = {
+    apikey: KH99_0x241617.yuafeng.apikey,
+    n: 1
+  };
+  铃响tb && (有缘tw.hash = 铃响tb);
+  铃响th && (有缘tw.msg = 铃响th + (云淡tm ? " " + 云淡tm : ""));
+  const 终章u9 = await KH99_0x2f26ee(KH99_0x241617.yuafeng.url, 有缘tw, 8000);
+  if (终章u9 && 0 === 终章u9.code && 终章u9.data) {
+    const 再见ui = 终章u9.data.music || "";
+    if (再见ui && KH99_0x4cbdf5(再见ui)) {
+      KH99_0x1df815.d("yuafeng酷狗成功:", 再见t6, "(302->sharefs.kugou.com)");
+      return 再见ui;
+    }
+    throw new Error("yuafengKg: data.music 为空");
+  }
+  throw new Error("yuafengKg fail: code=" + (终章u9?.["code"] ?? "null"));
+};
+const KH99_0x325c43 = async (终章ux, 云淡uy) => {
+  const 再见v0 = KH99_0xd6c618(终章ux);
+  if (!再见v0) {
+    throw new Error("nianxinWy: no id");
+  }
+  const 云淡v4 = {
+    "128k": "standard",
+    "320k": "exhigh",
+    flac: "lossless",
+    flac24bit: "hires",
+    hires: "hires",
+    master: "jymaster"
+  }[云淡uy] || "exhigh";
+  KH99_0x1df815.d("念心WY请求:", 再见v0, 云淡uy, "->", 云淡v4);
+  const 铃响vh = await KH99_0x2f26ee(KH99_0x241617.nianxinWy.url, {
+    id: 再见v0,
+    level: 云淡v4
+  }, 8000);
+  if (铃响vh && 200 === 铃响vh.code && 铃响vh.url) {
+    return 铃响vh.url;
+  }
+  throw new Error("nianxinWy fail: code=" + (铃响vh?.["code"] ?? "null"));
+};
+const KH99_0xd125e2 = async (终章vx, 云淡vy) => {
+  const 再见w0 = KH99_0xd6c618(终章vx);
+  if (!再见w0) {
+    throw new Error("nianxinKw: no id");
+  }
+  const 云淡w4 = {
+    "128k": "128kmp3",
+    "320k": "320kmp3",
+    flac: "2000kflac",
+    flac24bit: "4000kflac",
+    hires: "hires",
+    master: "4000kflac"
+  }[云淡vy] || "320kmp3";
+  KH99_0x1df815.d("念心KW请求:", 再见w0, 云淡vy, "->", 云淡w4);
+  const 铃响wh = await KH99_0x2f26ee(KH99_0x241617.nianxinKw.url, {
+    id: 再见w0,
+    level: 云淡w4
+  }, 8000);
+  if (铃响wh && 200 === 铃响wh.code) {
+    const 奈可wp = 铃响wh.data?.["url"] || 铃响wh.url || "";
+    if (奈可wp) {
+      return 奈可wp;
+    }
+  }
+  throw new Error("nianxinKw fail: code=" + (铃响wh?.["code"] ?? "null"));
+};
+const KH99_0x1e0d8d = async (奈可x1, 有缘x2) => {
+  const 云淡x4 = KH99_0xd6c618(奈可x1);
+  if (!云淡x4) {
+    throw new Error("bugpk: no id");
+  }
+  const 有缘x8 = {
+    "128k": "standard",
+    "320k": "exhigh",
+    flac: "lossless",
+    flac24bit: "hires",
+    hires: "hires",
+    master: "jymaster"
+  }[有缘x2] || "exhigh";
+  KH99_0x1df815.d("bugpk请求:", 云淡x4, 有缘x2, "->", 有缘x8);
+  const 终章xl = await KH99_0x2f26ee(KH99_0x241617.bugpk.url, {
+    type: "json",
+    ids: 云淡x4,
+    level: 有缘x8
+  }, 8000);
+  if (终章xl && 200 === 终章xl.status && 终章xl.url) {
+    if (!KH99_0x4cbdf5(终章xl.url)) {
+      throw new Error("bugpk: 外链伪直链(疑似VIP歌)");
+    }
+    return 终章xl.url;
+  }
+  throw new Error("bugpk fail: status=" + (终章xl?.["status"] ?? "null"));
+};
+const KH99_0x57d357 = async (铃响y5, 再见y6) => {
+  const 有缘y8 = 铃响y5.hash || 铃响y5.songmid || 铃响y5.id || "";
+  if (!有缘y8) {
+    throw new Error("nianxinKg: no hash");
+  }
+  const 云淡yg = {
+    "128k": "128kmp3",
+    "192k": "320kmp3",
+    "320k": "320kmp3",
+    flac: "2000kflac",
+    flac24bit: "4000kflac",
+    hires: "hires",
+    master: "4000kflac",
+    atmos: "4000kflac",
+    atmos_plus: "4000kflac"
+  }[再见y6] || "320kmp3";
+  KH99_0x1df815.d("念心酷狗请求:", 有缘y8, 再见y6, "->", 云淡yg);
+  const 有缘yw = await KH99_0x2f26ee(KH99_0x241617.nianxin.url, {
+    id: 有缘y8,
+    level: 云淡yg
+  }, 8000);
+  if (有缘yw && 200 === 有缘yw.code && 有缘yw.url) {
+    KH99_0x1df815.d("念心酷狗成功:", 再见y6, "(level=" + 云淡yg + ")");
+    return 有缘yw.url;
+  }
+  throw new Error("nianxinKg fail: code=" + (有缘yw?.["code"] ?? "null") + " msg=" + (有缘yw?.["msg"] || "").substring(0, 60));
+};
+const KH99_0x3ce087 = async (有缘zk, 终章zl) => {
+  const 铃响zn = 有缘zk.songmid || 有缘zk.strMediaMid || 有缘zk.mediaMid || 有缘zk.id || "";
+  if (!铃响zn) {
+    throw new Error("ygking: no mid");
+  }
+  const 终章zx = {
+    "128k": "128",
+    "192k": "320",
+    "320k": "320",
+    flac: "flac",
+    flac24bit: "hires",
+    hires: "hires",
+    master: "master",
+    atmos: "master",
+    atmos_plus: "master"
+  }[终章zl] || "320";
+  KH99_0x1df815.d("ygking QQ请求:", 铃响zn, 终章zl, "->", 终章zx);
+  const 奈可10d = await KH99_0x2f26ee(KH99_0x241617.ygking.url, {
+    mid: 铃响zn,
+    quality: 终章zx
+  }, 8000);
+  if (奈可10d && 0 === 奈可10d.code && 奈可10d.data) {
+    const 铃响10n = 奈可10d.data[铃响zn] || 奈可10d.data[Object.keys(奈可10d.data)[0]] || "";
+    if (铃响10n && KH99_0x4cbdf5(铃响10n)) {
+      KH99_0x1df815.d("ygking QQ成功:", 终章zl, "(quality=" + 终章zx + ")");
+      return 铃响10n;
+    }
+  }
+  throw new Error("ygking fail: code=" + (奈可10d?.["code"] ?? "null"));
+};
+const KH99_0x7208a = async (奈可117, 有缘118, 终章119) => {
+  const 铃响11b = "kg" === 奈可117 ? 有缘118.hash || 有缘118.songmid || 有缘118.id || "" : "migu" === 奈可117 ? 有缘118.songId || 有缘118.contentId || 有缘118.id || "" : 有缘118.songmid || 有缘118.rid || 有缘118.id || "";
+  if (!铃响11b) {
+    throw new Error("xinghai: no id for source=" + 奈可117);
+  }
+  const 终章11x = 有缘118.songName || 有缘118.name || "";
+  const 有缘122 = 有缘118.singer || "";
+  const 铃响125 = 终章11x + (有缘122 ? " " + 有缘122 : "");
+  const 终章129 = {
+    "128k": "128kmp3",
+    "192k": "320kmp3",
+    "320k": "320kmp3",
+    flac: "flac",
+    flac24bit: "hires",
+    hires: "hires",
+    master: "flac",
+    atmos: "flac",
+    atmos_plus: "flac"
+  }[终章119] || "320kmp3";
+  KH99_0x1df815.d("星海请求:", 奈可117, 铃响11b, 终章119, "->", 终章129);
+  const 有缘12q = await KH99_0x2f26ee(KH99_0x241617.xinghai.url, {
+    source: 奈可117,
+    name: 铃响125,
+    songmid: String(铃响11b),
+    quality: 终章129
+  }, 8000);
+  if (有缘12q && 200 === 有缘12q.code && 有缘12q.url) {
+    KH99_0x1df815.d("星海成功:", 奈可117, 终章119);
+    return 有缘12q.url;
+  }
+  throw new Error("xinghai fail: code=" + (有缘12q?.["code"] ?? "null") + " msg=" + (有缘12q?.["message"] || "").substring(0, 60));
+};
+const KH99_0x2bcea4 = (终章13f, 云淡13g) => KH99_0x7208a("kw", 终章13f, 云淡13g);
+const KH99_0x35ac09 = (奈可13j, 有缘13k) => KH99_0x7208a("kg", 奈可13j, 有缘13k);
+const KH99_0x44105f = (铃响13n, 再见13o) => KH99_0x7208a("migu", 铃响13n, 再见13o);
+const KH99_0x10e793 = async (终章13r, 云淡13s) => {
+  const 再见13u = 终章13r.songmid || 终章13r.songId || 终章13r.id || "";
+  if (!再见13u) {
+    throw new Error("xinghaiWy: no id");
+  }
+  const 有缘142 = 终章13r.songName || 终章13r.name || "";
+  const 奈可147 = 终章13r.singer || "";
+  const 云淡14a = 有缘142 + (奈可147 ? " " + 奈可147 : "");
+  const 有缘14e = {
+    "128k": "standard",
+    "192k": "exhigh",
+    "320k": "exhigh",
+    flac: "lossless",
+    flac24bit: "hires",
+    hires: "hires",
+    master: "jymaster",
+    atmos: "hires",
+    atmos_plus: "hires"
+  }[云淡13s] || "exhigh";
+  KH99_0x1df815.d("星海网易请求:", 再见13u, 云淡13s, "->", 有缘14e);
+  const 再见14u = await KH99_0x2f26ee(KH99_0x241617.xinghai.url, {
+    source: "netease",
+    name: 云淡14a,
+    songmid: String(再见13u),
+    quality: 有缘14e
+  }, 8000);
+  if (再见14u && 200 === 再见14u.code && 再见14u.url) {
+    if (!KH99_0x4cbdf5(再见14u.url)) {
+      throw new Error("xinghaiWy: URL无效");
+    }
+    KH99_0x1df815.d("星海网易成功:", 云淡13s, "(br=" + (再见14u.br || "?") + ")");
+    return 再见14u.url;
+  }
+  throw new Error("xinghai fail: code=" + (再见14u?.["code"] ?? "null") + " msg=" + (再见14u?.["message"] || "").substring(0, 60));
+};
+const KH99_0x34b349 = async (铃响15n, 再见15o) => {
+  const 有缘15q = 铃响15n.songName || 铃响15n.name || "";
+  if (!有缘15q) {
+    throw new Error("yunmgeKw: no name");
+  }
+  const 终章15x = {
+    "128k": 128,
+    "192k": 192,
+    "320k": 320,
+    flac: 2000,
+    flac24bit: 4000,
+    hires: 4000,
+    atmos: 4000,
+    atmos_plus: 4000,
+    master: 4000
+  }[再见15o] || 320;
+  const 铃响15z = {
+    4000: [4000, 2000, 320, 192, 128],
+    2000: [2000, 320, 192, 128],
+    320: [320, 192, 128],
+    192: [192, 128],
+    128: [128]
+  }[String(终章15x)] || [终章15x];
+  KH99_0x1df815.d("yunmge酷我请求:", 有缘15q, 再见15o, "->", 终章15x);
+  const 再见166 = await KH99_0x2f26ee(KH99_0x241617.yunmge.url, {
+    token: KH99_0x241617.yunmge.token,
+    name: 有缘15q,
+    n: 1
+  }, 8000);
+  if (!再见166 || 200 !== 再见166.code || !再见166.data) {
+    throw new Error("yunmgeKw fail: code=" + (再见166?.["code"] ?? "null") + " msg=" + KH99_0x3486ec(JSON.stringify(再见166)).substring(0, 80));
+  }
+  const 奈可16p = 再见166.data.all_bitrates || [];
+  if (0 === 奈可16p.length) {
+    throw new Error("yunmgeKw: no all_bitrates");
+  }
+  for (const 有缘16w of 铃响15z) {
+    const 云淡16y = 奈可16p.find(奈可171 => 奈可171.bitrate === 有缘16w || String(奈可171.bitrate) === String(有缘16w));
+    if (云淡16y && 云淡16y.play_url) {
+      if (await KH99_0x38d151(云淡16y.play_url)) {
+        KH99_0x1df815.d("yunmge酷我成功:", "bitrate=" + 云淡16y.bitrate, "label=" + (云淡16y.label || ""));
+        return 云淡16y.play_url;
+      }
+      KH99_0x1df815.d("yunmge酷我直链失效(过期缓存), 尝试下一档:", "bitrate=" + 云淡16y.bitrate);
+    }
+  }
+  for (const 有缘17q of 奈可16p) if (有缘17q.play_url && (await KH99_0x38d151(有缘17q.play_url))) {
+    KH99_0x1df815.d("yunmge酷我兜底返回:", "bitrate=" + 有缘17q.bitrate);
+    return 有缘17q.play_url;
+  }
+  throw new Error("yunmgeKw: all play_url dead");
+};
+const KH99_0x13e362 = async (终章183, 云淡184) => {
+  const 再见186 = 终章183.songName || 终章183.name || "";
+  const 铃响18b = 终章183.singer || "";
+  if (再见186) {
+    const 终章18f = 再见186 + 铃响18b;
+    KH99_0x1df815.d("妖狐酷我搜索:", 终章18f);
+    const 有缘18k = await KH99_0x2f26ee(KH99_0x241617.yaohu.base + "/kuwo", {
+      key: KH99_0x241617.yaohu.key,
+      action: "search",
+      msg: 终章18f,
+      n: 1
+    });
+    const 云淡18s = 有缘18k?.["data"]?.["vipmusic"] || {};
+    const 有缘18w = 云淡18s.url || "";
+    if (有缘18w && KH99_0x4cbdf5(有缘18w) && (await KH99_0x38d151(有缘18w))) {
+      KH99_0x1df815.d("妖狐酷我搜索成功, level:", 云淡18s.level, "bitrate:", 云淡18s.bitrate);
+      return 有缘18w;
+    }
+  }
+  const 终章199 = KH99_0xd6c618(终章183);
+  if (!终章199) {
+    throw new Error("yaohuKw: no id and no songName");
+  }
+  KH99_0x1df815.d("妖狐酷我ID解析:", 终章199);
+  const 终章19f = await KH99_0x2f26ee(KH99_0x241617.yaohu.base + "/kuwo", {
+    key: KH99_0x241617.yaohu.key,
+    action: "song",
+    id: 终章199,
+    size: "lossless"
+  }, 8000);
+  const 再见19o = KH99_0x17f9ce(终章19f);
+  if (再见19o && (await KH99_0x38d151(再见19o))) {
+    return 再见19o;
+  }
+  throw new Error("yaohuKw fail: " + KH99_0x3486ec(JSON.stringify(终章19f)).substring(0, 100));
+};
+const KH99_0x14514a = async (终章19x, 云淡19y) => {
+  const 再见1a0 = 终章19x.songName || 终章19x.name || "";
+  const 铃响1a5 = 终章19x.singer || "";
+  if (!再见1a0) {
+    throw new Error("no songName for kg search");
+  }
+  const 云淡1aa = {
+    "128k": "128",
+    "192k": "320",
+    "320k": "320",
+    flac: "flac",
+    flac24bit: "high",
+    hires: "high",
+    master: "high"
+  }[云淡19y] || "128";
+  const 有缘1ak = 再见1a0 + 铃响1a5;
+  KH99_0x1df815.d("妖狐酷狗请求:", 有缘1ak, 云淡1aa);
+  const 有缘1aq = await KH99_0x2f26ee(KH99_0x241617.yaohu.base + "/kg", {
+    key: KH99_0x241617.yaohu.key,
+    msg: 有缘1ak,
+    n: 1,
+    quality: 云淡1aa
+  }, 8000);
+  if (有缘1aq && 200 === 有缘1aq.code && 有缘1aq.data) {
+    const 终章1b3 = 有缘1aq.data.play_url || 有缘1aq.data.url || "";
+    if (终章1b3 && KH99_0x4cbdf5(终章1b3) && !终章1b3.includes("www.kugou.com/song")) {
+      return 终章1b3;
+    }
+  }
+  throw new Error("yaohuKg fail: code=" + (有缘1aq?.["code"] ?? "null") + " (酷狗直链不可用)");
+};
+const KH99_0x579292 = async (终章1bl, 云淡1bm) => {
+  const 再见1bo = 终章1bl.source;
+  const 终章1br = 终章1bl.songName || 终章1bl.name || "";
+  const 有缘1bw = 终章1bl.singer || "";
+  if (!终章1br) {
+    throw new Error("no songName");
+  }
+  const 奈可1c1 = {
+    wy: "wy",
+    tx: "qq"
+  }[再见1bo];
+  if (!奈可1c1) {
+    throw new Error("unsupported src: " + 再见1bo);
+  }
+  const 再见1c6 = 终章1br + 有缘1bw;
+  const 终章1c9 = {
+    key: KH99_0x241617.yaohu.key,
+    msg: 再见1c6,
+    n: 1
+  };
+  "tx" === 再见1bo && (终章1c9.size = {
+    "128k": "128",
+    "192k": "320",
+    "320k": "320",
+    flac: "flac",
+    flac24bit: "flac",
+    hires: "flac",
+    master: "flac"
+  }[云淡1bm] || "320");
+  KH99_0x1df815.d("妖狐通用请求:", 奈可1c1, 再见1c6, "tx" === 再见1bo ? "size=" + 终章1c9.size : "");
+  const 有缘1cw = await KH99_0x2f26ee(KH99_0x241617.yaohu.base + "/" + 奈可1c1, 终章1c9);
+  const 奈可1d1 = 有缘1cw?.["data"]?.["musicurl"] || 有缘1cw?.["data"]?.["vipmusic"]?.["url"] || "";
+  if (奈可1d1 && KH99_0x4cbdf5(奈可1d1)) {
+    return 奈可1d1;
+  }
+  const 再见1dc = KH99_0x17f9ce(有缘1cw);
+  if (再见1dc) {
+    return 再见1dc;
+  }
+  throw new Error("yaohu fail: " + KH99_0x3486ec(JSON.stringify(有缘1cw)).substring(0, 100));
+};
+const KH99_0x51f0ba = async (有缘1dk, 终章1dl) => {
+  let 铃响1dn = 有缘1dk.songName || 有缘1dk.name || "";
+  const 云淡1ds = 有缘1dk.singer || "";
+  const 奈可1dv = KH99_0xd6c618(有缘1dk);
+  if (!铃响1dn && 奈可1dv) {
+    KH99_0x1df815.d("妖狐咪咕: 无歌名，用 id 搜索获取:", 奈可1dv);
+    try {
+      const 奈可1e1 = await KH99_0x2f26ee("" + KH99_0x241617.yaohuMg.base, {
+        key: KH99_0x241617.yaohu.key,
+        msg: String(奈可1dv),
+        n: 1
+      });
+      const 奈可1e7 = 奈可1e1?.["data"]?.["vipmusic"] || 奈可1e1?.["data"]?.[0] || null;
+      奈可1e7 && (奈可1e7.songName || 奈可1e7.name) && (铃响1dn = 奈可1e7.songName || 奈可1e7.name, KH99_0x1df815.d("妖狐咪咕: 通过 id 搜索到歌名:", 铃响1dn));
+    } catch (奈可1ep) {
+      KH99_0x1df815.d("妖狐咪咕: id 搜索失败:", 奈可1ep.message);
+    }
+  }
+  if (!铃响1dn) {
+    throw new Error("yaohuMg: 无歌名且 id 搜索失败");
+  }
+  const 奈可1ev = 铃响1dn + (云淡1ds ? " " + 云淡1ds : "");
+  KH99_0x1df815.d("妖狐咪咕请求:", 奈可1ev);
+  const 奈可1f1 = await KH99_0x2f26ee("" + KH99_0x241617.yaohuMg.base, {
+    key: KH99_0x241617.yaohu.key,
+    msg: 奈可1ev,
+    n: 1
+  });
+  const 奈可1f7 = KH99_0x17f9ce(奈可1f1);
+  if (奈可1f7) {
+    return 奈可1f7;
+  }
+  throw new Error("yaohuMg fail: " + KH99_0x3486ec(JSON.stringify(奈可1f1)).substring(0, 100));
+};
+const KH99_0x31df1e = {
+  ok: null,
+  ts: 0
+};
+const KH99_0x371a9 = 60000;
+const KH99_0x1ea804 = async () => {
+  const 云淡1fg = Date.now();
+  if (null !== KH99_0x31df1e.ok && 云淡1fg - KH99_0x31df1e.ts < KH99_0x371a9) {
+    return KH99_0x31df1e.ok;
+  }
+  try {
+    const 奈可1fj = await KH99_0x27ff5c(KH99_0x241617.miguLocal.base + "/api/search?text=test&page=1&size=1", {
+      timeout: 2000
+    });
+    KH99_0x31df1e.ok = KH99_0x2d1c7c(奈可1fj);
+    KH99_0x31df1e.ts = 云淡1fg;
+    KH99_0x1df815.d("咪咕API健康检查:", KH99_0x31df1e.ok ? "正常" : "异常");
+    return KH99_0x31df1e.ok;
+  } catch (有缘1fq) {
+    KH99_0x31df1e.ok = false;
+    KH99_0x31df1e.ts = 云淡1fg;
+    KH99_0x1df815.d("咪咕API健康检查: 异常", 有缘1fq.message);
+    return false;
+  }
+};
+const KH99_0x401a31 = async (奈可1fv, 有缘1fw) => {
+  const 云淡1fy = 奈可1fv.songName || 奈可1fv.name || "";
+  const 终章1g3 = 奈可1fv.singer || "";
+  let 再见1g6 = 奈可1fv.songmid || 奈可1fv.songId || 奈可1fv.id || "";
+  let 再见1gc = 奈可1fv.contentId || "";
+  let 终章1gf = 奈可1fv.copyrightId || 奈可1fv.copyrightid || "";
+  const 有缘1gk = 奈可1fv.albumId || "";
+  if (KH99_0x1df815.d("咪咕请求:", 云淡1fy || 再见1g6, 有缘1fw, "albumId=" + 有缘1gk, "contentId=" + 再见1gc), 有缘1gk) {
+    try {
+      KH99_0x1df815.d("咪咕方式1: 通过albumId=" + 有缘1gk + "调专辑接口");
+      const 铃响1gz = await KH99_0x27ff5c("https://app.c.nf.migu.cn/MIGUM2.0/v1.0/content/resourceinfo.do?needSimple=01&resourceId=" + 有缘1gk + "&resourceType=2003", {
+        method: "GET",
+        timeout: 8000,
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+        }
+      });
+      if (铃响1gz && 200 === 铃响1gz.statusCode) {
+        let 有缘1h8 = 铃响1gz.body;
+        if ("string" == typeof 有缘1h8) {
+          try {
+            有缘1h8 = JSON.parse(有缘1h8);
+          } catch (云淡1hg) {}
+        }
+        if (有缘1h8 && "000000" === 有缘1h8.code && 有缘1h8.resource && 有缘1h8.resource[0]) {
+          const 奈可1hp = 有缘1h8.resource[0].songItems || [];
+          const 铃响1ht = 再见1g6 ? 奈可1hp.find(终章1hx => String(终章1hx.songId) === String(再见1g6)) : 奈可1hp.length > 0 ? 奈可1hp[0] : null;
+          铃响1ht && (再见1gc = 铃响1ht.contentId || 再见1gc, 终章1gf || (终章1gf = 铃响1ht.copyrightId || ""), KH99_0x1df815.d("咪咕方式1成功: contentId=" + 再见1gc + " copyrightId=" + 终章1gf));
+        }
+      }
+    } catch (铃响1ih) {
+      KH99_0x1df815.d("咪咕方式1失败:", 铃响1ih.message);
+    }
+  }
+  if (!再见1gc) {
+    if (!云淡1fy) {
+      throw new Error("miguLocal: 无contentId且无songName");
+    }
+    const 再见1io = 云淡1fy + (终章1g3 ? " " + 终章1g3 : "");
+    KH99_0x1df815.d("咪咕搜索:", 再见1io);
+    const 再见1iu = await KH99_0x2f26ee(KH99_0x241617.miguLocal.base + "/api/search", {
+      text: 再见1io,
+      page: 1,
+      size: 5
+    }, 8000);
+    if (再见1iu && 再见1iu.success && 再见1iu.data && 再见1iu.data.items) {
+      const 奈可1j7 = 再见1iu.data.items;
+      let 铃响1jb = null;
+      再见1g6 && (铃响1jb = 奈可1j7.find(云淡1jg => 云淡1jg.song && String(云淡1jg.song.songId) === String(再见1g6)));
+      !铃响1jb && 终章1gf && (铃响1jb = 奈可1j7.find(云淡1js => 云淡1js.song && 云淡1js.song.copyrightId === 终章1gf));
+      !铃响1jb && 奈可1j7.length > 0 && (铃响1jb = 奈可1j7[0]);
+      铃响1jb && 铃响1jb.song && (再见1gc = 铃响1jb.song.contentId || "", 终章1gf = 终章1gf || 铃响1jb.song.copyrightId || "", KH99_0x1df815.d("咪咕搜索匹配:", 铃响1jb.song.songName, "contentId=" + 再见1gc));
+    }
+  }
+  if (!再见1gc) {
+    throw new Error("miguLocal: 无法获取contentId");
+  }
+  const 再见1ko = KH99_0x241617.miguLocal.base + "/api/url/h5v2.4?contentId=" + 再见1gc + "&copyrightId=" + (终章1gf || "") + "&resourceType=2&toneFlag=PQ";
+  const 有缘1kw = await KH99_0x2f26ee(再见1ko, {}, 8000);
+  if (!(有缘1kw && 有缘1kw.success && 有缘1kw.data && 有缘1kw.data.url)) {
+    throw new Error("miguLocal: 本地API未返回有效URL");
+  }
+  let 奈可1l7 = 有缘1kw.data.url;
+  const 铃响1lb = "标清高清/MP3_128_16_Stero";
+  let 奈可1ld = 铃响1lb;
+  let 终章1lf = ".mp3";
+  switch (有缘1fw) {
+    case "320k":
+      奈可1ld = "标清高清/MP3_320_16_Stero";
+      终章1lf = ".mp3";
+      break;
+    case "flac":
+      奈可1ld = "歌曲下载/flac";
+      终章1lf = ".flac";
+      break;
+    case "flac24bit":
+    case "hires":
+      奈可1ld = "歌曲下载/flac_24bit";
+      终章1lf = ".flac";
+      break;
+    default:
+      奈可1ld = 铃响1lb;
+      终章1lf = ".mp3";
+  }
+  let 有缘1m2 = decodeURIComponent(奈可1l7);
+  有缘1m2 = 有缘1m2.split("?")[0];
+  有缘1m2 = 有缘1m2.replace(铃响1lb, 奈可1ld);
+  有缘1m2 = 有缘1m2.replace(/\.mp3$/, 终章1lf);
+  奈可1l7 = encodeURI(有缘1m2);
+  KH99_0x1df815.d("咪咕成功:", 有缘1fw, "(URL替换: " + 奈可1ld + ")");
+  return 奈可1l7;
+};
+const KH99_0x1c4cc1 = async (铃响1mn, 再见1mo) => {
+  const 有缘1mq = KH99_0xd6c618(铃响1mn);
+  if (!有缘1mq) {
+    throw new Error("no id");
+  }
+  KH99_0x1df815.d("溯音QQ请求:", 有缘1mq, 再见1mo);
+  const 终章1mx = await KH99_0x2f26ee(KH99_0x241617.suyinQQ.base, {
+    key: KH99_0x241617.suyinQQ.key,
+    type: "json",
+    br: {
+      "128k": 7,
+      "192k": 5,
+      "320k": 5,
+      flac: 4,
+      hires: 3,
+      flac24bit: 1,
+      master: 1
+    }[再见1mo] || 7,
+    n: 1,
+    mid: 有缘1mq
+  });
+  const 铃响1n5 = KH99_0x17f9ce(终章1mx);
+  if (铃响1n5) {
+    return 铃响1n5;
+  }
+  throw new Error("suyinQQ fail");
+};
+const KH99_0x4b1604 = async (云淡1na, 铃响1nb) => {
+  const 奈可1nd = KH99_0xd6c618(云淡1na);
+  if (!奈可1nd) {
+    throw new Error("no id");
+  }
+  KH99_0x1df815.d("溯音网易请求:", 奈可1nd, 铃响1nb);
+  const 有缘1nk = await KH99_0x2f26ee(KH99_0x241617.suyinWy.base, {
+    key: KH99_0x241617.suyinWy.key,
+    type: "json",
+    level: {
+      "128k": "standard",
+      "192k": "exhigh",
+      "320k": "exhigh",
+      flac: "lossless",
+      flac24bit: "hires",
+      hires: "hires",
+      master: "jymaster"
+    }[铃响1nb] || "standard",
+    n: 1,
+    id: 奈可1nd
+  });
+  const 再见1o0 = KH99_0x17f9ce(有缘1nk);
+  if (再见1o0) {
+    return 再见1o0;
+  }
+  throw new Error("suyinWy fail");
+};
+const KH99_0x547d0d = async (铃响1o5, 再见1o6) => {
+  const 有缘1o8 = 铃响1o5.songName || 铃响1o5.name || "";
+  if (!有缘1o8) {
+    throw new Error("no name");
+  }
+  KH99_0x1df815.d("溯音酷我请求:", 有缘1o8, 再见1o6);
+  const 再见1oi = await KH99_0x2f26ee(KH99_0x241617.suyinKw.base, {
+    key: KH99_0x241617.suyinKw.key,
+    type: "json",
+    br: {
+      "128k": 7,
+      "192k": 5,
+      "320k": 5,
+      flac: 1,
+      flac24bit: 1,
+      hires: 1
+    }[再见1o6] || 7,
+    n: 1,
+    msg: 有缘1o8
+  });
+  const 有缘1oq = ("string" == typeof 再见1oi?.["message"] ? 再见1oi.message : "").match(/音乐链接[：:]\s*(\S+)/);
+  if (有缘1oq && KH99_0x4cbdf5(有缘1oq[1]) && (await KH99_0x38d151(有缘1oq[1]))) {
+    KH99_0x1df815.d("溯音酷我成功:", 再见1o6);
+    return 有缘1oq[1];
+  }
+  throw new Error("suyinKw fail");
+};
+const KH99_0x115934 = (云淡1p4, 铃响1p5) => {
+  const 奈可1p7 = 有缘1p8 => String(有缘1p8 || "").replace(/\s|'|\.|,|，|&|"|、|\(|\)|（|）|`|~|-|<|>|\||\/|\]|\[|!|！/g, "").toLowerCase();
+  const 再见1pc = String(云淡1p4.singer || "").toLowerCase();
+  const 云淡1pg = String(铃响1p5.artists || "").toLowerCase();
+  const 有缘1pk = 奈可1p7(云淡1p4.songName || 云淡1p4.name || "");
+  const 有缘1pq = 奈可1p7(铃响1p5.name || "");
+  let 再见1pu = 0;
+  有缘1pq === 有缘1pk ? 再见1pu += 2 : 有缘1pq && (有缘1pq.includes(有缘1pk) || 有缘1pk.includes(有缘1pq)) && (再见1pu += 1);
+  再见1pc && 云淡1pg && 再见1pc.split(/、|&|;|；|\/|,|，|\|/).map(铃响1qb => 铃响1qb.trim().toLowerCase()).filter(Boolean).some(铃响1qh => 铃响1qh && 云淡1pg.includes(铃响1qh)) && (再见1pu += 1);
+  return 再见1pu;
+};
+const KH99_0x17bf32 = async (再见1qo, 奈可1qp) => {
+  const 终章1qr = 再见1qo.source;
+  if ("tx" === 终章1qr) {
+    const 奈可1qv = KH99_0xd6c618(再见1qo);
+    if (!奈可1qv) {
+      throw new Error("cyapi: no id");
+    }
+    KH99_0x1df815.d("cyapi QQ请求 mid:", 奈可1qv);
+    const 奈可1r1 = await KH99_0x2f26ee(KH99_0x241617.cyapi.qq, {
+      apikey: KH99_0x241617.cyapi.key,
+      type: "json",
+      mid: 奈可1qv
+    });
+    if (奈可1r1 && 奈可1r1.url && "string" == typeof 奈可1r1.url && 奈可1r1.url.startsWith("http")) {
+      return 奈可1r1.url;
+    }
+    throw new Error("cyapi QQ fail: no url field");
+  }
+  if ("kg" === 终章1qr) {
+    const 终章1rl = 再见1qo.hash || 再见1qo.FileHash || 再见1qo.fileHash || "";
+    if (!终章1rl) {
+      throw new Error("cyapi KG: no hash");
+    }
+    KH99_0x1df815.d("cyapi 酷狗请求 hash:", 终章1rl);
+    const 有缘1rw = await KH99_0x2f26ee(KH99_0x241617.cyapi.kg, {
+      apikey: KH99_0x241617.cyapi.key,
+      id: 终章1rl,
+      type: "json"
+    }, 8000);
+    if (有缘1rw && 200 === 有缘1rw.code && 有缘1rw.data && 有缘1rw.data.url) {
+      if (!KH99_0x4cbdf5(有缘1rw.data.url)) {
+        throw new Error("cyapi KG: URL无效");
+      }
+      KH99_0x1df815.d("cyapi 酷狗成功:", 奈可1qp, "(quality=" + (有缘1rw.data.quality || 有缘1rw.data.extName || "?") + ")");
+      return 有缘1rw.data.url;
+    }
+    throw new Error("cyapi KG fail: code=" + (有缘1rw?.["code"] ?? "null"));
+  }
+  if ("wy" === 终章1qr) {
+    const 奈可1sv = 再见1qo.songName || 再见1qo.name || "";
+    const 再见1t0 = 再见1qo.singer || "";
+    if (!奈可1sv) {
+      throw new Error("cyapi WY: no songName");
+    }
+    const 铃响1t5 = 奈可1sv + (再见1t0 ? " " + 再见1t0 : "");
+    const 终章1t9 = await KH99_0x2f26ee(KH99_0x241617.cyapi.wy, {
+      apikey: KH99_0x241617.cyapi.key,
+      msg: 铃响1t5,
+      num: 20,
+      type: "json"
+    }, 8000);
+    if (!终章1t9 || !Array.isArray(终章1t9.list) || 0 === 终章1t9.list.length) {
+      throw new Error("cyapi WY: 搜索无结果");
+    }
+    let 铃响1tn = 0;
+    let 再见1to = -1;
+    终章1t9.list.forEach((云淡1ts, 铃响1tt) => {
+      const 再见1tu = KH99_0x115934(再见1qo, 云淡1ts);
+      再见1tu > 再见1to && (再见1to = 再见1tu, 铃响1tn = 铃响1tt);
+    });
+    const 终章1u3 = 终章1t9.list[铃响1tn];
+    KH99_0x1df815.d("cyapi 网易匹配:", 终章1u3.name, "-", 终章1u3.artists, "(score=" + 再见1to + ", idx=" + 铃响1tn + "/" + 终章1t9.list.length + ")");
+    const 奈可1uj = await KH99_0x2f26ee(KH99_0x241617.cyapi.wy, {
+      apikey: KH99_0x241617.cyapi.key,
+      msg: 铃响1t5,
+      num: 20,
+      type: "json",
+      n: 铃响1tn + 1
+    }, 12000);
+    if (奈可1uj && 奈可1uj.url && "string" == typeof 奈可1uj.url && 奈可1uj.url.startsWith("http")) {
+      if (!KH99_0x4cbdf5(奈可1uj.url)) {
+        throw new Error("cyapi WY: URL无效");
+      }
+      return 奈可1uj.url;
+    }
+    throw new Error("cyapi WY fail: no url field");
+  }
+  throw new Error("cyapi: unsupported src: " + 终章1qr);
+};
+const KH99_0x5ad3a6 = (有缘1v8, 终章1v9) => KH99_0x17bf32(有缘1v8, 终章1v9);
+const KH99_0xf2194e = async (再见1vc, 奈可1vd) => {
+  const 终章1vf = KH99_0xd6c618(再见1vc);
+  const 铃响1vh = 再见1vc.source;
+  if (!终章1vf) {
+    throw new Error("no id");
+  }
+  KH99_0x1df815.d("fish请求:", 铃响1vh, 终章1vf);
+  const 奈可1vp = await KH99_0x2f26ee(KH99_0x241617.fish.base + "/" + 铃响1vh + "/song", {
+    id: 终章1vf
+  });
+  const 奈可1vv = KH99_0x17f9ce(奈可1vp);
+  if (奈可1vv) {
+    return 奈可1vv;
+  }
+  throw new Error("fish fail");
+};
+const KH99_0x438615 = async (再见1w0, 奈可1w1) => {
+  const 终章1w3 = KH99_0xd6c618(再见1w0);
+  if (!终章1w3) {
+    throw new Error("no id");
+  }
+  KH99_0x1df815.d("HYW请求:", 终章1w3);
+  const 终章1w9 = await KH99_0x2f26ee(KH99_0x241617.hywmusic.base + "/api/music", {
+    mid: 终章1w3
+  });
+  const 有缘1we = KH99_0x17f9ce(终章1w9);
+  if (有缘1we) {
+    return 有缘1we;
+  }
+  throw new Error("hyw fail");
+};
+const KH99_0xb8077 = async (奈可1wj, 有缘1wk) => {
+  const 云淡1wm = 奈可1wj.source;
+  const 奈可1wp = 奈可1wj.songName || 奈可1wj.name || "";
+  const 再见1wu = 奈可1wj.singer || "";
+  const 终章1wx = KH99_0xd6c618(奈可1wj);
+  if (!奈可1wp && !终章1wx) {
+    throw new Error("yuafeng: no songName and no id");
+  }
+  const 有缘1x2 = {
+    wy: "wymusic",
+    tx: "qqmusic",
+    kw: "kwmusic",
+    kg: "kgmusic",
+    mg: "mgmusic"
+  }[云淡1wm];
+  if (!有缘1x2) {
+    throw new Error("yuafeng: unsupported src: " + 云淡1wm);
+  }
+  const 再见1xc = {
+    "128k": "低品质",
+    "192k": "中品质",
+    "320k": "HQ高品质",
+    flac: "SQ无损",
+    flac24bit: "SQ无损",
+    hires: "臻品2.0",
+    master: "臻品母带",
+    atmos: "杜比全景声",
+    atmos_plus: "杜比全景声"
+  }[有缘1wk] || "HQ高品质";
+  const 再见1xo = "ak_d6c2d3eef8b8d16ac34b1fc38f6bfc198d8c2e6c25f38165" || "";
+  const 云淡1xs = 奈可1wp + (再见1wu ? " " + 再见1wu : "");
+  KH99_0x1df815.d("冷雨请求:", 有缘1x2, 云淡1xs || 终章1wx, 有缘1wk, "->", 再见1xc);
+  const 有缘1y2 = {
+    apikey: 再见1xo,
+    n: 1,
+    type: 再见1xc
+  };
+  if ("tx" === 云淡1wm && 终章1wx) {
+    有缘1y2.mid = String(终章1wx);
+  } else {
+    if ("kg" === 云淡1wm && 奈可1wj.hash) {
+      有缘1y2.hash = 奈可1wj.hash;
+    } else {
+      if (!奈可1wp) {
+        throw new Error("yuafeng: no mid/hash/msg");
+      }
+      有缘1y2.msg = 云淡1xs;
+    }
+  }
+  const 云淡1ym = KH99_0x241617.yuafeng.url.replace(/\/kgmusic$/, "") + "/" + 有缘1x2;
+  const 终章1yr = await KH99_0x2f26ee(云淡1ym, 有缘1y2, 8000);
+  if (终章1yr && 0 === 终章1yr.code) {
+    const 终章1yx = 终章1yr.data?.["music"] || 终章1yr.music || "";
+    if (终章1yx && KH99_0x4cbdf5(终章1yx)) {
+      KH99_0x1df815.d("冷雨成功:", 有缘1x2, 有缘1wk, "(type=" + 再见1xc + ")");
+      return 终章1yx;
+    }
+  }
+  throw new Error("yuafeng fail: code=" + (终章1yr?.["code"] ?? "null") + " msg=" + (终章1yr?.["msg"] || ""));
+};
+const KH99_0x4c23ac = async (再见1zi, 奈可1zj) => {
+  const 终章1zl = KH99_0xd6c618(再见1zi);
+  if (!终章1zl) {
+    throw new Error("QQ专属: no songmid");
+  }
+  const 奈可1zp = 再见1zi.mediaMid || 再见1zi.strMediaMid || 再见1zi.media_mid || 再见1zi.strmediamid || "";
+  const 云淡1zy = {
+    "128k": "M500",
+    "192k": "M800",
+    "320k": "M800",
+    flac: "F000",
+    flac24bit: "RS01",
+    hires: "RS01",
+    atmos: "atmosphere",
+    atmos_plus: "atmosphere",
+    master: "AIM00"
+  }[奈可1zj] || "M800";
+  const 云淡20a = {
+    M500: "mp3",
+    M800: "mp3",
+    F000: "flac",
+    RS01: "flac",
+    RS02: "flac",
+    AIM00: "mflac",
+    atmosphere: "flac"
+  }[云淡1zy] || "mp3";
+  const 有缘20k = 奈可1zp || 终章1zl;
+  const 铃响20n = KH99_0x241617.qqExploit.key;
+  const 有缘20q = KH99_0x241617.qqExploit.uin;
+  const 铃响20t = Math.floor(10000000000 * Math.random()).toString();
+  const 终章20x = "qm_keyst=" + 铃响20n + "; uin=o" + 有缘20q + "; pgv_pvid=" + 铃响20t + "; qqmusic_key=" + 铃响20n + "; qqmusic_uin=o" + 有缘20q + "; psrf_qqaccess_token=" + 铃响20n + "; ts_uid=" + 铃响20t + "; psi=" + 铃响20t;
+  const 有缘21e = "" + 云淡1zy + 有缘20k + "." + 云淡20a;
+  const 再见21i = {
+    comm: {
+      ct: 19,
+      cv: 0,
+      guid: 铃响20t,
+      tmeAppID: "qqmusic",
+      qq: 有缘20q
+    },
+    hot: {
+      method: "CgiGetHotVkey",
+      module: "music.vkey.GetEVkey",
+      param: {
+        filename: [有缘21e],
+        songmid: [终章1zl]
+      }
+    },
+    ekey: {
+      method: "GetEkey",
+      module: "music.vkey.GetEVkey",
+      param: {
+        finfo: [{
+          filename: 有缘21e,
+          mid: 有缘20k || "0"
+        }]
+      }
+    }
+  };
+  try {
+    KH99_0x1df815.d("QQ专属(ut)请求:", 终章1zl, 云淡1zy, 有缘21e);
+    const 云淡21y = await KH99_0x27ff5c("https://ut.y.qq.com/cgi-bin/musicu.fcg", {
+      method: "POST",
+      timeout: KH99_0x849c2a,
+      headers: {
+        "Content-Type": "application/json",
+        Referer: "https://y.qq.com/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        Cookie: 终章20x
+      },
+      body: JSON.stringify(再见21i)
+    });
+    if (KH99_0x2d1c7c(云淡21y)) {
+      const 有缘228 = "string" == typeof 云淡21y.body ? JSON.parse(云淡21y.body) : 云淡21y.body;
+      const 铃响22h = 有缘228?.["hot"]?.["data"]?.["urls"] || [];
+      if (铃响22h.length > 0 && 铃响22h[0].purl) {
+        const 有缘22q = "https://dl.stream.qqmusic.qq.com/";
+        KH99_0x1df815.d("QQ专属(ut)成功:", 云淡1zy, "purl=" + 铃响22h[0].purl.substring(0, 60));
+        return "" + 有缘22q + 铃响22h[0].purl;
+      }
+      KH99_0x1df815.d("QQ专属(ut)无purl:", JSON.stringify(有缘228?.["hot"]?.["data"] || {}).substring(0, 100));
+    }
+  } catch (奈可237) {
+    KH99_0x1df815.d("QQ专属(ut)失败:", 奈可237.message);
+  }
+  const 铃响23b = [{
+    name: "双songmid+专属uin",
+    filename: "" + 云淡1zy + 终章1zl + 终章1zl + "." + 云淡20a,
+    uin: 有缘20q,
+    loginflag: 1
+  }, {
+    name: "单songmid+专属uin",
+    filename: "" + 云淡1zy + 终章1zl + "." + 云淡20a,
+    uin: 有缘20q,
+    loginflag: 1
+  }, {
+    name: "双songmid+空uin",
+    filename: "" + 云淡1zy + 终章1zl + 终章1zl + "." + 云淡20a,
+    uin: "",
+    loginflag: 1
+  }, {
+    name: "单songmid+空uin",
+    filename: "" + 云淡1zy + 终章1zl + "." + 云淡20a,
+    uin: "",
+    loginflag: 1
+  }];
+  for (const 有缘23w of 铃响23b) try {
+    const 云淡23y = {
+      filename: [有缘23w.filename],
+      songmid: [终章1zl],
+      songtype: [0],
+      uin: 有缘23w.uin,
+      loginflag: 有缘23w.loginflag,
+      platform: "23",
+      firstlogin: 1,
+      newver: 1,
+      nohash: 0,
+      cms: 0
+    };
+    const 再见246 = JSON.stringify({
+      comm: {
+        uin: 有缘23w.uin ? parseInt(有缘23w.uin) : 0,
+        format: "json",
+        ct: 23,
+        cv: 0,
+        ...(有缘23w.uin ? {
+          qq: 有缘23w.uin
+        } : {})
+      },
+      req_0: {
+        module: "vkey.GetVkeyServer",
+        method: "CgiGetVkey",
+        param: 云淡23y
+      }
+    });
+    const 有缘24k = "https://u.y.qq.com/cgi-bin/musicu.fcg?format=json&data=" + encodeURIComponent(再见246);
+    KH99_0x1df815.d("QQ专属(u,p23)请求:", 有缘23w.name, 终章1zl, 云淡1zy);
+    const 云淡24s = await KH99_0x27ff5c(有缘24k, {
+      method: "GET",
+      timeout: KH99_0x849c2a,
+      headers: {
+        Referer: "https://y.qq.com/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        Cookie: 终章20x
+      }
+    });
+    if (KH99_0x2d1c7c(云淡24s)) {
+      const 铃响24z = "string" == typeof 云淡24s.body ? JSON.parse(云淡24s.body) : 云淡24s.body;
+      const 有缘258 = 铃响24z?.["req_0"]?.["data"]?.["midurlinfo"]?.[0];
+      if (0 === 铃响24z?.["code"] && 有缘258?.["purl"]) {
+        const 铃响25h = 铃响24z.req_0?.["data"]?.["sip"]?.[0] || "https://dl.stream.qqmusic.qq.com/";
+        KH99_0x1df815.d("QQ专属(u,p23)成功:", 有缘23w.name, 云淡1zy);
+        return "" + 铃响25h + 有缘258.purl;
+      }
+    }
+  } catch (再见25u) {
+    KH99_0x1df815.d("QQ专属(u,p23) " + 有缘23w.name + "失败:", 再见25u.message);
+  }
+  const 奈可261 = {
+    comm: {
+      ct: 19,
+      cv: 0,
+      guid: 铃响20t,
+      tmeAppID: "qqmusic",
+      qq: 有缘20q
+    },
+    hot: {
+      method: "CgiGetHotVkey",
+      module: "music.vkey.GetEVkey",
+      param: {
+        filename: [有缘21e],
+        songmid: [终章1zl]
+      }
+    }
+  };
+  try {
+    KH99_0x1df815.d("QQ专属(ut+key)请求:", 终章1zl, 云淡1zy);
+    const 再见26c = await KH99_0x27ff5c("https://ut.y.qq.com/cgi-bin/musicu.fcg", {
+      method: "POST",
+      timeout: KH99_0x849c2a,
+      headers: {
+        "Content-Type": "application/json",
+        Referer: "https://y.qq.com/",
+        "User-Agent": "Mozilla/5.0 QQMusic/2201",
+        Cookie: 终章20x
+      },
+      body: JSON.stringify(奈可261)
+    });
+    if (KH99_0x2d1c7c(再见26c)) {
+      const 云淡26m = "string" == typeof 再见26c.body ? JSON.parse(再见26c.body) : 再见26c.body;
+      const 奈可26v = 云淡26m?.["hot"]?.["data"]?.["urls"] || [];
+      if (奈可26v.length > 0 && 奈可26v[0].purl) {
+        const 云淡274 = "https://dl.stream.qqmusic.qq.com/";
+        KH99_0x1df815.d("QQ专属(ut+key)成功:", 云淡1zy);
+        return "" + 云淡274 + 奈可26v[0].purl;
+      }
+    }
+  } catch (铃响27b) {
+    KH99_0x1df815.d("QQ专属(ut+key)失败:", 铃响27b.message);
+  }
+  throw new Error("QQ专属全部失败: " + KH99_0x3486ec(终章1zl) + " " + 云淡1zy);
+};
+const KH99_0x5de1c0 = {
+  tx: [[{
+    name: "ygkingQQ",
+    fn: KH99_0x3ce087
+  }], [{
+    name: "QQ专属",
+    fn: KH99_0x4c23ac
+  }], [{
+    name: "cyapi QQ",
+    fn: KH99_0x17bf32
+  }, {
+    name: "溯音QQ",
+    fn: KH99_0x1c4cc1
+  }, {
+    name: "FFAPI",
+    fn: KH99_0x28c14f
+  }], [{
+    name: "妖狐QQ",
+    fn: KH99_0x579292
+  }], [{
+    name: "本地QQ(3035)",
+    fn: KH99_0x37b286
+  }, {
+    name: "HYW",
+    fn: KH99_0x438615
+  }, {
+    name: "fish",
+    fn: KH99_0xf2194e
+  }]],
+  wy: [[{
+    name: "念心WY",
+    fn: KH99_0x325c43
+  }, {
+    name: "本地网易(3036+cookie)",
+    fn: KH99_0x249433
+  }, {
+    name: "星海网易",
+    fn: KH99_0x10e793
+  }, {
+    name: "bugpk",
+    fn: KH99_0x1e0d8d
+  }, {
+    name: "cyapi 网易",
+    fn: KH99_0x17bf32
+  }], [{
+    name: "妖狐WY",
+    fn: KH99_0x579292
+  }, {
+    name: "溯音网易",
+    fn: KH99_0x4b1604
+  }, {
+    name: "FFAPI",
+    fn: KH99_0x28c14f
+  }], [{
+    name: "HYW",
+    fn: KH99_0x438615
+  }, {
+    name: "fish",
+    fn: KH99_0xf2194e
+  }]],
+  kw: [[{
+    name: "yunmge酷我",
+    fn: KH99_0x34b349
+  }, {
+    name: "妖狐酷我",
+    fn: KH99_0x13e362
+  }, {
+    name: "酷我官方anti",
+    fn: KH99_0x483715
+  }, {
+    name: "星海酷我",
+    fn: KH99_0x2bcea4
+  }, {
+    name: "溯音酷我",
+    fn: KH99_0x547d0d
+  }], [{
+    name: "FFAPI",
+    fn: KH99_0x28c14f
+  }], [{
+    name: "fish",
+    fn: KH99_0xf2194e
+  }]],
+  kg: [[{
+    name: "cyapi 酷狗",
+    fn: KH99_0x5ad3a6
+  }, {
+    name: "星海酷狗",
+    fn: KH99_0x35ac09
+  }, {
+    name: "念心酷狗",
+    fn: KH99_0x57d357
+  }, {
+    name: "妖狐酷狗",
+    fn: KH99_0x14514a
+  }], [{
+    name: "yuafeng酷狗",
+    fn: KH99_0x42cdf5
+  }, {
+    name: "FFAPI",
+    fn: KH99_0x28c14f
+  }], [{
+    name: "fish",
+    fn: KH99_0xf2194e
+  }]],
+  mg: [[{
+    name: "星海咪咕",
+    fn: KH99_0x44105f
+  }, {
+    name: "咪咕本地(3037)",
+    fn: KH99_0x401a31
+  }], [{
+    name: "妖狐咪咕",
+    fn: KH99_0x51f0ba
+  }, {
+    name: "FFAPI",
+    fn: KH99_0x28c14f
+  }, {
+    name: "fish",
+    fn: KH99_0xf2194e
+  }]]
+};
+const KH99_0x10856c = async (再见27i, 奈可27j, 有缘27k) => 再见27i && 0 !== 再见27i.length ? new Promise(铃响27n => {
+  let 奈可27p = 再见27i.length;
+  let 云淡27s = false;
+  再见27i.forEach(async 奈可27v => {
+    try {
+      const 终章27x = await 奈可27v.fn(奈可27j, 有缘27k);
+      if (终章27x && KH99_0x4cbdf5(终章27x)) {
+        return void (云淡27s || (云淡27s = true, 铃响27n({
+          url: 终章27x,
+          name: 奈可27v.name
+        })));
+      }
+    } catch (终章289) {
+      KH99_0x1df815.d("[竞速] " + 奈可27v.name + " 失败:", 终章289.message);
+    }
+    奈可27p--;
+    0 !== 奈可27p || 云淡27s || (云淡27s = true, 铃响27n(null));
+  });
+}) : null;
+const KH99_0x256e6c = async (终章28l, 云淡28m, 铃响28n) => {
+  KH99_0x1df815.t("i", "=== 获取URL开始 v1.7.1 ===");
+  KH99_0x1df815.t("i", "平台:", KH99_0x1df818[终章28l] || 终章28l, "| 请求音质:", 铃响28n, "| 歌曲ID:", KH99_0xd6c618(云淡28m));
+  const 终章28x = KH99_0x13a61b[终章28l];
+  if (终章28x && KH99_0x1df815.t("i", "平台支持音质:", 终章28x.supported.join("/"), "(" + 终章28x.note + ")"), !KH99_0x4f3f69.includes(终章28l)) {
+    throw KH99_0x1df815.t("e", "不支持的平台:", 终章28l), new Error("不支持的平台: " + 终章28l);
+  }
+  const 再见29c = KH99_0x5376f6[铃响28n] || [铃响28n];
+  KH99_0x1df815.t("i", "音质降级链:", 再见29c.join(" -> "));
+  const 奈可29j = KH99_0x5de1c0[终章28l];
+  if (!奈可29j || 0 === 奈可29j.length) {
+    throw new Error("未配置API组: " + 终章28l);
+  }
+  if ("mg" === 终章28l) {
+    KH99_0x1df815.t("i", "咪咕快速模式: 不逐层降级，直接尝试+PQ兜底");
+    for (let 云淡29s = 0; 云淡29s < 奈可29j.length; 云淡29s++) {
+      const 终章29x = 奈可29j[云淡29s];
+      KH99_0x1df815.t("i", "[音质" + 铃响28n + "] 组" + (云淡29s + 1) + "/" + 奈可29j.length + " 并行尝试 " + 终章29x.length + " 个API: " + 终章29x.map(再见2ac => 再见2ac.name).join(", "));
+      const 云淡2ag = await KH99_0x10856c(终章29x, 云淡28m, 铃响28n);
+      if (云淡2ag && 云淡2ag.url) {
+        KH99_0x1df815.t("i", "✓ 成功! 来源:" + 云淡2ag.name + " -> " + 云淡2ag.url.substring(0, 80) + "...");
+        return 云淡2ag.url;
+      }
+      KH99_0x1df815.t("w", "[音质" + 铃响28n + "] 组" + (云淡29s + 1) + " 全部失败");
+    }
+    throw KH99_0x1df815.t("e", "=== 咪咕所有API均失败 ==="), new Error("咪咕所有API均失败 (v1.7.1 快速模式)");
+  }
+  for (let 云淡2b4 = 0; 云淡2b4 < 再见29c.length; 云淡2b4++) {
+    const 终章2b9 = 再见29c[云淡2b4];
+    const 再见2bc = 云淡2b4 === 再见29c.length - 1;
+    云淡2b4 > 0 && KH99_0x1df815.t("w", "音质 " + 再见29c[云淡2b4 - 1] + " 全部失败，降级到 " + 终章2b9);
+    for (let 云淡2bm = 0; 云淡2bm < 奈可29j.length; 云淡2bm++) {
+      const 终章2br = 奈可29j[云淡2bm];
+      if (云淡2bm === 奈可29j.length - 1 && !再见2bc && 云淡2b4 > 0) {
+        continue;
+      }
+      KH99_0x1df815.t("i", "[音质" + 终章2b9 + "] 组" + (云淡2bm + 1) + "/" + 奈可29j.length + " 并行尝试 " + 终章2br.length + " 个API: " + 终章2br.map(铃响2cb => 铃响2cb.name).join(", "));
+      const 终章2cf = await KH99_0x10856c(终章2br, 云淡28m, 终章2b9);
+      if (终章2cf && 终章2cf.url) {
+        KH99_0x1df815.t("i", "✓ 成功! 音质:" + 终章2b9 + " 来源:" + 终章2cf.name + " -> " + 终章2cf.url.substring(0, 80) + "...");
+        终章2b9 !== 铃响28n && KH99_0x1df815.t("w", "⚠ 用户请求 " + 铃响28n + "，已降级到 " + 终章2b9);
+        return 终章2cf.url;
+      }
+      KH99_0x1df815.t("w", "[音质" + 终章2b9 + "] 组" + (云淡2bm + 1) + " 全部失败");
+    }
+  }
+  throw KH99_0x1df815.t("e", "=== 所有API + 所有音质档 均失败 ==="), new Error("所有API均失败 (v1.7.1 已尝试音质降级)");
+};
+const KH99_0x89ac0e = async (铃响2db, 再见2dc) => {
+  const 有缘2de = KH99_0xd6c618(再见2dc);
+  if (!有缘2de) {
+    KH99_0x1df815.w("歌词: 无歌曲ID");
+    return {
+      lyric: "",
+      tlyric: "",
+      rlyric: "",
+      lxlyric: ""
+    };
+  }
+  KH99_0x1df815.t("i", "获取歌词:", KH99_0x1df818[铃响2db] || 铃响2db, 有缘2de);
+  try {
+    if ("wy" === 铃响2db) {
+      const 铃响2dn = await KH99_0x2f26ee(KH99_0x241617.localWy.base + "/lyric", {
+        id: 有缘2de,
+        cookie: KH99_0x241617.neteaseCookie
+      });
+      if (铃响2dn && (200 === 铃响2dn.status || 200 === 铃响2dn.code) && 铃响2dn.data) {
+        KH99_0x1df815.t("i", "歌词获取成功(网易)");
+        return {
+          lyric: 铃响2dn.data.lrc?.["lyric"] || "",
+          tlyric: 铃响2dn.data.tlyric?.["lyric"] || "",
+          rlyric: 铃响2dn.data.romalrc?.["lyric"] || "",
+          lxlyric: ""
+        };
+      }
+    } else {
+      if ("tx" === 铃响2db) {
+        const 有缘2ee = await KH99_0x2f26ee(KH99_0x241617.localQQ.base + "/song/lyric", {
+          mid: 有缘2de,
+          decode: 1
+        });
+        if (有缘2ee && 0 === 有缘2ee.code && 有缘2ee.data) {
+          KH99_0x1df815.t("i", "歌词获取成功(QQ)");
+          return {
+            lyric: 有缘2ee.data.lyric || "",
+            tlyric: 有缘2ee.data.trans || "",
+            rlyric: 有缘2ee.data.roma || "",
+            lxlyric: ""
+          };
+        }
+      }
+    }
+  } catch (云淡2ey) {
+    KH99_0x1df815.t("e", "歌词获取失败:", 云淡2ey.message);
+  }
+  KH99_0x1df815.w("歌词: 无结果");
+  return {
+    lyric: "",
+    tlyric: "",
+    rlyric: "",
+    lxlyric: ""
+  };
+};
+const KH99_0x39ff67 = async (终章2f3, 云淡2f4) => {
+  const 再见2f6 = KH99_0xd6c618(云淡2f4);
+  if (!再见2f6) {
+    KH99_0x1df815.w("封面: 无歌曲ID");
+    return "";
+  }
+  KH99_0x1df815.t("i", "获取封面:", KH99_0x1df818[终章2f3] || 终章2f3, 再见2f6);
+  try {
+    if ("wy" === 终章2f3) {
+      const 终章2ff = await KH99_0x2f26ee(KH99_0x241617.localWy.base + "/song/detail", {
+        ids: 再见2f6,
+        cookie: KH99_0x241617.neteaseCookie
+      });
+      if (终章2ff && (200 === 终章2ff.status || 200 === 终章2ff.code) && 终章2ff.data && 终章2ff.data.pic) {
+        KH99_0x1df815.t("i", "封面获取成功(网易)");
+        return 终章2ff.data.pic;
+      }
+    } else {
+      if ("tx" === 终章2f3) {
+        const 再见2g0 = await KH99_0x2f26ee(KH99_0x241617.localQQ.base + "/song/detail", {
+          mids: 再见2f6
+        });
+        if (再见2g0 && 0 === 再见2g0.code && 再见2g0.data && 再见2g0.data.length > 0) {
+          const 奈可2gd = 再见2g0.data[0].album?.["cover"] || "";
+          奈可2gd && KH99_0x1df815.t("i", "封面获取成功(QQ)");
+          return 奈可2gd;
+        }
+      }
+    }
+  } catch (终章2gl) {
+    KH99_0x1df815.t("e", "封面获取失败:", 终章2gl.message);
+  }
+  KH99_0x1df815.w("封面: 无结果");
+  return "";
+};
+const KH99_0x2426e2 = (有缘2gq, 终章2gr, 云淡2gs, 铃响2gt) => {
+  if (!globalThis.__KH_PROXY__) {
+    try {
+      let 有缘2gw = "";
+      let 终章2gx = "";
+      try {
+        const 云淡2gy = 铃响2gt && 铃响2gt.musicInfo || {};
+        有缘2gw = String(云淡2gy.songmid || 云淡2gy.hash || 云淡2gy.copyrightId || 云淡2gy.id || "").slice(0, 64);
+        终章2gx = String(云淡2gy.songName || 云淡2gy.name || "").slice(0, 80);
+      } catch (铃响2hh) {}
+      KH99_0x5d2dfd("http://hywmusicsource.xn--9tra.work/api/source/stats/ping?p=" + encodeURIComponent(String(终章2gr || "")) + "&t=" + encodeURIComponent(String(云淡2gs || "")) + "&ok=" + (有缘2gq ? "1" : "0") + "&id=" + encodeURIComponent(有缘2gw) + "&n=" + encodeURIComponent(终章2gx) + "&v=full", {
+        method: "GET",
+        timeout: 8000
+      }, () => {});
+    } catch (再见2hu) {}
+  }
+};
+KH99_0x5960ac(KH99_0x39563d.request, ({
+  source: 奈可2hv,
+  action: 有缘2hw,
+  info: 终章2hx
+}) => {
+  switch (KH99_0x1df815.t("d", "事件:", 有缘2hw, KH99_0x1df818[奈可2hv] || 奈可2hv), 有缘2hw) {
+    case "musicUrl":
+      return KH99_0x256e6c(奈可2hv, 终章2hx.musicInfo, 终章2hx.type).then(铃响2ib => (KH99_0x1df815.t("i", "musicUrl 返回成功"), KH99_0x2426e2(1, 奈可2hv, 终章2hx.type, 终章2hx), 铃响2ib)).catch(奈可2ij => {
+        throw KH99_0x1df815.t("e", "musicUrl 返回失败:", 奈可2ij.message), KH99_0x2426e2(0, 奈可2hv, 终章2hx.type, 终章2hx), 奈可2ij;
+      });
+    case "lyric":
+      return KH99_0x89ac0e(奈可2hv, 终章2hx.musicInfo);
+    case "pic":
+      return KH99_0x39ff67(奈可2hv, 终章2hx.musicInfo);
+    default:
+      KH99_0x1df815.w("未知事件:", 有缘2hw);
+      return Promise.reject(new Error("未知事件: " + 有缘2hw));
+  }
+});
+KH99_0x1ad6fa(KH99_0x39563d.inited, {
+  openDevTools: false,
+  meta: {
+    name: KH99_0x52bd3a,
+    desc: KH99_0x4d75f6,
+    version: KH99_0x7066d5,
+    author: "HYW & Koneko",
+    downloadType: KH99_0x1ac47c,
+    homepage: "https://github.com/Miao-moe"
+  },
+  sources: {
+    wy: {
+      name: "网易云音乐",
+      type: "music",
+      actions: ["musicUrl"],
+      qualitys: [["128k", "320k", "flac", "hires", "master"]],
+      meta: {
+        downloadType: "test",
+        desc: KH99_0x4d75f6
+      }
+    },
+    tx: {
+      name: "QQ音乐",
+      type: "music",
+      actions: ["musicUrl"],
+      qualitys: [["128k", "320k", "flac", "hires", "master", "atmos", "atmos_plus"]],
+      meta: {
+        downloadType: "test",
+        desc: KH99_0x4d75f6
+      }
+    },
+    kw: {
+      name: "酷我音乐",
+      type: "music",
+      actions: ["musicUrl"],
+      qualitys: [["128k", "320k", "flac", "hires"]],
+      meta: {
+        downloadType: "test",
+        desc: KH99_0x4d75f6,
+        primary: "yunmge"
+      }
+    },
+    kg: {
+      name: "酷狗音乐",
+      type: "music",
+      actions: ["musicUrl"],
+      qualitys: [["128k", "320k", "flac"]],
+      meta: {
+        downloadType: "test",
+        desc: KH99_0x4d75f6
+      }
+    },
+    mg: {
+      name: "咪咕音乐",
+      type: "music",
+      actions: ["musicUrl"],
+      qualitys: [["128k", "320k", "flac"]],
+      meta: {
+        downloadType: "test",
+        desc: KH99_0x4d75f6
+      }
+    }
+  }
+});
+const KH99_0x478167 = "=AFVx4mVuRmVWZkShZ1aalWZqZkVW5GaOFGbklUYE50Vh5mU0Z1ModnYGp0VhdUNWVmVsdkVxYFNSFDcQRFbalmTHhncW5mTv1EbG90UtB3UWhVQ4VlaStWTWpFWjRkQqdFbZhXWzgmWiZkWYFFbSplUxkUeZZFZPJ1RGpkWHhXakNjUyZlbSdnUWR2VjdUMTZVMKhVVrR3ciZkW6FGRKhWYWBncWtGcLJmVKhmYHFjVj5mQXZFbkdlUWB3bXpmRo10Vjl3VVh2VSZkWxd1aapWZuJ0cW1GdPJmRsp3YHh3UUxmWzZlbONlUtp0MT1WNXVmRrhXVtx2ahFjSSNmRaNVWVlVeWVFaLJVbSh2VrpVYXZ0b4lFVCZXTxYFMS5GcXZVRwZzVq5UYidkSIJVbxY1VGBncWxWV4JlMOhVTXR3UkBTNZZ1MKNXZsJ1TX1GdXNVRwdUWs50aiZEbJNVb4dlVWB3RZxmQLJWRxw0UsJlWS12Z5ZFbkd3VGlleiRkRo1UVWh1VYhmUSBTNWZ1aaFmVFB3VUVFdrJmRaFTUtVDVVNDaIdFbkdlVtlEMT1GeXRGMFpXVs9GeiZlSy00V0NVWXdneXVFZ3JmRkd1YHVzVNZkWzZVb0dkYWpVeS1GcqVlaGhUWxg2UiVFM3ZVb4hlVwA3RU1GbhJFbvpnWGpVaORkVyZVRotUTX5EWOdVMXFmRwNnVu1UNNZkWwU1aohlVxo1cWFDazJ2RKJHVth3VjBjSJVVMKdnYWJFeadEeoJlModkVqlVMNZkSYFFbS50VVRTeVpmRWJmRapXUq5kaXxGcHllMotkYWpkcW5GcXR2RolVWWZ1dTdkS1cVb4lWYxAnVXhlSHVWbKhFZHFzViJjUzVlbk9kYsRGWjRkRodlRwZ0Vqp1VS1mSyNmRadVZtRGSVFDcHVWbGRTTHR3UX1mU1ZFMo9WTxo1ckRkSo1kM4dFVXB3RhxmV14URWVlVIJFdWNjQHZFMxMjWEZ0VW5WQ4p1RstWYxoUUUpmSTVWRxc1VsNWNSJjVhFGRGpVTVxGdW5mT31UMsh0YFpFWhZEcyV1MsFmYGpkdkdUMaJ1MCZUWXZUYhFjWaZVbxkWYycGeWx2Y4J1VWB3VspVVOZlWzlVV09kVsBHSlRkSTdFSShUWrh3RiVVMQdlaGdFZHhWWWtWNXJ1VKlVVrpFWhBTNWZlRkdnYHZVcaVkVsZ1aahEVXZ0VWZFZ2ElVopVYXJlcVFDbLZVbKRTWyg3Vl1mTYplVwRjVxEFMT1GeORlMnhnVuJ1bNFjWZ1UVkx2VsB3cZx2Y1ImVsl1YFZFWiZkWGdlbG9kVspFaUxGaYZVb4ZjVFVTYiZ0YwoFRGhmVxo0VWFDZDJWbOhlVrpFaUVEcYVlboNjVWxWSS5GcXFWMaJXVxAXYS1mSQVVbwZVZUJlcU1GbrJ1VWl1UtFDbjJzZ4ZFbs9mYWp1TadEeWdFbZlXVuhmbNZFbHF1aotmVWB3cWVEeLJlMKhmUsJlWTVkW2k1VodVYx40VVtmWYF2MShlVGhWYSZFZvVVb0R1VFB3cURlUhJmRkh1YEZ0ahZFczZlbatUTXZkciZEZYdVVwZlVxMWMiZlTV1UVWlWVyI1VWhlUDNlRk9UTVR2al1Gezl1a5ATYxwGSjVkWOFmVaJnVrlzRiZlSzclaCd1YxkUeWZFZDZVRxolWFpVaVJDaXd1aadkUGRmVX1GeVNlRahVWrB3RhxGZHNmRah2VtJ1RaVFbhJ2RKpnTWRWVjNjQHZFM5smVrFDWXtmWTJVMwdkVsh2VWVVNwdVb4hlTFVzRZxGZvJVMaRTUU50VWNjQ1ZFWvhXYxoVYaVEaXR2RnpnVs50QSdkTJZVb45EZzIFdWZFahJ2RWRFZFRWYjZkSIRFWkdlYspVMhdUMpRlboRXVxY1RNdlRU50V0VlUqxGSaZFZ3JmVKh3UtFzUWJTU4ZlRWdXTHZUYadEeWJlM4dVWtlzahFjWzI1VwpmV6ZFSZFDZP10axQkWGpFWXdEaZdVV1smVWp0MZJDeoJlMoh1VYRmVh1mTZF2R4VVTwA3VZtGZzZFbSdVVrRWaWNjQ1VFbkdlYHpEUkdUMWN2MCNnVxo1diZlT2VlaGhWWVpVdW5mVTJmVK9UZGRGVOZEcXZVbGtmVsB3VlRkSqZlaGRXVup1SW1mSQ9EVKZ1YYF0dWZlUDZVR0k3VVpFWVpHb0dFWONlVxQGWkdUMXNWV1MXVuR2aSZlWWdVb0xWYWB3cWpnVLJVbKRlWHh3VOxGcGZVMWFmYGZlNXtmWpdVbol1VYxmbNFjWzpVRWt2VGp0VWpmR6ZVMsRjTHRHWWhEa0Z1MCNlVwEzMadEeXJlbCd1VVVTYiZkTaVVbxMVYwo0VWtmVhFmMOhVTXFzUTZkWIlFbkNXTxw2RjRkRXdlRwJXVzwWYNdlR6R2RxcFZIJkRVJDdrJ1VSh2VqZkTRFDcWZVMkdnUrFDcXtmWhdFbJhXWXNXMSZFcwEmRktmV6ZFdWZUU4J1VKhVYGpVYSFjSIZFM5ATTtlUMW1GeoV1MSR3VVR2dWtWNVpVRax2VHFFeV1WOrJmRapUYHFzUVBjSFRFVSdnVrFDaW1GeXN2MCZUVxAHNiZlWFNlaGNFVtJVWW5mUv1UMaZ1YFhWaWFDcHVlM5E2VGJFWjRkRpdFSSRnVth2ciZkWopVRad1VWlUeWdEb0ImVkpkVrR2UTJjUHZlbW9mUyI1VjdUNS10avlXVsR2bhFDZJF2R1cVYxo1cWBDZ3JmRaNjWHRnVTRkVWZVMSBjYWR2dV1WMO1kMoVnVuZ1dNdkUY10VxMVYGB3RZ1WR1EWMaRTUU5kaWpmRIpFSkZkVwEDajdUNXN2MCdlVR1TP";
+const KH99_0x2ba412 = (再见2j6, 奈可2j7) => {
+  let 终章2j9 = 再见2j6;
+  for (let 铃响2jb = 0; 铃响2jb < 奈可2j7; 铃响2jb++) {
+    try {
+      终章2j9 = Buffer.from(终章2j9.split("").reverse().join(""), "base64").toString("utf8");
+    } catch (再见2jo) {
+      return 终章2j9;
+    }
+  }
+  return 终章2j9;
+};
+try {
+  KH99_0x1df815.t("i", "[彩蛋] " + KH99_0x2ba412(KH99_0x478167, 14));
+} catch (KH99_0x443f7b) {}
+KH99_0x1df815.t("i", "========================================");
+KH99_0x1df815.t("i", KH99_0x52bd3a + " v" + KH99_0x7066d5 + " 初始化完成");
+KH99_0x1df815.t("i", "描述: " + KH99_0x4d75f6);
+KH99_0x1df815.t("i", "下载方式: " + KH99_0x1ac47c);
+KH99_0x1df815.t("i", "支持平台: 网易云/QQ/酷我/酷狗/咪咕");
+KH99_0x1df815.t("i", "支持音质: 128k/192k/320k/flac/flac24bit/hires/atmos/atmos_plus/master");
+KH99_0x1df815.t("i", "v3.0·终章: 最终版·超稳定。酷我毒源修复/云梦新接口/直链存活校验/yuafeng酷狗(仅KG) 就绪");
+KH99_0x1df815.t("i", "曲终云淡去，铃响奈可来 —— 感谢一个多月的陪伴，我们有缘小奈可见。");
+KH99_0x1df815.t("i", "【酷狗】yuafeng apikey 已配置 (酷狗端点余额不足时自动跳过，充值后即生效)");
+KH99_0x1df815.t("i", "咪咕支持音质: 128k(PQ)/320k(HQ)/flac(SQ)");
+KH99_0x1df815.t("i", "========================================");
