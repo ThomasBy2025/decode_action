@@ -1,209 +1,260 @@
-//Sat Aug 22 2026 02:50:16 GMT+0000 (Coordinated Universal Time)
+//Tue Sep 08 2026 12:44:05 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-function closeLogoutSheet() {
-  window.document.getElementById("logout-sheet").classList.remove("show");
-  window.document.body.style.overflow = "";
-}
-function confirmLogout() {
-  closeLogoutSheet();
-  $.get("?kglogout=1", function (guf6) {
-    if (guf6.code == 200) {
-      showToast(guf6.msg, "success");
-      setTimeout(function () {
-        location.reload();
-      }, 800);
-    } else if (guf6.code == 401) {
-      showToast("登录已失效，请重新扫码登录", "error");
-      setTimeout(openKgLoginModal, 1000);
-    } else {
-      showToast(guf6.msg || "退出失败", "error");
+const {
+  EVENT_NAMES,
+  request,
+  on,
+  send
+} = globalThis.lx;
+const CURRENT_VERSION = "1.0.2";
+const VERSION_CHECK_URL = "https://gitee.com/nianxinxz1/emo-music/raw/master/wubian.json";
+const _0x10c252 = {
+  "128k": "standard",
+  "320k": "exhigh",
+  flac: "lossless",
+  master: "master",
+  atmos: "atmos"
+};
+const _0x50d340 = {
+  "128k": "standard",
+  "320k": "exhigh",
+  flac: "lossless",
+  hires: "hires",
+  master: "master",
+  atmos: "atmos"
+};
+const _0x2fbdf5 = {
+  "128k": "standard",
+  "320k": "exhigh",
+  flac: "lossless",
+  hires: "hires",
+  jyeffect: "jyeffect",
+  jymaster: "jymaster"
+};
+const _0x3ae75f = {
+  "128k": "standard",
+  "320k": "exhigh",
+  flac: "lossless"
+};
+const _0x136061 = {
+  "128k": "standard",
+  "320k": "exhigh",
+  flac: "lossless"
+};
+const qualitys = {
+  kg: _0x10c252,
+  tx: _0x50d340,
+  wy: _0x2fbdf5,
+  kw: _0x3ae75f,
+  mg: _0x136061
+};
+const apis = {
+  kg: {
+    musicUrl(_0x1ec113, _0x3ba2c2) {
+      let _0x28d26a = "";
+      const _0xe75860 = _0x1ec113.hash;
+      console.log(_0x3ba2c2, _0xe75860);
+      _0x28d26a = "http://mcp.nianxinxz.com/share/ceshi/kg.php?id=" + _0xe75860 + "&level=" + _0x3ba2c2 + "&type=mp3";
+      return new Promise(_0x9b7ba => {
+        _0x9b7ba(_0x28d26a);
+      });
     }
-  }, "json").fail(function () {
-    showToast("网络请求失败", "error");
-  });
-}
-$(window.document).on("change", "#kgjxToggle", function () {
-  var wo7 = this.checked ? 11 : 22;
-  var dt$tRhpoG8 = $(this);
-  var eOzvFJTiT9 = "<?php echo addslashes($deviceId); ?>";
-  if (!eOzvFJTiT9) {
-    dt$tRhpoG8.prop("checked", !dt$tRhpoG8.prop("checked"));
-    showToast("设备ID缺失，无法设置", "error");
-    return;
+  },
+  tx: {
+    musicUrl(_0x212818, _0x9d0f0f) {
+      let _0x2b9c95 = "";
+      const _0xe9f5a0 = _0x212818.songmid;
+      console.log(_0x9d0f0f, _0xe9f5a0);
+      _0x2b9c95 = "http://mcp.nianxinxz.com/share/ceshi/tx.php?id=" + _0xe9f5a0 + "&level=" + _0x9d0f0f + "&type=mp3";
+      return new Promise(_0x5dade9 => {
+        _0x5dade9(_0x2b9c95);
+      });
+    }
+  },
+  wy: {
+    musicUrl(_0x507cca, _0x1e3fea) {
+      let _0x23d6cd = "";
+      const _0x40747e = _0x507cca.songmid;
+      console.log(_0x1e3fea, _0x40747e);
+      _0x23d6cd = "http://music.nxinxz.com/csy/wy.php?id=" + _0x40747e + "&level=" + _0x1e3fea + "&type=mp3";
+      return new Promise(_0x4cf8e7 => {
+        _0x4cf8e7(_0x23d6cd);
+      });
+    }
+  },
+  kw: {
+    musicUrl(_0x60af2a, _0x4b8a3e) {
+      let _0x2b8314 = "";
+      const _0x555cdf = _0x60af2a.songmid;
+      console.log(_0x4b8a3e, _0x555cdf);
+      _0x2b8314 = "http://mcp.nianxinxz.com/share/ceshi/kw.php?id=" + _0x555cdf + "&level=" + _0x4b8a3e + "&type=mp3";
+      return new Promise(_0x5fbe8b => {
+        _0x5fbe8b(_0x2b8314);
+      });
+    }
+  },
+  mg: {
+    musicUrl(_0x21f739, _0x331dd4) {
+      let _0x1cd5dd = "";
+      const _0x58ba3d = _0x21f739.songmid;
+      console.log(_0x331dd4, _0x58ba3d);
+      _0x1cd5dd = "http://mcp.nianxinxz.com/share/ceshi/mg.php?id=" + _0x58ba3d + "&level=" + _0x331dd4 + "&type=mp3";
+      return new Promise(_0x195982 => {
+        _0x195982(_0x1cd5dd);
+      });
+    }
   }
-  dt$tRhpoG8.prop("disabled", true);
-  $.get("", {
-    action: "update_kgjx",
-    deviceid: eOzvFJTiT9,
-    status: wo7
-  }, function (yJVELef10) {
-    dt$tRhpoG8.prop("disabled", false);
-    if (yJVELef10.code == 200) {
-      showToast(yJVELef10.msg, "success");
-    } else if (yJVELef10.code == 401) {
-      showToast("登录已失效，请重新扫码登录", "error");
-      setTimeout(openKgLoginModal, 1000);
-    } else {
-      dt$tRhpoG8.prop("checked", !dt$tRhpoG8.prop("checked"));
-      showToast(yJVELef10.msg || "设置失败", "error");
+};
+const compareVersions = (_0x1a89ba, _0x16de08) => {
+  const _0x599e0b = _0x1a89ba.split(".").map(Number);
+  const _0x560637 = _0x16de08.split(".").map(Number);
+  for (let _0x5ea648 = 0; _0x5ea648 < Math.max(_0x599e0b.length, _0x560637.length); _0x5ea648++) {
+    {
+      const _0x3f8160 = _0x599e0b[_0x5ea648] || 0;
+      const _0x43fa83 = _0x560637[_0x5ea648] || 0;
+      if (_0x3f8160 > _0x43fa83) {
+        return 1;
+      }
+      if (_0x3f8160 < _0x43fa83) {
+        return -1;
+      }
     }
-  }, "json").fail(function () {
-    dt$tRhpoG8.prop("disabled", false);
-    dt$tRhpoG8.prop("checked", !dt$tRhpoG8.prop("checked"));
-    showToast("网络请求失败", "error");
-  });
-});
-function openKgLoginModal() {
-  $("#kg-login-modal").addClass("show");
-  getqrpic();
-}
-function closeKgLoginModal() {
-  $("#kg-login-modal").removeClass("show");
-  cleartime();
-  $("#loginmsg").html("使用酷狗手机版扫描二维码").removeAttr("data-lock");
-  $("#qrimg").show().empty();
-  $("#mobile").hide();
-}
-$("#kg-login-modal").on("click", function (Z11) {
-  if (Z11.target === this) closeKgLoginModal();
-});
-$(window.document).on("keydown", function (gsv12) {
-  if (gsv12.key === "Escape" && $("#kg-login-modal").hasClass("show")) closeKgLoginModal();
-});
-$(".qr-modal-content .close-btn").on("click", closeKgLoginModal);
-function getqrpic() {
-  cleartime();
-  $.get("kglogin.php?do=getqrpic&r=" + window.Math.random(), function (wum13) {
-    if (wum13.saveOK == 0) {
-      $("#qrimg").attr("qrsig", wum13.qrsig).attr("qrurl", wum13.uu);
-      $("#qrimg").html("<img onclick=\"getqrpic()\" src=\"data:image/png;base64," + wum13.data + "\" title=\"点击刷新二维码\" />");
-      if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) $("#mobile").css("display", "block");
-      r1 = setInterval(loginload, 1000);
-      tL2 = setInterval(qrlogin, 3000);
-    } else {
-      showToast(wum13.msg, "error");
-    }
-  }, "json");
-}
-function qrlogin() {
-  if ($("#loginmsg").attr("data-lock") === "true") return;
-  var HiSd14 = $("#qrimg").attr("qrsig");
-  $.get("kglogin.php?do=qrlogin&qrsig=" + encodeURIComponent(HiSd14) + "&r=" + window.Math.random(), function ($kd15) {
-    if ($kd15.saveOK == 0) {
-      $("#loginmsg").html("✅ 登录成功！" + decodeURIComponent($kd15.nick));
-      $("#loginload").hide();
-      $("#qrimg, #mobile").hide();
-      $("#loginmsg").attr("data-lock", "true");
-      cleartime();
-      showToast("酷狗账号绑定成功，即将刷新页面", "success");
-      setTimeout(function () {
-        location.reload();
-      }, 1500);
-    } else if ($kd15.saveOK == 1) {
-      getqrpic();
-      $("#loginmsg").html("二维码已过期，请重新扫描");
-    } else if ($kd15.saveOK == 2) {
-      $("#loginmsg").html("请使用酷狗APP扫描二维码");
-    } else if ($kd15.saveOK == 3) {
-      $("#loginmsg").html("扫描成功，请在手机上确认登录");
-    } else {
-      cleartime();
-      $("#loginmsg").html($kd15.msg);
-    }
-  }, "json");
-}
-function loginload() {
-  if ($("#loginmsg").attr("data-lock") === "true") return;
-  var fS16 = $("#loginload").text();
-  $("#loginload").text(fS16.length > 2 ? "." : fS16 + ".");
-}
-function cleartime() {
-  clearInterval(r1);
-  clearInterval(tL2);
-}
-function mloginurl() {
-  var spcFK17 = $("#qrimg").attr("qrurl");
-  $("#loginmsg").html("跳转后请返回本页面");
-  if (/iPhone|iPad/i.test(navigator.userAgent)) {
-    window.alert("跳转后请手动返回本页面");
-    window.open(spcFK17, "_blank");
-  } else {
-    window.location.href = spcFK17;
   }
-}
-$(window.document).ready(function () {
-  $("#kg-login-trigger").click(openKgLoginModal);
-});
-function setCookie(TpeGD18, dkcQP19, BKRGUHesM20) {
-  var Vaf21 = new window.Date();
-  Vaf21.setTime(Vaf21.getTime() + BKRGUHesM20 * 24 * 60 * 60 * 1000);
-  window.document.cookie = TpeGD18 + "=" + encodeURIComponent(dkcQP19) + ";expires=" + Vaf21.toUTCString() + ";path=/";
-}
-var _22 = new URLSearchParams(window.location.search).get("deviceid");
-setCookie("aa", _22, 7);
-function bdkey(FmPlZU23) {
-  var glZOsiTXm24 = new XMLHttpRequest();
-  glZOsiTXm24.open("GET", "?dhkey=" + encodeURIComponent(FmPlZU23));
-  glZOsiTXm24.onreadystatechange = function () {
-    if (glZOsiTXm24.readyState === XMLHttpRequest.DONE) {
-      var BqJPSIbMk25 = window.document.getElementById("confirm-button");
-      BqJPSIbMk25.textContent = "确定";
-      BqJPSIbMk25.disabled = false;
-      try {
-        var $KwIioTqe26 = JSON.parse(glZOsiTXm24.responseText);
-        var DzK$sdL27 = window.document.getElementById("audioA");
-        if ($KwIioTqe26.code == 200) {
-          DzK$sdL27.src = "ma.mp3";
-          DzK$sdL27.currentTime = 0;
-          DzK$sdL27.play();
-          showToast("🎉 " + $KwIioTqe26.msg, "success");
-          setTimeout(function () {
-            location.reload();
-          }, 800);
-        } else {
-          DzK$sdL27.src = $KwIioTqe26.code == 203 ? "whh.mp3" : "ngmhhy.mp3";
-          DzK$sdL27.currentTime = 0;
-          DzK$sdL27.play();
-          showToast($KwIioTqe26.msg, $KwIioTqe26.code == 203 ? "error" : "warn");
+  return 0;
+};
+const checkUpdate = async () => {
+  return new Promise((_0xab96b6, _0x5b9628) => {
+    {
+      request(VERSION_CHECK_URL, {
+        method: "GET",
+        timeout: 3000
+      }, (_0x510d8c, _0x399cd3) => {
+        if (_0x510d8c || _0x399cd3.statusCode !== 200) {
+          {
+            console.log("检查更新失败:", _0x510d8c || _0x399cd3.statusMessage);
+            _0xab96b6(null);
+            return;
+          }
         }
-      } catch (e) {
-        showToast("服务器响应异常", "error");
-      }
+        try {
+          {
+            const _0x4d4cf7 = _0x399cd3.body;
+            if (compareVersions(CURRENT_VERSION, _0x4d4cf7.version) < 0) {
+              const _0x43ec55 = {
+                version: _0x4d4cf7.version,
+                updateUrl: _0x4d4cf7.updateUrl,
+                description: _0x4d4cf7.description || ""
+              };
+              _0xab96b6(_0x43ec55);
+            } else {
+              _0xab96b6(null);
+            }
+          }
+        } catch (_0x30e28f) {
+          console.log("解析版本信息失败:", _0x30e28f);
+          _0xab96b6(null);
+        }
+      });
     }
-  };
-  glZOsiTXm24.send();
-}
-$(window.document).ready(function () {
-  $("#confirm-button").click(function () {
-    var yWhX28 = $("#key-path-input").val().trim();
-    if (!yWhX28) {
-      var XlVa29 = window.document.getElementById("audioA");
-      if (XlVa29) {
-        XlVa29.src = "j.mp3";
-        XlVa29.currentTime = 0;
-        XlVa29.play();
-      }
-      showToast("请输入兑换码", "warn");
+  });
+};
+on(EVENT_NAMES.request, ({
+  source: _0x58b7b4,
+  action: _0x487391,
+  info: _0x4cebe4
+}) => {
+  switch (_0x487391) {
+    case "musicUrl":
+      console.log(apis[_0x58b7b4].musicUrl(_0x4cebe4.musicInfo, qualitys[_0x58b7b4][_0x4cebe4.type]), _0x58b7b4);
+      return apis[_0x58b7b4].musicUrl(_0x4cebe4.musicInfo, qualitys[_0x58b7b4][_0x4cebe4.type]);
+  }
+});
+checkUpdate().then(_0x3facf9 => {
+  if (_0x3facf9) {
+    {
+      const _0x32a9e4 = "发现新版本 v" + _0x3facf9.version + "\n" + (_0x3facf9.description ? "更新内容: " + _0x3facf9.description + "\n" : "") + "请更新后使用";
+      const _0x407c45 = {
+        log: _0x32a9e4,
+        updateUrl: _0x3facf9.updateUrl
+      };
+      send(EVENT_NAMES.updateAlert, _0x407c45);
+      console.log("发现新版本,需要更新,脚本将不会初始化:", _0x3facf9);
       return;
     }
-    $(this).text("处理中...").prop("disabled", true);
-    bdkey(yWhX28);
-  });
-  $("#key-path-input").keypress(function (yMeE30) {
-    if (yMeE30.key === "Enter") $("#confirm-button").click();
+  } else {
+    console.log("当前已是最新版本,正常初始化");
+    send(EVENT_NAMES.inited, {
+      openDevTools: false,
+      sources: {
+        kg: {
+          name: "kg音乐",
+          type: "music",
+          actions: ["musicUrl"],
+          qualitys: ["128k", "320k", "flac"]
+        },
+        tx: {
+          name: "tx音乐",
+          type: "music",
+          actions: ["musicUrl"],
+          qualitys: ["128k", "320k", "flac"]
+        },
+        wy: {
+          name: "wy音乐",
+          type: "music",
+          actions: ["musicUrl"],
+          qualitys: ["128k", "320k", "flac"]
+        },
+        kw: {
+          name: "kw音乐",
+          type: "music",
+          actions: ["musicUrl"],
+          qualitys: ["128k", "320k", "flac"]
+        },
+        mg: {
+          name: "mg音乐",
+          type: "music",
+          actions: ["musicUrl"],
+          qualitys: ["128k", "320k", "flac"]
+        }
+      }
+    });
+  }
+}).catch(_0x530907 => {
+  console.log("检查更新出错,正常初始化:", _0x530907);
+  send(EVENT_NAMES.inited, {
+    openDevTools: false,
+    sources: {
+      kg: {
+        name: "kg音乐",
+        type: "music",
+        actions: ["musicUrl"],
+        qualitys: ["128k", "320k", "flac"]
+      },
+      tx: {
+        name: "tx音乐",
+        type: "music",
+        actions: ["musicUrl"],
+        qualitys: ["128k", "320k", "flac"]
+      },
+      wy: {
+        name: "wy音乐",
+        type: "music",
+        actions: ["musicUrl"],
+        qualitys: ["128k", "320k", "flac"]
+      },
+      kw: {
+        name: "kw音乐",
+        type: "music",
+        actions: ["musicUrl"],
+        qualitys: ["128k", "320k", "flac"]
+      },
+      mg: {
+        name: "mg音乐",
+        type: "music",
+        actions: ["musicUrl"],
+        qualitys: ["128k", "320k", "flac"]
+      }
+    }
   });
 });
-const fixedPrefix = "【坤】";
-const scrollText = "最新资源已更新 · 每日免费兑换码 · 加q群不迷路 ";
-let position = 0;
-function scrollTitle() {
-  const rotated = scrollText.substring(position) + scrollText.substring(0, position);
-  window.document.title = fixedPrefix + rotated;
-  position++;
-  if (position > scrollText.length) {
-    position = 0;
-  }
-  setTimeout(scrollTitle, 300);
-}
-scrollTitle();
